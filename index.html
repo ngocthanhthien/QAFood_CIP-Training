@@ -1,0 +1,1442 @@
+<!doctype html>
+<!-- CIP Academy · © 2026 Đặng Thanh Bình <dangthanhbinh53@gmail.com> · Biên soạn tiếng Việt, thiết kế và phần mềm khóa học. Nội dung gốc: EHEDG Doc. 50 © EHEDG. -->
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Đặng Thanh Bình"><meta name="copyright" content="© 2026 Đặng Thanh Bình"><meta name="description" content="Khóa học nội bộ về thiết kế vệ sinh cho hệ thống CIP nhà máy thực phẩm, biên soạn từ EHEDG Doc.50, 2019."><title>CIP Academy · EHEDG Doc. 50</title>
+<style>
+:root{--bg:#f1f4f1;--paper:#fff;--ink:#173e35;--text:#30483f;--muted:#61756c;--line:#d9e3dc;--green:#12674e;--pale:#e8f3ec;--gold:#b7843b;--amber:#fff3d9;--red:#a53535;--blue:#25566e;--nav:268px;--shadow:0 12px 40px #143f3210;color-scheme:light}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 'Segoe UI',Arial,sans-serif}h1,h2,h3,h4{color:var(--ink);line-height:1.2;margin:0 0 18px}h1{font-size:clamp(34px,4vw,60px);letter-spacing:-2px}h2{font-size:clamp(28px,3vw,43px);letter-spacing:-1px}h3{font-size:20px}p{margin:0 0 18px}button,input,select,textarea{font:inherit}button,a,input,select,summary{touch-action:manipulation}button{cursor:pointer;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:10px;padding:10px 16px;font-weight:600;line-height:1.4}button:hover{background:var(--pale);border-color:var(--green)}button:disabled{cursor:default;opacity:.5}button.primary{background:var(--green);color:#fff;border-color:var(--green)}button.ghost{background:transparent}a{color:var(--green)}:focus-visible{outline:3px solid var(--gold);outline-offset:4px}[hidden]{display:none!important}input,select,textarea{border:1px solid var(--line);background:var(--paper);color:var(--text);padding:10px 12px;border-radius:8px;max-width:100%}label{display:block;font-size:14px;font-weight:600}label input,label select{margin-top:6px;width:100%}small,.small{font-size:13px;color:var(--muted)}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:var(--green);margin-bottom:18px}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.between{justify-content:space-between}.grow{flex:1}.pill{padding:5px 10px;border-radius:30px;background:var(--pale);font-size:12px;color:var(--green);font-weight:700}.lead{font-size:19px;max-width:780px;color:var(--muted)}.muted{color:var(--muted)}.skip{position:fixed;left:15px;top:-100px;z-index:200;background:white;padding:10px}.skip:focus{top:15px}
+aside#sidebar{position:fixed;inset:0 auto 0 0;width:var(--nav);background:#123e32;color:#e0ece5;z-index:60;padding:28px 20px;display:flex;flex-direction:column;gap:20px;overflow:auto}.brand{display:flex;align-items:center;gap:11px;color:white;font-size:20px;letter-spacing:-.5px;font-weight:800}.brand-icon{height:38px;width:38px;background:#d6bc7d;color:#123e32;border-radius:10px;display:grid;place-items:center;font-size:22px}.brand small{font-size:10px;color:#adc5b6;display:block;letter-spacing:2px;font-weight:500}.sidebar-label{color:#96b5a4;text-transform:uppercase;font-size:10px;letter-spacing:2px}.sidebar-button{display:block;width:100%;text-align:left;border:0;background:transparent;color:#d2e5d9;margin:4px 0;padding:10px 12px;font-size:13px;font-weight:500;line-height:1.45}.sidebar-button:hover,.sidebar-button.active{background:#ffffff15;color:#fff}.sidebar-button.active{box-shadow:inset 3px 0 #d6bc7d}.sidebar-button .num{color:#b6cba8;font-size:11px;margin-right:8px}.sidebar-button.done .num{color:#b0e2b7}.side-footer{margin-top:auto;border-top:1px solid #ffffff20;padding-top:15px;font-size:12px;color:#b1c9bb}.side-footer strong{color:white}.progress{height:5px;background:#ffffff20;border-radius:10px;overflow:hidden;margin:9px 0}.progress i{display:block;height:100%;background:#c7d9a5;transition:width .3s}
+header#topbar{margin-left:var(--nav);height:76px;position:sticky;top:0;z-index:40;border-bottom:1px solid var(--line);background:var(--paper);padding:12px 34px;display:flex;align-items:center;gap:15px}.crumb{font-size:12px;color:var(--muted);flex:1}.crumb b{display:block;color:var(--ink);font-size:14px}.toolbar{display:flex;align-items:center;gap:8px}.toolbar button{padding:8px 11px;font-size:12px}.toolbar select{font-size:12px;padding:8px;max-width:170px}.mobile{display:none}.searchwrap{position:relative}#search{width:190px;font-size:12px}#search-results{position:absolute;right:0;top:45px;width:min(410px,85vw);max-height:65vh;overflow:auto;background:var(--paper);box-shadow:var(--shadow);border:1px solid var(--line);padding:10px;border-radius:12px}#search-results button{display:block;width:100%;text-align:left;font-size:13px;border:0;margin:3px 0}
+main{margin-left:var(--nav);padding:32px 38px 100px;max-width:1660px;min-height:calc(100vh - 76px)}.hero{background:linear-gradient(115deg,#133f33,#22554c);border-radius:22px;color:#dfebe3;padding:48px;display:grid;grid-template-columns:1.3fr 1fr;gap:24px;overflow:hidden;position:relative}.hero h1{color:white}.hero .eyebrow{color:#dbc28b}.hero p{color:#ccdfd3;max-width:580px}.hero button.primary{background:#e2c88f;color:#183e32;border:0}.hero button.ghost{border-color:#ffffff55;color:white}.hero button.ghost:hover{background:#ffffff12}.hero small{color:#b7cfc0}.hero-diagram{display:flex;align-items:center;justify-content:center;min-width:0}.hero svg{width:100%;max-width:400px}.stats{display:flex;gap:32px;flex-wrap:wrap;border-top:1px solid #ffffff25;margin-top:28px;padding-top:20px}.stats b{display:block;font-size:25px;color:white}.stats span{font-size:12px}.section-head{display:flex;justify-content:space-between;align-items:end;margin:36px 0 20px;gap:16px}.section-head h2{font-size:26px;margin:0}.section-head p{font-size:13px;margin:7px 0 0}.modules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.module-card{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:23px;display:grid;grid-template-columns:42px 1fr;gap:17px;text-align:left;transition:transform .15s;align-items:start}.module-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.module-card .badge{background:var(--pale);color:var(--green);height:42px;width:42px;border-radius:12px;display:grid;place-items:center;font-size:15px}.module-card h3{font-size:18px;margin:3px 0 9px}.module-card p{font-size:14px;font-weight:400;color:var(--muted);margin-bottom:14px}.module-card .meta{display:flex;justify-content:space-between;gap:10px;font-size:11px;font-weight:500;color:var(--muted)}.notice{border-left:3px solid var(--gold);padding:14px 20px;background:var(--amber);border-radius:0 9px 9px 0;font-size:14px;margin:24px 0}.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:30px;margin:20px 0;box-shadow:var(--shadow)}.panel>h3{margin-top:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.card{background:var(--pale);border-radius:12px;padding:22px}.card h3{font-size:18px}.card p{font-size:15px;margin:0}.card .index{font-size:11px;color:var(--green);font-weight:800;display:block;margin-bottom:12px}.lesson{background:var(--paper);padding:36px;border-radius:20px;border:1px solid var(--line);box-shadow:var(--shadow)}.lesson-head{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:26px}.lesson-head .eyebrow{margin-bottom:14px}.lesson h2{max-width:920px}.lesson .lead{margin-bottom:0}.takeaway{margin-top:24px;border-left:4px solid var(--gold);padding:16px 20px;background:var(--amber);font-weight:600;border-radius:0 10px 10px 0}.takeaway small{display:block;color:var(--muted);font-weight:600;margin-bottom:4px}.source{font-size:12px;color:var(--muted);margin:20px 0 0}.lesson-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:22px;margin-top:22px;border-top:1px solid var(--line)}.dots{display:flex;gap:6px}.dots button{border:0;padding:0;width:30px;height:5px;border-radius:3px;background:var(--line)}.dots button.active{background:var(--green)}.dots button.seen{background:#a2c6b0}details{margin-top:18px;border:1px solid var(--line);border-radius:10px;padding:0 18px}summary{cursor:pointer;padding:13px 0;font-weight:600;font-size:14px;color:var(--green)}details p{font-size:15px}.trainer-note{border:1px dashed var(--gold);background:var(--amber);padding:18px;margin-top:18px;border-radius:12px}.trainer-note small{display:block;margin-bottom:7px}.audio{background:var(--paper);border:1px solid var(--line);border-radius:12px;display:flex;gap:9px;flex-wrap:wrap;align-items:center;padding:13px 16px;margin-top:16px;font-size:12px}.audio button,.audio select{font-size:12px;padding:7px 11px}.audio label{display:flex;align-items:center;gap:5px;font-size:12px}.audio label input{width:auto;margin:0}.audio-status{font-size:12px;color:var(--muted)}
+.visual{background:var(--bg);border:1px solid var(--line);padding:24px;border-radius:15px;margin-top:24px}.visual .eyebrow{margin-bottom:8px}.flow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.flow .node{flex:1;min-width:100px;padding:19px 12px;border:1px solid var(--line);border-radius:11px;background:var(--paper);text-align:center;font-weight:600;font-size:14px}.arrow{color:var(--green);font-size:22px}.flow .node small{display:block;font-weight:400}.ahu{display:grid;grid-template-columns:repeat(5,1fr);border:2px solid var(--blue);border-radius:12px;overflow:hidden;background:var(--paper)}.ahu button{border:0;border-right:1px dashed var(--line);border-radius:0;padding:18px 8px;font-size:12px;min-width:0}.ahu button svg{display:block;margin:0 auto 10px;width:55px;height:55px}.ahu button.active{background:var(--pale);box-shadow:inset 0 -4px var(--green)}.explanation{padding:17px 20px;background:var(--paper);border:1px solid var(--line);border-radius:10px;margin-top:12px;font-size:15px;min-height:70px}.room{padding:22px;text-align:center;border-radius:12px;background:var(--paper);border:1px solid var(--line)}.room strong{display:block;font-size:32px}.room input{width:110px}.room h3{font-size:17px}.pressure-grid{display:grid;grid-template-columns:1fr 90px 1fr;align-items:center;gap:12px}.air-arrow{text-align:center;font-size:40px;color:var(--green)}.air-arrow small{font-size:10px;display:block;line-height:1.4}.calc{display:grid;grid-template-columns:1fr 1fr;gap:22px}.fields{display:grid;gap:12px}.metric{font-size:54px;color:var(--green);font-weight:800;line-height:1.2;letter-spacing:-2px}.metric small{font-size:15px;letter-spacing:0}.calc-result{padding:24px;background:var(--pale);border-radius:12px;display:flex;flex-direction:column;justify-content:center}.calc-result p{margin:12px 0 0}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:12px;border:1px solid var(--line);text-align:left}th{background:var(--pale);color:var(--ink)}.sequence{list-style:none;padding:0;display:grid;gap:8px}.sequence li{display:flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);padding:8px 14px;border-radius:10px}.sequence li span{flex:1}.sequence button{padding:5px 12px}.check-row{display:flex;gap:12px;padding:12px;border-bottom:1px solid var(--line);align-items:start}.check-row input{margin:5px 0 0;width:auto}.check-row span{font-weight:400}.choice{display:block;text-align:left;width:100%;padding:15px 18px;border:1px solid var(--line);background:var(--paper);margin:9px 0;font-weight:500}.choice.selected{background:var(--pale);border-color:var(--green);box-shadow:inset 3px 0 var(--green)}.choice.correct{border-color:var(--green);background:var(--pale)}.choice.wrong{border-color:var(--red);background:#fff1eb;color:#803020}.feedback{padding:16px;background:var(--pale);border-radius:10px;margin:14px 0;font-size:14px}.feedback.bad{background:var(--amber)}fieldset{border:0;margin:0;padding:0;min-width:0}legend{font-size:20px;color:var(--ink);font-weight:700;padding:0;margin-bottom:16px;line-height:1.5}.question-card{padding:26px;border:1px solid var(--line);border-radius:13px;margin:18px 0;background:var(--paper)}.exam-progress{position:sticky;top:76px;z-index:20;background:var(--paper);border:1px solid var(--line);padding:14px 20px;border-radius:10px;margin:20px 0}.history-item{border-top:1px solid var(--line);padding:16px 0}.certificate{border:double 6px var(--green);padding:42px;text-align:center;max-width:920px;margin:25px auto;background:var(--paper)}.certificate h2{font-size:31px}.certificate .learner-name{font-size:34px;color:var(--green);font-weight:700;margin:25px 0}.certificate .cert-line{width:90px;height:3px;background:var(--gold);margin:25px auto}.certificate p{margin:10px 0}.certificate small{display:block}.source-index li{margin:12px 0}.empty{padding:40px;text-align:center}#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#163f32;color:white;z-index:200;padding:14px 22px;border-radius:12px;max-width:90vw;box-shadow:var(--shadow);font-size:14px}dialog{border:1px solid var(--line);border-radius:20px;padding:32px;background:var(--paper);color:var(--text);width:min(540px,95vw);max-height:90vh}dialog::backdrop{background:#0a251dcc;backdrop-filter:blur(5px)}dialog h2{font-size:29px}dialog label{margin:15px 0}dialog .error{color:var(--red);font-size:14px}.storage-alert{position:sticky;top:76px;z-index:50;padding:10px 20px;background:#ffdfad;color:#563b0c;font-size:13px;margin-left:var(--nav)}
+body.dark{--bg:#10231d;--paper:#19362b;--ink:#e2ecdf;--text:#d6e5da;--muted:#a8c0b1;--line:#375347;--green:#9cd5b4;--pale:#224735;--amber:#42391f;--gold:#dabb7a;--blue:#92b7c6;color-scheme:dark}.dark button.primary{background:#a9d6b6;color:#173e35}.dark .hero button.primary{background:#e2c88f}.dark .choice.wrong{background:#4b302a;color:#f5c5b7}.dark .feedback.bad{background:#42391f}.dark .hero{background:linear-gradient(115deg,#173f32,#284f46)}
+body.present #sidebar{display:none}body.present #topbar,body.present main,body.present .storage-alert{margin-left:0}body.present main{max-width:1500px;margin:0 auto;padding:22px 35px 80px}body.present .lesson .card p{font-size:18px}body.present .lesson h2{font-size:clamp(30px,3.2vw,49px)}body.present .lesson{padding:32px 40px;zoom:var(--deck-zoom,1)}body.present .lesson .lead{font-size:21px}body.present .lesson-nav{background:var(--paper);padding-bottom:8px}body.present .source{font-size:11px}
+@media(min-width:1700px){main{margin-right:auto;margin-left:calc(var(--nav) + (100vw - 1700px)/2)}}
+@media(max-width:1150px){:root{--nav:230px}header#topbar{padding:12px 22px}main{padding:25px 22px 80px}.hero{padding:32px;grid-template-columns:1.6fr 1fr}.hero h1{font-size:40px}.grid{gap:12px}.card{padding:18px}#search{width:155px}.toolbar{gap:5px}.toolbar select{max-width:125px}}
+@media(max-width:900px){:root{--nav:0px}#sidebar{width:268px!important;transform:translateX(-100%)}#sidebar.open{transform:translateX(0)}.mobile{display:inline-flex}.toolbar .desktop{display:none}header#topbar{padding:10px 15px;height:70px}.crumb{font-size:10px}.crumb b{font-size:12px}.hero{grid-template-columns:1fr 0.8fr;padding:28px}.hero h1{font-size:36px}.grid{grid-template-columns:1fr}.card h3{margin-bottom:10px}.lesson{padding:26px}.lesson-head{padding-bottom:20px}.exam-progress,.storage-alert{top:70px}.panel{padding:24px}}
+@media(max-width:600px){main{padding:18px 12px 65px}.hero{grid-template-columns:1fr;padding:26px}.hero-diagram{display:none}.hero h1{font-size:38px}.stats{gap:24px}.modules{grid-template-columns:1fr}.module-card{padding:19px}.toolbar select{max-width:105px}.toolbar button{padding:8px}.searchwrap{display:none}.crumb span{display:none}.two{grid-template-columns:1fr}.lesson{padding:23px 18px}.lesson h2{font-size:29px}.lead{font-size:17px}.visual{padding:16px}.ahu{grid-template-columns:repeat(5,1fr)}.ahu button{font-size:10px;padding:12px 4px}.ahu button svg{width:34px;height:34px}.pressure-grid{grid-template-columns:1fr 45px 1fr;gap:6px}.room{padding:15px 8px}.room input{width:80px}.air-arrow{font-size:29px}.calc{grid-template-columns:1fr}.lesson-nav{flex-wrap:wrap}.lesson-nav small{display:none}.dots{order:3;width:100%;justify-content:center;margin-top:10px}.audio label{font-size:11px}.panel{padding:22px 17px}.certificate{padding:24px 18px}.certificate h2{font-size:24px}.question-card{padding:20px 16px}body.present main{padding:12px 10px 50px}body.present .lesson{padding:23px 18px}body.present .lesson .card p{font-size:16px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media print{*{outline:none!important}body.present .lesson{zoom:1!important}#print-checklist ul{list-style:none;padding-left:0}#print-checklist li{margin:14px 0}.certificate small{color:#40584c!important}body{background:white!important;color:black!important;font-size:11pt}#sidebar,#topbar,#toast,dialog,.storage-alert,.no-print{display:none!important}main,body.present main{margin:0!important;max-width:none;padding:0!important}.panel{box-shadow:none;border:0;padding:0}.certificate{color:black!important;background:white!important;break-inside:avoid;border-color:#234b3b}.certificate h2,.certificate .learner-name{color:#173e35}.print-checklist{display:block!important}.print-checklist h2{font-size:22pt}.print-checklist li{margin:14px 0}.print-only{display:block!important}body.print-cert main>*{display:none!important}body.print-cert #cert-area{display:block!important}body.print-check main>*{display:none!important}body.print-check #print-checklist{display:block!important}a{color:black}.lesson{break-after:page}}
+.audio{position:relative}.tts-track{position:absolute;top:0;left:0;right:0;height:3px;background:var(--line);overflow:hidden;border-radius:12px}.tts-track i{display:block;height:100%;width:0;background:var(--gold)}.tts-disclosure{width:100%;font-size:10px}.audio-status{flex:1;min-width:180px}body.present .audio{position:fixed;bottom:12px;left:24px;right:24px;z-index:55;box-shadow:var(--shadow);margin:0}body.present main{padding-bottom:180px}body.present .audio label{white-space:nowrap}body.present .audio select{width:auto}body.present .audio .audio-status{font-size:11px}@media(max-width:650px){body.present .audio{left:8px;right:8px;bottom:6px;gap:6px;padding:10px}.audio button{padding:7px 9px}body.present main{padding-bottom:220px}.tts-disclosure{font-size:9px}}@media print{.audio{display:none!important}}
+/* ===== Theme v1.1: vivid module palette, gradient slide headers, motion ===== */
+:root{--bg:#f2f4fb;--paper:#fff;--ink:#131c3a;--text:#33405e;--muted:#66728f;--line:#dfe4f2;--green:#1557d6;--pale:#e8f0ff;--gold:#f59e0b;--amber:#fff4d6;--red:#d43d4f;--blue:#1557d6;--shadow:0 14px 44px #1a2a6014;--m:#1557d6;--m2:#19b5e8}
+body.dark{--bg:#0b1124;--paper:#141d3a;--ink:#eef2ff;--text:#d3dbf0;--muted:#9eabcb;--line:#2a3760;--green:#8fb6ff;--pale:#1b2850;--amber:#3a3015;--gold:#ffc55a;--blue:#8fb6ff;color-scheme:dark}
+[data-m="1"]{--m:#1557d6;--m2:#19b5e8}[data-m="2"]{--m:#6d3be0;--m2:#c14fe6}[data-m="3"]{--m:#d42f4b;--m2:#ff7a3d}[data-m="4"]{--m:#c45a00;--m2:#f5a81c}[data-m="5"]{--m:#078a77;--m2:#25c7a0}[data-m="6"]{--m:#1c8a3a;--m2:#86c92a}[data-m="7"]{--m:#bf2585;--m2:#f2609c}[data-m="8"]{--m:#3a48d0;--m2:#2aa9ea}
+.dark button.primary{background:#8fb6ff;color:#0b1124}
+aside#sidebar{background:linear-gradient(180deg,#0f1838,#1c1552)}
+.brand-icon{background:linear-gradient(135deg,#ffb020,#ff5d8f);color:#fff}.brand small{color:#a9b3da}.sidebar-label{color:#93a0cc}.sidebar-button{color:#d5dcf5;transition:background .2s,transform .2s}.sidebar-button:hover{transform:translateX(3px)}
+.sidebar-button[data-m] .num{display:inline-grid;place-items:center;min-width:24px;height:22px;padding:0 5px;border-radius:7px;background:var(--m);color:#fff;font-weight:700}.sidebar-button[data-m].active{box-shadow:inset 4px 0 var(--m2)}.sidebar-button.done .num{background:#1c8a3a;color:#fff}
+.side-footer{color:#aab4d8}.progress i{background:linear-gradient(90deg,#19b5e8,#86c92a,#f5a81c)}
+#course-progress{position:absolute;left:0;right:0;bottom:-3px;height:4px;pointer-events:none}#course-progress i{display:block;height:100%;width:0;border-radius:0 4px 4px 0;background:linear-gradient(90deg,#1557d6,#6d3be0,#d42f4b,#f5a81c,#25c7a0);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+#toast{background:linear-gradient(100deg,#131c3a,#3a2bb0);animation:pop .3s both}
+.hero,.dark .hero{background:linear-gradient(125deg,#0f1b4d 0%,#3a2bb0 48%,#b0268a 100%)}
+.hero>*{position:relative;z-index:1}.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(50px);opacity:.55;animation:float 9s ease-in-out infinite}.hero::before{width:320px;height:320px;background:#19b5e8;left:-90px;bottom:-140px}.hero::after{width:280px;height:280px;background:#ff7a3d;right:-70px;top:-110px;animation-delay:-4s}
+.hero .eyebrow,.stats b{color:#ffd166}.hero p{color:#e3e6ff}.hero small,.stats span{color:#c9cdf5}
+.hero button.primary,.dark .hero button.primary{background:linear-gradient(135deg,#ffd166,#ff9f43);color:#1a1440;box-shadow:0 8px 24px #ff9f4355;transition:transform .2s,box-shadow .2s}.hero button.primary:hover{background:linear-gradient(135deg,#ffe08a,#ffb061);transform:translateY(-2px)}
+.module-card[data-m]{position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s}.module-card[data-m]::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:linear-gradient(180deg,var(--m),var(--m2))}
+.module-card[data-m]:hover{transform:translateY(-4px);background:var(--paper);border-color:var(--m);box-shadow:0 16px 36px color-mix(in srgb,var(--m) 24%,transparent)}
+.module-card[data-m] .badge{background:linear-gradient(135deg,var(--m),var(--m2));color:#fff;font-weight:800;box-shadow:0 6px 14px color-mix(in srgb,var(--m) 35%,transparent)}.module-card[data-m] .meta span:last-child{color:var(--m);font-weight:700}
+main:not([data-m=""]) .pill{background:linear-gradient(135deg,var(--m),var(--m));color:#fff}main:not([data-m=""])>.eyebrow{color:var(--m)}
+.lesson{--lp:36px;--lpx:36px;padding:var(--lp) var(--lpx);overflow:hidden;border-color:color-mix(in srgb,var(--m) 18%,var(--line))}
+body.present .lesson{--lp:32px;--lpx:40px}
+.lesson .lesson-head{margin:calc(-1*var(--lp)) calc(-1*var(--lpx)) 26px;padding:34px var(--lpx) 30px;border:0;position:relative;overflow:hidden;color:#fff;background:linear-gradient(112deg,var(--m) 0%,var(--m) 42%,var(--m2) 135%)}
+.lesson .lesson-head>*{position:relative;z-index:1}.lesson .lesson-head h2{color:#fff;text-shadow:0 2px 12px #0003}.lesson .lesson-head .lead{color:#fffffff0;max-width:860px}.lesson .lesson-head .eyebrow{color:#ffffffd9}
+.lesson .lesson-head::after{content:attr(data-n);position:absolute;right:26px;top:50%;transform:translateY(-50%);font-size:170px;font-weight:900;line-height:1;letter-spacing:-8px;color:#ffffff1f;pointer-events:none}
+.lesson .lesson-head::before{content:"";position:absolute;top:0;bottom:0;left:0;width:30%;background:linear-gradient(90deg,transparent,#ffffff2e,transparent);transform:translateX(-120%) skewX(-18deg);pointer-events:none}
+.lesson .card{background:color-mix(in srgb,var(--m) 6%,var(--paper));border:1px solid color-mix(in srgb,var(--m) 16%,var(--line));border-top:4px solid var(--m);box-shadow:0 6px 18px #1a2a600d;transition:transform .2s,box-shadow .2s}
+.lesson .card:nth-child(2){border-top-color:color-mix(in srgb,var(--m) 50%,var(--m2))}.lesson .card:nth-child(3){border-top-color:var(--m2)}
+.lesson .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px color-mix(in srgb,var(--m) 20%,transparent)}
+.lesson .card .index{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--m),var(--m));color:#fff;font-size:13px;box-shadow:0 5px 12px color-mix(in srgb,var(--m) 35%,transparent)}
+.example{position:relative;margin-top:22px;padding:18px 22px 18px 66px;border-radius:14px;font-size:16px;color:var(--ink);background:linear-gradient(100deg,color-mix(in srgb,var(--m2) 17%,var(--paper)),color-mix(in srgb,var(--m) 7%,var(--paper)));border:1.5px dashed color-mix(in srgb,var(--m) 50%,transparent)}
+.example::before{content:"💡";position:absolute;left:18px;top:15px;font-size:28px;line-height:1.2}.example small{display:block;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--m);margin-bottom:4px}.example small i{font-style:normal;font-weight:500;letter-spacing:0;text-transform:none;color:var(--muted)}
+.lesson .takeaway{background:linear-gradient(100deg,#131c3a,#2b2f7a);color:#fff;border-left:6px solid #ffb020;border-radius:12px;font-size:17px;padding:18px 22px}.lesson .takeaway small{color:#ffd166;letter-spacing:1.5px}
+.visual{border-color:color-mix(in srgb,var(--m) 28%,var(--line));background:color-mix(in srgb,var(--m) 4%,var(--bg))}.flow .node{border-top:3px solid var(--m);transition:transform .2s}.flow .node:hover{transform:translateY(-3px)}.arrow,.metric{color:var(--m)}.ahu{border-color:var(--m)}.ahu button.active{box-shadow:inset 0 -4px var(--m)}.visual .eyebrow{color:var(--m)}
+.dots button{transition:width .3s,background .3s}.dots button.active{width:48px;background:linear-gradient(90deg,var(--m),var(--m2))}.dots button.seen{background:color-mix(in srgb,var(--m) 40%,var(--line))}
+.lesson .lesson-nav button.primary{background:var(--m);border-color:var(--m);color:#fff;transition:transform .2s,filter .2s}.lesson .lesson-nav button.primary:hover{background:var(--m);filter:brightness(1.12);transform:translateX(3px)}
+.choice{transition:transform .15s,border-color .15s,background .15s}.choice:hover{transform:translateX(4px)}
+.dark .metric,.dark .arrow,.dark .example small,.dark .visual .eyebrow,.dark .module-card[data-m] .meta span:last-child,.dark main:not([data-m=""])>.eyebrow{color:var(--m2)}.dark .example small i{color:var(--muted)}
+@keyframes inR{from{opacity:0;transform:translateX(56px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes inL{from{opacity:0;transform:translateX(-56px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+@keyframes sheen{to{transform:translateX(480%) skewX(-18deg)}}
+@keyframes float{50%{transform:translate(20px,-24px) scale(1.1)}}
+main[data-anim="enter-next"] .lesson{animation:inR .5s cubic-bezier(.2,.8,.2,1) both}main[data-anim="enter-prev"] .lesson{animation:inL .5s cubic-bezier(.2,.8,.2,1) both}
+main[data-anim^="enter"] .lesson-head::before{animation:sheen 1.1s .25s ease-out both}
+main[data-anim^="enter"] .lesson-head h2{animation:rise .5s .12s cubic-bezier(.2,.8,.2,1) both}main[data-anim^="enter"] .lesson-head .lead{animation:rise .5s .2s cubic-bezier(.2,.8,.2,1) both}
+main[data-anim^="enter"] .lesson .card{animation:rise .55s cubic-bezier(.2,.8,.2,1) both;animation-delay:.26s}main[data-anim^="enter"] .lesson .card:nth-child(2){animation-delay:.36s}main[data-anim^="enter"] .lesson .card:nth-child(3){animation-delay:.46s}
+main[data-anim^="enter"] .example{animation:pop .5s .58s both}main[data-anim^="enter"] .lesson .visual{animation:rise .5s .66s both}main[data-anim^="enter"] .lesson .takeaway{animation:rise .5s .72s both}
+main[data-anim^="enter"]>:not(.lesson):not(.audio):not(.modules){animation:rise .45s cubic-bezier(.2,.8,.2,1) both}
+main[data-anim^="enter"] .module-card{animation:rise .5s cubic-bezier(.2,.8,.2,1) both}main[data-anim^="enter"] .module-card:nth-child(1){animation-delay:.08s}main[data-anim^="enter"] .module-card:nth-child(2){animation-delay:.13s}main[data-anim^="enter"] .module-card:nth-child(3){animation-delay:.18s}main[data-anim^="enter"] .module-card:nth-child(4){animation-delay:.23s}main[data-anim^="enter"] .module-card:nth-child(5){animation-delay:.28s}main[data-anim^="enter"] .module-card:nth-child(6){animation-delay:.33s}main[data-anim^="enter"] .module-card:nth-child(7){animation-delay:.38s}main[data-anim^="enter"] .module-card:nth-child(8){animation-delay:.43s}
+@media(max-width:900px){.lesson{--lp:26px;--lpx:26px}.lesson .lesson-head::after{font-size:120px}}
+@media(max-width:600px){.lesson,body.present .lesson{--lp:23px;--lpx:18px}.lesson .lesson-head{padding-top:26px;padding-bottom:24px}.lesson .lesson-head::after{font-size:90px;right:10px}.example{padding-left:56px}.example::before{left:14px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+@media print{*{animation:none!important}.lesson .lesson-head,.lesson .takeaway{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+/* ===== v1.2 present mode: bars auto-hide, slide fits the viewport ===== */
+body.present #topbar{position:fixed;top:0;left:0;right:0;z-index:70;transform:translateY(-110%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:var(--shadow)}
+body.present.show-top #topbar,body.present #topbar:hover,body.present #topbar:focus-within{transform:none}
+body.present .audio{transform:translateY(calc(100% + 30px));transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+body.present.show-bottom .audio,body.present .audio:hover,body.present .audio:focus-within{transform:none}
+html:has(body.present){scrollbar-width:none}
+body.present main{max-width:none;padding:14px 22px;min-height:100vh}
+body.present main:has(.lesson){display:flex;flex-direction:column;justify-content:center}
+body.present main>.row.no-print:first-child,body.present .lesson details,body.present .storage-alert{display:none!important}
+body.present .lesson .lesson-nav{margin-top:16px;padding-top:14px}
+@media(min-width:1100px){body.present .lesson{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);column-gap:22px;grid-auto-flow:row dense;align-items:start}body.present .lesson>*{grid-column:1/-1}body.present .lesson:has(>.visual)>.visual{grid-column:1;grid-row:span 2}body.present .lesson:has(>.visual)>.example,body.present .lesson:has(>.visual)>.takeaway{grid-column:2}body.present .lesson:not(:has(>.visual))>.example{grid-column:1}body.present .lesson:not(:has(>.visual))>.takeaway{grid-column:2;align-self:stretch;display:flex;flex-direction:column;justify-content:center;margin-top:22px}}
+@media print{body.present #topbar,body.present .audio{transform:none}}
+/* ===== open variant: no sign-in, author credit ===== */
+#profile,[data-profile]{display:none!important}
+.author{display:flex;gap:18px;align-items:center;margin:26px 0;padding:22px 26px;border-radius:18px;color:#fff;background:linear-gradient(120deg,#131c3a,#3a2bb0 60%,#b0268a);box-shadow:var(--shadow)}
+.author .avatar{flex:none;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:20px;color:#1a1440;background:linear-gradient(135deg,#ffd166,#ff9f43)}
+.author small{display:block;color:#c9cdf5;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700}.author b{display:block;font-size:20px;color:#fff;line-height:1.3}.author a{color:#ffd166}.author p{margin:6px 0 0;font-size:12px;color:#d7daf7}
+.side-footer .copyright{margin:8px 0 0;font-size:10px;color:#fff}
+#cert-area label{margin:0;font-weight:500;font-size:13px}#cert-area label input{width:260px}
+@media(max-width:600px){.author{flex-direction:column;align-items:flex-start}}
+</style></head><body>
+<a class="skip" href="#main">Bỏ qua điều hướng</a>
+<aside id="sidebar" aria-label="Điều hướng khóa học"></aside>
+<header id="topbar"><div id="course-progress" aria-hidden="true"><i></i></div><button class="mobile" id="menu" aria-label="Mở mục lục" aria-expanded="false">☰</button><div class="crumb"><b>CIP ACADEMY</b><span>EHEDG Doc. 50 / Khóa học nội bộ</span></div><div class="toolbar"><div class="searchwrap"><input id="search" type="search" aria-label="Tìm nội dung" placeholder="Tìm bài học…"><div id="search-results" hidden></div></div><select id="role" aria-label="Chế độ học"><option value="learner">Học viên</option><option value="trainer">Giảng viên</option></select><button id="present" class="desktop">Trình chiếu</button><button id="theme" aria-label="Đổi sáng tối">◐</button><button id="profile" aria-label="Thông tin học viên">Học viên</button></div></header>
+<div id="storage-alert" class="storage-alert" role="status" hidden></div><main id="main" tabindex="-1"></main>
+<div id="toast" role="status" hidden></div>
+<dialog id="profile-dialog" aria-labelledby="profile-title"><form id="profile-form"><div class="eyebrow">HỒ SƠ HỌC TẬP</div><h2 id="profile-title">Sẵn sàng bắt đầu?</h2><p class="muted">Nhập thông tin để lưu tiến độ và ghi trên xác nhận hoàn thành.</p><label>Mã nhân viên<input id="emp-id" required maxlength="30" autocomplete="off" placeholder="Ví dụ: NV-0123"></label><label>Họ và tên<input id="emp-name" required maxlength="80" autocomplete="name" placeholder="Họ và tên của bạn"></label><label>Bộ phận<input id="emp-dept" required maxlength="60" placeholder="Ví dụ: QA / Kỹ thuật / Sản xuất"></label><p class="small">Dữ liệu lưu trong trình duyệt trên máy này. Mỗi mã nhân viên có hồ sơ riêng; không có máy chủ xác minh danh tính.</p><p class="error" id="profile-error" role="alert"></p><div class="row"><button class="primary" type="submit">Lưu & tiếp tục</button><button type="button" id="profile-cancel">Để sau</button></div></form></dialog>
+<script id="course-data" type="application/json">{
+  "id": "ild-cip50-2019-open-v1",
+  "version": "1.1",
+  "title": "Thiết kế vệ sinh cho hệ thống CIP",
+  "subtitle": "Thiết kế • Vận hành • Thẩm định",
+  "source": "EHEDG Doc. 50 · July 2019 · 94 trang",
+  "audience": "QA / QC · Kỹ thuật · Sản xuất · Vệ sinh",
+  "duration": "60–80 phút",
+  "passPercent": 85,
+  "examPerModule": 2,
+  "modules": [
+    {
+      "id": 1,
+      "title": "CIP & phạm vi tài liệu",
+      "description": "Hiểu CIP là một hệ thống và giới hạn của Doc. 50.",
+      "duration": "6–8 phút",
+      "objective": "Gọi đúng trạm CIP, mạch, đối tượng làm sạch; nêu được phần nằm ngoài phạm vi."
+    },
+    {
+      "id": 2,
+      "title": "Tác động cơ học & chương trình CIP",
+      "description": "Vận tốc, thiết bị phun và trình tự các bước.",
+      "duration": "8–10 phút",
+      "objective": "Tính vận tốc trung bình; giải thích khi nào thời gian tuần hoàn được tính."
+    },
+    {
+      "id": 3,
+      "title": "An toàn, chất lượng & URS",
+      "description": "Đưa an toàn lao động và yêu cầu người dùng vào thiết kế.",
+      "duration": "7–9 phút",
+      "objective": "Nhận diện mối nguy chính của CIP và các đầu vào của URS."
+    },
+    {
+      "id": 4,
+      "title": "Chọn mô hình CIP",
+      "description": "Một lần qua, dùng một lần, một bồn hay thu hồi.",
+      "duration": "7–9 phút",
+      "objective": "So sánh các mô hình theo rủi ro nhiễm chéo và tổng chi phí sở hữu."
+    },
+    {
+      "id": 5,
+      "title": "Thành phần trạm CIP",
+      "description": "Bồn, bơm, gia nhiệt, van, lọc thô và thiết bị đo.",
+      "duration": "8–10 phút",
+      "objective": "Nêu tiêu chí thiết kế chính và vị trí đo của từng thông số."
+    },
+    {
+      "id": 6,
+      "title": "Dung dịch, thu hồi & tự động hóa",
+      "description": "Giữ dung dịch có hiệu lực và chương trình không bị rút ngắn.",
+      "duration": "8–10 phút",
+      "objective": "Áp dụng tiêu chí thải bỏ dung dịch, vệ sinh trạm CIP và nguyên tắc failsafe."
+    },
+    {
+      "id": 7,
+      "title": "Thiết kế vệ sinh mạch CIP",
+      "description": "Tách biệt, thoát hết và không có nhánh chết.",
+      "duration": "8–10 phút",
+      "objective": "Kiểm tra tách biệt sản phẩm/CIP, nối xả, nhánh T và độ dốc."
+    },
+    {
+      "id": 8,
+      "title": "Thẩm định & quản lý",
+      "description": "Từ DQ đến kiểm tra định kỳ.",
+      "duration": "8–10 phút",
+      "objective": "Phân biệt thẩm định, giám sát, thẩm tra và điều kiện tái thẩm định."
+    }
+  ],
+  "slides": [
+    {
+      "id": 1,
+      "module": 1,
+      "title": "CIP là một hệ thống, không chỉ là một trạm bơm",
+      "lead": "Làm sạch tại chỗ: tuần hoàn hoặc cho dung dịch và nước tráng chảy qua bề mặt mà không tháo rời thiết bị.",
+      "cards": [
+        {
+          "title": "Bốn phần phải khớp nhau",
+          "text": "Trạm CIP và cấp hóa chất; đường cấp/hồi; thiết bị công nghệ làm sạch được tại chỗ; hệ điều khiển đưa dung dịch tới đúng điều kiện."
+        },
+        {
+          "title": "Chảy rối là điều kiện",
+          "text": "Dù phun lên bề mặt bồn hay tuần hoàn trong đường ống, điều kiện thủy động phải tạo dòng chảy rối."
+        },
+        {
+          "title": "Thiết kế đồng thời",
+          "text": "Quy trình sản xuất và các mạch CIP cần được thiết kế cùng lúc, cân nhắc ngang nhau giữa yêu cầu công nghệ và cách làm sạch."
+        }
+      ],
+      "example": "Một nhà máy sữa đầu tư trạm CIP mới nhưng kết quả kiểm tra ở cụm van chiết vẫn lúc đạt, lúc không. Thủ phạm là một nhánh ống cụt còn sót sau cải tạo, không phải trạm CIP.",
+      "takeaway": "Một trạm CIP tốt không bù được cho thiết bị hoặc đường ống không làm sạch được tại chỗ.",
+      "source": "Giới thiệu, tr. 6",
+      "narration": "Chào mừng bạn đến với khóa học về hệ thống làm sạch tại chỗ, gọi tắt là CIP. Hãy bắt đầu bằng một câu chuyện. Một nhà máy sữa vừa lắp trạm CIP mới. Bơm mạnh. Hóa chất đúng nồng độ. Vậy mà kết quả kiểm tra ở cụm van chiết vẫn lúc đạt, lúc không. Sau nhiều tuần tìm kiếm, thủ phạm lộ diện. Đó là một nhánh ống cụt còn sót lại sau cải tạo. Dung dịch không bao giờ chảy tới đó. Bài học rất rõ. CIP là một hệ thống gồm bốn phần. Trạm CIP. Đường cấp và đường hồi. Thiết bị được thiết kế để làm sạch tại chỗ. Và hệ điều khiển. Kết quả luôn bị quyết định bởi mắt xích yếu nhất.",
+      "visual": "hero",
+      "trainer": "Yêu cầu học viên liên hệ với một trạm CIP, mạch hoặc đối tượng thực tế. Phân biệt nguyên tắc trong tài liệu với thông số đã được thẩm định và phê duyệt tại cơ sở."
+    },
+    {
+      "id": 2,
+      "module": 1,
+      "title": "Đúng phạm vi của EHEDG Doc. 50",
+      "lead": "Nguồn học: Hygienic Design Requirements for CIP Installations, tháng 7/2019.",
+      "cards": [
+        {
+          "title": "Trong phạm vi",
+          "text": "Lựa chọn, thiết kế hệ thống CIP mới và nâng cấp hệ thống cũ; yêu cầu người dùng, thẩm định và quản lý vận hành trạm CIP cùng các mạch."
+        },
+        {
+          "title": "Ngoài phạm vi",
+          "text": "SIP; làm khô; thu hồi sản phẩm bằng đẩy nước, khí hoặc pigging; quy trình riêng cho bồn, cô đặc, màng, máy chiết; đường ống lớn hơn 150 mm."
+        },
+        {
+          "title": "Đối tượng là “hộp đen”",
+          "text": "Thiết bị cần làm sạch được coi là hộp đen với yêu cầu đầu vào/đầu ra như lưu lượng, nhiệt độ; các yêu cầu này đặt trong SOP."
+        }
+      ],
+      "example": "Nhóm dự án hỏi: “Doc. 50 quy định rửa máy chiết bao nhiêu phút?” Tài liệu không trả lời câu đó. Con số đến từ nhà sản xuất thiết bị và kết quả thẩm định của cơ sở.",
+      "takeaway": "Doc. 50 nói về hệ thống CIP. Nguyên lý làm sạch – khử trùng và làm sạch bồn nằm ở Doc. 52 và Doc. 51.",
+      "source": "§1, tr. 6–7; §5, tr. 8",
+      "narration": "Trước khi đi sâu, cần biết tài liệu này trả lời câu hỏi nào. Tài liệu số năm mươi của EHEDG hướng dẫn cách chọn, thiết kế, thẩm định và quản lý hệ thống CIP. Nó không hướng dẫn tiệt trùng tại chỗ. Không hướng dẫn làm khô. Không hướng dẫn thu hồi sản phẩm. Và không đưa ra công thức rửa cho từng loại máy. Thiết bị cần làm sạch được coi như một hộp đen. Hộp đen đó có yêu cầu riêng về lưu lượng và nhiệt độ, ghi trong quy trình vận hành chuẩn. Vì vậy, nếu ai đó hỏi tài liệu quy định rửa máy chiết bao nhiêu phút, câu trả lời là không có. Con số ấy đến từ nhà sản xuất thiết bị và từ kết quả thẩm định của chính nhà máy. Xin lưu ý, bài học này là bản diễn giải tiếng Việt cho đào tạo nội bộ, không phải bản dịch chính thức.",
+      "visual": "",
+      "trainer": "Hỏi học viên: yêu cầu lưu lượng và nhiệt độ cho từng đối tượng ở cơ sở đang được ghi ở tài liệu nào? Ai là người phê duyệt?"
+    },
+    {
+      "id": 3,
+      "module": 1,
+      "title": "Gọi đúng tên để nói cùng một ngôn ngữ",
+      "lead": "Nhiều tranh luận về CIP bắt đầu từ việc dùng một từ cho hai khái niệm khác nhau.",
+      "cards": [
+        {
+          "title": "Mạch và đối tượng",
+          "text": "Mạch CIP: mọi đoạn ống dung dịch, ống sản phẩm và thiết bị được làm sạch trong một chu trình. Đối tượng làm sạch: thiết bị hoặc cụm công nghệ được nối với hệ thống CIP."
+        },
+        {
+          "title": "Ba cách dùng dung dịch",
+          "text": "Một lần qua: xả thẳng, không tuần hoàn. Dùng một lần: pha mới, xả sau mỗi bước. Tái sử dụng: thu về bồn, theo dõi và hiệu chỉnh nồng độ."
+        },
+        {
+          "title": "Tự thoát và thoát được",
+          "text": "Tự thoát: chỉ nhờ trọng lực. Thoát được: loại hết chất lỏng nhờ một biện pháp hỗ trợ, ví dụ thổi khí hoặc hướng lắp đặc biệt."
+        }
+      ],
+      "example": "Trong cuộc họp, bảo trì nói “đường ống thoát được”, QA hiểu là “tự thoát”. Thực tế phải thổi khí mới hết nước, và nước đọng qua cuối tuần đã thành ổ vi sinh.",
+      "takeaway": "Nước tráng thu hồi chỉ dùng làm nước tráng sơ bộ cho chu trình sau; nước tráng cuối là nước uống được.",
+      "source": "§3, tr. 7–8",
+      "narration": "Bạn đã bao giờ dự một cuộc họp mà hai người dùng cùng một từ nhưng nghĩ hai điều khác nhau chưa? Với CIP, điều đó xảy ra thường xuyên. Bộ phận bảo trì nói đường ống thoát được. Bộ phận chất lượng lại hiểu là tự thoát. Hai khái niệm khác nhau. Tự thoát nghĩa là chất lỏng chảy hết chỉ nhờ trọng lực. Thoát được nghĩa là phải có hỗ trợ, ví dụ thổi khí. Tương tự, dung dịch có ba cách sử dụng. Một lần qua rồi xả. Dùng một lần có tuần hoàn rồi xả. Hoặc thu hồi về bồn để dùng lại. Còn mạch CIP là toàn bộ đường ống và thiết bị được làm sạch trong cùng một chu trình. Thống nhất từ ngữ trước, tranh luận sẽ ngắn hơn rất nhiều.",
+      "visual": "",
+      "trainer": "Yêu cầu học viên liên hệ với một trạm CIP, mạch hoặc đối tượng thực tế. Phân biệt nguyên tắc trong tài liệu với thông số đã được thẩm định và phê duyệt tại cơ sở."
+    },
+    {
+      "id": 4,
+      "module": 1,
+      "title": "Theo đường đi của dung dịch",
+      "lead": "Trạm CIP → đường cấp → đường phân phối → đối tượng → đường hồi.",
+      "cards": [
+        {
+          "title": "Trạm CIP",
+          "text": "Nơi pha và giữ dung dịch: bồn, bơm, van, đường cấp/hồi, thiết bị đo và tự động hóa. Còn được gọi là “kitchen” hoặc “farm”."
+        },
+        {
+          "title": "Đường phân phối",
+          "text": "Mọi kết nối giữa trạm và đối tượng. Mỗi đường tạo một lộ trình làm sạch riêng từ trạm tới đối tượng và quay về."
+        },
+        {
+          "title": "Mạch làm sạch",
+          "text": "Toàn bộ lộ trình để làm sạch một đối tượng: đường cấp, đường phân phối, đối tượng và đường hồi. Còn gọi là CIP loop."
+        }
+      ],
+      "example": "Bài tập 5 phút tại xưởng: đứng ở trạm CIP, đi bộ theo đường cấp tới một bồn chứa rồi theo đường hồi quay về. Đếm số van, nhánh rẽ và cảm biến trên đường đi.",
+      "takeaway": "Mỗi đối tượng có một bộ thông số riêng: lưu lượng, nhiệt độ, nồng độ.",
+      "source": "§7.2, tr. 20–22; Hình 6–8",
+      "narration": "Bây giờ, hãy tưởng tượng bạn là một giọt dung dịch kiềm. Bạn được pha tại trạm CIP. Bơm cấp đẩy bạn vào đường cấp. Ở đây người ta đo lưu lượng và nhiệt độ của bạn. Bạn đi qua đường phân phối, tới thiết bị cần làm sạch, ví dụ một bồn chứa. Bạn cuốn chất bẩn đi, rồi theo đường hồi quay về trạm. Trên đường hồi, người ta lại đo nhiệt độ và độ dẫn điện. Tại sao đo ở đường hồi? Vì đó là bằng chứng bạn đã thật sự đi qua thiết bị với đủ điều kiện. Toàn bộ hành trình khép kín ấy gọi là một mạch làm sạch. Mỗi thiết bị có bộ thông số riêng. Nếu thiết bị là bồn hở, hành trình thường cần thêm một bơm hồi.",
+      "visual": "cipflow",
+      "trainer": "Yêu cầu học viên vẽ nhanh một mạch CIP thực tế của cơ sở và chỉ ra vị trí các cảm biến trên đường cấp, đường hồi."
+    },
+    {
+      "id": 5,
+      "module": 2,
+      "title": "Vận tốc là chỉ báo của tác động cơ học",
+      "lead": "Chất bẩn rời khỏi bề mặt khi ứng suất trượt tại thành đủ lớn; vận tốc trung bình được chấp nhận làm chỉ báo tương đương.",
+      "cards": [
+        {
+          "title": "Ngưỡng 1,5 m/s",
+          "text": "Vận tốc trung bình 1,5 m/s thường được coi là ngưỡng tối thiểu trong đường ống."
+        },
+        {
+          "title": "Khi cần 2 m/s hoặc hơn",
+          "text": "Thiết bị dễ đóng cặn hoặc chất bẩn khó loại bỏ có thể cần 2 m/s trở lên, theo khuyến nghị của nhà cung cấp thiết bị."
+        },
+        {
+          "title": "Tăng mãi không hiệu quả",
+          "text": "Trên khoảng 4 m/s, lớp biên tầng tiệm cận độ dày tối thiểu; tăng thêm vận tốc chỉ cải thiện rất ít."
+        }
+      ],
+      "example": "Mạch ống 50 mm chạy 11 m³/h đạt khoảng 1,56 m/s. Sau cải tạo, một đoạn được thay bằng ống 80 mm: cùng lưu lượng, vận tốc chỉ còn khoảng 0,6 m/s — và cặn xuất hiện đúng ở đoạn đó.",
+      "takeaway": "Vận tốc phù hợp được đánh giá trong thẩm định làm sạch; con số 1,5 m/s là ngưỡng khởi đầu, không phải bảo chứng.",
+      "source": "§6.1, tr. 9–10; Phụ lục E, tr. 91",
+      "narration": "Rửa bát dưới vòi nước chảy mạnh luôn sạch hơn ngâm trong chậu. Trong đường ống cũng vậy. Chất bẩn chỉ rời bề mặt khi dòng chảy tạo đủ lực kéo tại thành ống. Lực này khó đo, nên người ta dùng vận tốc trung bình làm chỉ báo. Ngưỡng tối thiểu được chấp nhận rộng rãi là một phẩy năm mét mỗi giây. Chất bẩn khó có thể cần hai mét mỗi giây hoặc hơn. Hãy xem một ví dụ. Mạch ống năm mươi mi li mét chạy mười một mét khối mỗi giờ đạt khoảng một phẩy năm sáu mét mỗi giây. Sau cải tạo, một đoạn được thay bằng ống tám mươi mi li mét. Lưu lượng giữ nguyên, nhưng vận tốc ở đoạn đó chỉ còn khoảng không phẩy sáu. Cặn xuất hiện đúng tại đó. Bạn hãy thử nhập số liệu của mình vào công cụ trên màn hình.",
+      "visual": "velocity",
+      "trainer": "Cho học viên tính với một đoạn ống có đường kính lớn nhất trong mạch thực tế. Liên hệ §8.1.5: vận tốc thấp nhất nằm ở đoạn có đường kính lớn nhất."
+    },
+    {
+      "id": 6,
+      "module": 2,
+      "title": "Trong bồn, thiết bị phun tạo tác động cơ học",
+      "lead": "Chọn thiết bị phun theo mức va đập, lưu lượng và diện tích cần phủ.",
+      "cards": [
+        {
+          "title": "Quả cầu phun tĩnh",
+          "text": "Va đập thấp, lưu lượng lớn; làm ướt diện rộng với kiểu phun cố định. Áp suất tham khảo 1–2 bar."
+        },
+        {
+          "title": "Quả cầu phun quay",
+          "text": "Va đập trung bình, lưu lượng trung bình; phủ toàn bộ nhờ quay. Áp suất tham khảo 2–4 bar."
+        },
+        {
+          "title": "Đầu phun tia quay",
+          "text": "Va đập cao, lưu lượng trung bình; tia nhỏ, cần nhiều chu kỳ để phủ hết. Có thể giám sát bằng cảm biến quay. Áp suất tham khảo 3–8 bar."
+        }
+      ],
+      "example": "Bồn có cánh khuấy: quả cầu phun tĩnh để lại một “vùng bóng” phía sau trục khuấy. Kiểm tra độ phủ khi chạy thử giúp phát hiện vùng khuất trước khi mẻ đầu tiên vào bồn.",
+      "takeaway": "Quả cầu phun rút được dùng khi đầu phun cố định có thể gây rủi ro trong sản xuất, ví dụ ở đáy bồn hoặc trong ống lớn.",
+      "source": "Bảng 2, tr. 11",
+      "narration": "Trong đường ống, dòng chảy làm việc. Còn trong bồn thì sao? Ở đó, thiết bị phun tạo ra tác động cơ học. Có ba nhóm chính. Quả cầu phun tĩnh giống vòi hoa sen. Lưu lượng lớn, va đập nhẹ, kiểu phun cố định. Quả cầu phun quay cho va đập trung bình và phủ đều nhờ chuyển động quay. Đầu phun tia quay giống súng phun áp lực. Tia nhỏ, va đập mạnh, nhưng cần đủ số vòng để quét hết bề mặt. Một lưu ý từ thực tế. Bồn có cánh khuấy thường có vùng khuất phía sau trục. Dung dịch không tới, chất bẩn ở lại. Vì vậy cần kiểm tra độ phủ khi chạy thử. Lưu lượng và áp suất cụ thể luôn theo thông số của nhà sản xuất thiết bị phun.",
+      "visual": "",
+      "trainer": "Thảo luận: bồn nào ở cơ sở có vùng khuất sau cánh khuấy hoặc cửa người chui? Việc phủ dung dịch đã được kiểm tra bằng cách nào?"
+    },
+    {
+      "id": 7,
+      "module": 2,
+      "title": "Một chương trình CIP đầy đủ",
+      "lead": "Số bước được chọn theo đối tượng, quy trình sản xuất, đặc tính chất bẩn và mục đích làm sạch dựa trên đánh giá rủi ro.",
+      "cards": [
+        {
+          "title": "Tráng sơ bộ",
+          "text": "Loại chất bẩn rời. Nhiệt độ không quá cao để tránh biến tính protein, không quá thấp để làm chảy chất béo. Có thể dùng nước tráng thu hồi."
+        },
+        {
+          "title": "Rửa hóa chất",
+          "text": "Tham khảo: kiềm 70–80 °C; kiềm có clo 55–65 °C; axit 40–70 °C. Sau mỗi bước rửa là tráng trung gian bằng nước uống được."
+        },
+        {
+          "title": "Khử trùng & tráng cuối",
+          "text": "Khử trùng hóa học thường ở 15–30 °C, hoặc bằng nước nóng, hơi. Tráng cuối bằng nước uống được."
+        }
+      ],
+      "example": "Dây chuyền sữa chua uống: giữa hai mẻ cùng hương chỉ tráng nhanh theo ma trận sản xuất; cuối ngày chạy chương trình đầy đủ; sau sự cố dừng máy kéo dài chạy chương trình tăng cường.",
+      "takeaway": "Rút ngắn chương trình là quyết định dựa trên đánh giá rủi ro và nên được tính từ giai đoạn thiết kế.",
+      "source": "§6.2, tr. 12–13; Bảng 3, tr. 15",
+      "narration": "Một chương trình CIP giống một công thức nấu ăn. Thứ tự các bước rất quan trọng. Đầu tiên là tráng sơ bộ để cuốn đi chất bẩn rời. Nước không nên quá nóng, vì chất đạm sẽ bị nấu chín và bám chặt hơn. Cũng không nên quá lạnh, vì chất béo không tan chảy. Tiếp theo là rửa bằng hóa chất, thường là kiềm, rồi tráng trung gian. Sau đó có thể rửa axit, rồi tráng lần nữa. Cuối cùng là khử trùng và tráng cuối bằng nước uống được. Có cần đủ bảy bước mỗi lần không? Không nhất thiết. Giữa hai mẻ cùng loại, có thể chỉ cần tráng nhanh. Cuối ngày chạy chương trình đầy đủ. Sau sự cố, chạy chương trình tăng cường. Nhưng mọi quyết định rút ngắn đều phải dựa trên đánh giá rủi ro.",
+      "visual": "steps",
+      "trainer": "Yêu cầu học viên liên hệ với một trạm CIP, mạch hoặc đối tượng thực tế. Phân biệt nguyên tắc trong tài liệu với thông số đã được thẩm định và phê duyệt tại cơ sở."
+    },
+    {
+      "id": 8,
+      "module": 2,
+      "title": "Khi nào đồng hồ được chạy?",
+      "lead": "Thời gian tuần hoàn chỉ được tính khi cả ba thông số đạt điểm đặt.",
+      "cards": [
+        {
+          "title": "Ba điều kiện",
+          "text": "Nhiệt độ, lưu lượng và nồng độ phải được giám sát, điều khiển và duy trì trong suốt bước rửa."
+        },
+        {
+          "title": "Đo ở đúng chỗ",
+          "text": "Nhiệt độ và độ dẫn điện đo trên đường hồi. Lưu lượng đo trên đường cấp."
+        },
+        {
+          "title": "Thông số cho từng bước",
+          "text": "Mỗi bước cần xác định loại chất lỏng, thao tác (tráng, điền đầy, tuần hoàn, xả) và cách quản lý chất lỏng."
+        }
+      ],
+      "example": "Hồ sơ ghi “rửa kiềm 20 phút”. Biểu đồ cho thấy nhiệt độ đường hồi chỉ đạt điểm đặt ở phút thứ 12. Thực chất thiết bị chỉ được rửa có hiệu lực 8 phút.",
+      "takeaway": "Đạt nhiệt độ ở bồn cấp chưa chứng minh đối tượng đã nhận được bước rửa có hiệu lực.",
+      "source": "§6.2, tr. 13–14",
+      "narration": "Đây là một trong những lỗi phổ biến nhất mà người kiểm tra tìm thấy. Hồ sơ ghi rửa kiềm hai mươi phút. Nhưng khi xem biểu đồ, nhiệt độ ở đường hồi chỉ đạt điểm đặt ở phút thứ mười hai. Vậy thiết bị thực sự được rửa bao lâu? Chỉ tám phút. Nguyên tắc của tài liệu rất rõ ràng. Thời gian tuần hoàn chỉ được tính khi cả ba thông số cùng đạt. Nhiệt độ. Lưu lượng. Và nồng độ. Nhiệt độ và độ dẫn điện được đo ở đường hồi. Lưu lượng được đo ở đường cấp. Nếu một thông số tụt xuống, đồng hồ phải dừng. Bạn hãy thử bật và tắt từng điều kiện trên màn hình để thấy đồng hồ phản ứng ra sao.",
+      "visual": "timer",
+      "trainer": "Hỏi học viên: ở cơ sở, bộ đếm bước rửa bắt đầu theo tín hiệu nào? Có dừng khi nhiệt độ hồi giảm dưới điểm đặt không?"
+    },
+    {
+      "id": 9,
+      "module": 3,
+      "title": "CIP kết hợp nhiệt, hóa chất và áp suất",
+      "lead": "An toàn lao động là một cân nhắc chính khi thiết kế hoặc nâng cấp hệ thống CIP.",
+      "cards": [
+        {
+          "title": "Phòng riêng, hạn chế ra vào",
+          "text": "Lý tưởng là đặt trạm CIP ở phòng riêng hoặc ngoài trời; chỉ người đã được đào tạo được vào. Phòng cần hút khí để giảm hơi kiềm và axit."
+        },
+        {
+          "title": "Ngăn tràn và nối sai",
+          "text": "Cần hệ thống ngăn chứa khi bồn rò rỉ. Nối ống sai hoặc thiếu là mối nguy; phải có biện pháp như khóa liên động để ngăn."
+        },
+        {
+          "title": "Tiếp cận an toàn",
+          "text": "Cửa người chui đặt trên đỉnh bồn, có khóa liên động khi vận hành. Điểm lấy mẫu ở độ cao thuận tiện. Bảo vệ khỏi nguồn nhiệt trên 50 °C."
+        }
+      ],
+      "example": "Một công nhân mở khớp nối trên đường hồi vì nghĩ CIP đã xong; kiềm nóng còn áp trong ống bắn ra. Biển báo tại thiết bị và khóa liên động sinh ra để ngăn đúng tình huống này.",
+      "takeaway": "Ba mối nguy thường gặp nhất: tiếp xúc hóa chất nóng/ăn mòn, bề mặt nóng, và tràn đổ gây trượt ngã.",
+      "source": "§6.3, tr. 15–17",
+      "narration": "CIP là nơi ba mối nguy gặp nhau. Nhiệt độ cao. Hóa chất ăn mòn. Và áp suất. Hãy hình dung một công nhân mở khớp nối trên đường hồi vì nghĩ rằng chu trình đã kết thúc. Kiềm nóng còn áp trong ống bắn ra. Tai nạn như vậy ngăn được bằng thiết kế. Trạm CIP nên đặt trong phòng riêng, có hút khí, chỉ người đã được đào tạo mới được vào. Cần có tường chắn để giữ dung dịch khi bồn rò rỉ. Cửa người chui đặt trên đỉnh bồn và có khóa liên động. Bề mặt nóng trên năm mươi độ phải được che chắn hoặc bọc cách nhiệt. Và đừng quên biển cảnh báo ngay tại thiết bị đang được làm sạch, không chỉ ở phòng trạm.",
+      "visual": "",
+      "trainer": "Thảo luận: sự cố gần nhất liên quan đến hóa chất CIP tại cơ sở là gì? Biện pháp thiết kế nào có thể đã ngăn được?"
+    },
+    {
+      "id": 10,
+      "module": 3,
+      "title": "Hóa chất đậm đặc: quy tắc không thương lượng",
+      "lead": "Thiết kế hệ thống để các lỗi nguy hiểm không thể xảy ra, không chỉ dựa vào nhắc nhở.",
+      "cards": [
+        {
+          "title": "Không trộn, không đổ nước vào",
+          "text": "Cấm trộn các hóa chất đậm đặc. Chỉ cho hóa chất đậm đặc vào nước; pha tự động phải bảo đảm có lượng nước tối thiểu trước khi định lượng."
+        },
+        {
+          "title": "Bảo hộ và thông tin",
+          "text": "Kính bảo hộ luôn dùng trong khu CIP; quần áo kín và găng cao su dài khi thao tác hóa chất. Phiếu an toàn hóa chất cập nhật tại điểm sử dụng."
+        },
+        {
+          "title": "Ứng cứu và cách ly",
+          "text": "Vòi tắm khẩn cấp 120–180 L/phút và bồn rửa mắt 15–18 L/phút, không bị che chắn. Mọi nguồn năng lượng, kể cả hóa chất, cần điểm khóa cách ly."
+        }
+      ],
+      "example": "Hai can hóa chất cùng màu, cùng kiểu khớp nối, đặt cạnh nhau: axit bị nối nhầm vào đường kiềm có clo. Khớp nối khác kiểu và rào chắn vật lý loại bỏ khả năng nhầm.",
+      "takeaway": "Trước khi đưa hóa chất mới vào nhà máy phải có phân tích rủi ro chi tiết.",
+      "source": "§6.3, tr. 16–17",
+      "narration": "Có những quy tắc không có ngoại lệ. Thứ nhất, không bao giờ trộn các hóa chất đậm đặc với nhau. Thứ hai, không bao giờ đổ nước vào hóa chất đậm đặc. Luôn cho hóa chất vào nước. Hãy nghĩ tới tình huống này. Hai can hóa chất cùng màu, cùng kiểu khớp nối, đặt cạnh nhau. Một ngày vội vã, axit bị nối nhầm vào đường kiềm có clo. Nhắc nhở thôi thì không đủ. Thiết kế tốt làm cho việc nối nhầm không thể xảy ra, bằng khớp nối khác kiểu và rào chắn vật lý. Ngoài ra, vòi tắm khẩn cấp và bồn rửa mắt phải ở nơi không bị che chắn. Phiếu an toàn hóa chất phải có ngay tại điểm sử dụng. Và tuyệt đối không vào bồn kín khi chưa làm thủ tục không gian hạn chế.",
+      "visual": "",
+      "trainer": "Kiểm tra nhanh: học viên có biết vị trí vòi tắm khẩn cấp và phiếu an toàn hóa chất gần trạm CIP nhất không?"
+    },
+    {
+      "id": 11,
+      "module": 3,
+      "title": "CIP nằm trong hệ thống chất lượng",
+      "lead": "Chính sách, xem xét và thực hiện CIP cần được kiểm soát trong hệ thống chất lượng và HACCP.",
+      "cards": [
+        {
+          "title": "Thiết kế để lấy mẫu được",
+          "text": "Cần đủ điểm lấy mẫu để lấy mẫu đại diện ở từng giai đoạn của chu trình, kể cả mẫu vi sinh."
+        },
+        {
+          "title": "Lấy ở điểm khó nhất",
+          "text": "Đặt điểm kiểm tra ở vị trí khó làm sạch nhất: đỉnh bồn, các đầu nối trên bồn, nhánh cụt không tránh được."
+        },
+        {
+          "title": "Nước tráng không nói hết",
+          "text": "Nước tráng không phát hiện được chất bẩn chưa được làm ướt hoặc bám quá chặt mà nước không cuốn đi."
+        }
+      ],
+      "example": "Nước tráng cuối nhiều tháng liền luôn đạt. Khi mở cửa bồn mới thấy một vành cặn ở đỉnh bồn, nơi tia phun không với tới. Nước tráng chưa từng chạm vào chỗ đó.",
+      "takeaway": "Nước tráng cuối đạt chưa chứng minh bề mặt đã sạch; cần mở và kiểm tra bề mặt ở điểm khó.",
+      "source": "§6.4, tr. 17",
+      "narration": "Nước tráng cuối trong vắt. Kết quả phân tích đạt. Vậy thiết bị đã sạch chưa? Chưa chắc. Có nhà máy nhiều tháng liền nước tráng luôn đạt. Đến khi mở cửa bồn, họ thấy một vành cặn ở đỉnh bồn, nơi tia phun không với tới. Nước tráng chưa từng chạm vào chỗ đó, nên không thể báo cho ta biết. Tài liệu nói rõ điều này. Nước tráng không phát hiện được chất bẩn chưa được làm ướt, hoặc bám quá chặt. Vì vậy, ngay từ thiết kế phải có điểm lấy mẫu và điểm mở kiểm tra tại những vị trí khó làm sạch nhất. Đỉnh bồn. Các đầu nối trên bồn. Và những nhánh cụt không tránh được. Đó là cách đưa CIP vào hệ thống chất lượng một cách thực chất.",
+      "visual": "",
+      "trainer": "Yêu cầu học viên liên hệ với một trạm CIP, mạch hoặc đối tượng thực tế. Phân biệt nguyên tắc trong tài liệu với thông số đã được thẩm định và phê duyệt tại cơ sở."
+    },
+    {
+      "id": 12,
+      "module": 3,
+      "title": "Viết URS trước khi chọn trạm",
+      "lead": "URS là bộ đầu vào thiết kế; trạm CIP chỉ có thể được thiết kế để đáp ứng những gì URS nêu.",
+      "cards": [
+        {
+          "title": "Hiểu việc cần làm",
+          "text": "Mục đích làm sạch và mối nguy; đặc tính sản phẩm và chất bẩn; thông số làm sạch; mức sạch yêu cầu hoặc tiêu chí chấp nhận."
+        },
+        {
+          "title": "Hiểu điều kiện nhà máy",
+          "text": "Tiện ích sẵn có; yêu cầu thu hồi nhiệt; trình tự làm sạch; danh sách đối tượng kèm tài liệu nhà sản xuất và các bề mặt khó làm sạch; lịch và thời gian chờ."
+        },
+        {
+          "title": "Hiểu cách chứng minh",
+          "text": "Yêu cầu thẩm định; điều khiển, giám sát và ghi nhận; an toàn lao động; khả năng của hệ thống xử lý nước thải với tải lượng từ CIP."
+        }
+      ],
+      "example": "Dự án mua trạm ba bồn “giống nhà máy bên cạnh”. Chạy thử mới biết trạm xử lý nước thải không nhận nổi lượng kiềm xả mỗi ca. Một dòng trong URS lẽ ra đã cho thấy điều đó.",
+      "takeaway": "Một yêu cầu không có tiêu chí chấp nhận sẽ khó thẩm định ở cuối dự án.",
+      "source": "§7.1, tr. 19",
+      "narration": "Nhiều dự án bắt đầu bằng câu hỏi nên mua trạm mấy bồn. Đó là câu hỏi sai thứ tự. Có dự án mua trạm ba bồn giống nhà máy bên cạnh. Đến khi chạy thử mới phát hiện trạm xử lý nước thải không nhận nổi lượng kiềm xả ra mỗi ca. Bản yêu cầu người dùng sinh ra để tránh điều đó. Nó gồm mười ba nhóm thông tin, có thể gom thành ba câu hỏi. Một, cần làm sạch cái gì, khỏi chất bẩn nào, sạch tới mức nào. Hai, nhà máy có tiện ích gì, lịch sản xuất ra sao, thiết bị nào khó làm sạch. Ba, sẽ chứng minh và ghi nhận bằng cách nào, có an toàn không, nước thải có xử lý được không. Số bồn chỉ là kết quả của các câu trả lời đó.",
+      "visual": "",
+      "trainer": "Bài tập: chọn một đối tượng thực tế, yêu cầu học viên viết ba dòng URS: chất bẩn, tiêu chí chấp nhận và bằng chứng."
+    },
+    {
+      "id": 13,
+      "module": 4,
+      "title": "Chọn mô hình theo tổng chi phí sở hữu",
+      "lead": "So sánh ở cùng một mức hiệu quả làm sạch đã định trước.",
+      "cards": [
+        {
+          "title": "TCO gồm gì",
+          "text": "Vốn đầu tư và chi phí vận hành: thời gian dừng để làm sạch, tần suất, nhân lực, năng lượng, hóa chất, chi phí nước thải."
+        },
+        {
+          "title": "Một lần qua",
+          "text": "Dung dịch đi qua đối tượng rồi xả, không tuần hoàn. Dùng khi cần rủi ro nhiễm chéo thấp nhất, ví dụ sản phẩm giá trị cao hoặc chứa chất gây dị ứng."
+        },
+        {
+          "title": "Dùng một lần có tuần hoàn",
+          "text": "Cho đối tượng tải bẩn nặng như UHT, cô đặc, thanh trùng, màng. Dung dịch tuần hoàn rồi xả; nồng độ chỉnh được theo từng đối tượng."
+        }
+      ],
+      "example": "Xưởng chiết dùng chung cho sản phẩm có và không có đậu nành: chọn CIP một lần qua cho cụm chiết. Tốn hóa chất hơn, nhưng không có dung dịch dùng lại mang chất gây dị ứng sang mẻ sau.",
+      "takeaway": "Hai mô hình không thu hồi có rủi ro nhiễm chéo thấp nhưng chi phí vận hành cao.",
+      "source": "§7.3–7.3.2, tr. 23–24",
+      "narration": "Không có mô hình CIP nào tốt nhất cho mọi nhà máy. Tài liệu khuyên chọn theo tổng chi phí sở hữu. Nghĩa là tính cả tiền đầu tư lẫn tiền vận hành, ở cùng một mức sạch đã định. Mô hình đơn giản nhất là một lần qua. Dung dịch đi qua thiết bị rồi xả bỏ. Tốn nước, tốn hóa chất, nhưng nguy cơ nhiễm chéo là thấp nhất. Ví dụ, một xưởng chiết dùng chung cho sản phẩm có đậu nành và không có đậu nành. Chọn một lần qua cho cụm chiết là hợp lý, vì không có dung dịch dùng lại nào mang chất gây dị ứng sang mẻ sau. Mô hình thứ hai là dùng một lần có tuần hoàn. Nó hợp với thiết bị rất bẩn như máy tiệt trùng hay thiết bị cô đặc. Dung dịch bẩn nhanh đến mức thu hồi không còn đáng.",
+      "visual": "",
+      "trainer": "Yêu cầu học viên liên hệ với một trạm CIP, mạch hoặc đối tượng thực tế. Phân biệt nguyên tắc trong tài liệu với thông số đã được thẩm định và phê duyệt tại cơ sở."
+    },
+    {
+      "id": 14,
+      "module": 4,
+      "title": "Một bồn hay thu hồi nhiều bồn",
+      "lead": "Tái sử dụng dung dịch giảm chi phí nhưng mang theo yêu cầu giám sát.",
+      "cards": [
+        {
+          "title": "CIP một bồn",
+          "text": "Cho nhà máy nhỏ, tần suất thấp. Chi phí lắp đặt thấp, linh hoạt, có thể di động; đổi lại chi phí vận hành cao hơn và tốn nhân công."
+        },
+        {
+          "title": "Thu hồi nhiều bồn",
+          "text": "Phổ biến trong sữa và đồ uống. Dung dịch được cấp, tuần hoàn, thu hồi và giữ ở nhiệt độ yêu cầu; nước tráng cuối có thể dùng làm nước tráng sơ bộ."
+        },
+        {
+          "title": "Cái giá của thu hồi",
+          "text": "Giảm hóa chất và tải nước thải, nhưng tăng rủi ro nhiễm chéo; cần giám sát chặt để tránh tích tụ chất bẩn trong bồn."
+        }
+      ],
+      "example": "Nhà máy nước giải khát chạy hơn chục lượt CIP mỗi ngày: trạm thu hồi nhiều bồn giảm rõ lượng kiềm mua vào. Đổi lại, bồn kiềm phải được theo dõi độ đục và chuẩn độ đều đặn.",
+      "takeaway": "Tích tụ chất bẩn trong bồn thu hồi thường đến từ bản chất tải bẩn hoặc từ tráng sơ bộ không đủ.",
+      "source": "§7.3.3–7.3.4, tr. 25–26",
+      "narration": "Nếu nhà bạn mỗi tuần chỉ giặt một lần, bạn không cần máy giặt công nghiệp. Với CIP cũng vậy. Nhà máy nhỏ, làm sạch thưa, có thể dùng trạm một bồn. Rẻ, linh hoạt, thậm chí đặt trên bánh xe. Bù lại, tốn nhân công và chi phí mỗi lần chạy cao hơn. Ngược lại, một nhà máy nước giải khát chạy hơn chục lượt mỗi ngày sẽ chọn trạm thu hồi nhiều bồn. Dung dịch được giữ nóng và dùng lại nhiều lần. Nước tráng cuối được giữ lại làm nước tráng sơ bộ cho lượt sau. Tiết kiệm rất rõ. Nhưng có một cái giá. Nguy cơ nhiễm chéo tăng lên. Chất bẩn tích tụ dần trong bồn nếu tráng sơ bộ không đủ. Vì vậy, thu hồi luôn phải đi kèm với giám sát chặt chẽ.",
+      "visual": "",
+      "trainer": "Thảo luận: trạm của cơ sở thuộc mô hình nào? Tráng sơ bộ hiện có đủ để giữ bồn kiềm sạch không?"
+    },
+    {
+      "id": 15,
+      "module": 4,
+      "title": "So sánh nhanh các mô hình",
+      "lead": "Dùng bảng này để mở đầu thảo luận, sau đó tính bằng số liệu của nhà máy.",
+      "cards": [
+        {
+          "title": "Không thu hồi",
+          "text": "Ít rủi ro nhiễm chéo, vốn thấp; chi phí vận hành cao. Hợp với làm sạch không thường xuyên."
+        },
+        {
+          "title": "Thu hồi toàn phần/một phần",
+          "text": "Chi phí vận hành tương đối thấp hơn; vốn cao và có thể nhiễm chéo. Hợp với làm sạch thường xuyên."
+        },
+        {
+          "title": "Bền vững",
+          "text": "Dùng một lần có thể cho kết quả làm sạch và vi sinh tốt nhất nhưng không phải giải pháp bền vững."
+        }
+      ],
+      "example": "Cách kết hợp: thu hồi cho bồn và đường ống thông thường; dùng một lần cho thiết bị tải bẩn nặng hoặc có chất gây dị ứng. Quyết định bằng số liệu của chính nhà máy.",
+      "takeaway": "Rủi ro nhiễm chéo của thu hồi phải được kiểm soát bằng đánh giá rủi ro và giám sát, không bằng giả định.",
+      "source": "Bảng 4, tr. 27; §7.8.2, tr. 46",
+      "narration": "Màn hình này tóm tắt các mô hình trong một bảng. Hãy đọc bảng theo hai nhóm. Nhóm không thu hồi gồm một lần qua và dùng một lần. Ưu điểm là ít nguy cơ nhiễm chéo và vốn đầu tư thấp. Nhược điểm là mỗi lần chạy đều tốn hóa chất, nước và năng lượng. Nhóm thu hồi thì ngược lại. Chi phí vận hành thấp hơn, nhưng vốn cao hơn và phải kiểm soát nhiễm chéo. Yếu tố quyết định là tần suất. Làm sạch càng thường xuyên, thu hồi càng có lợi. Một cách làm thực tế là kết hợp. Dùng thu hồi cho các bồn và đường ống thông thường. Dùng một lần cho thiết bị rất bẩn hoặc có chất gây dị ứng. Cuối cùng, hãy tính bằng số liệu của chính nhà máy mình.",
+      "visual": "concepts",
+      "trainer": "Yêu cầu học viên liên hệ với một trạm CIP, mạch hoặc đối tượng thực tế. Phân biệt nguyên tắc trong tài liệu với thông số đã được thẩm định và phê duyệt tại cơ sở."
+    },
+    {
+      "id": 16,
+      "module": 4,
+      "title": "Tập trung, vệ tinh và số lượng trạm",
+      "lead": "Khoảng cách làm mất năng lượng và làm khó việc tách pha giữa các dung dịch.",
+      "cards": [
+        {
+          "title": "Tập trung",
+          "text": "Một trạm phục vụ nhiều đối tượng; thường dùng ở nhà máy nhỏ và vừa, nơi khoảng cách không quá dài."
+        },
+        {
+          "title": "Vệ tinh",
+          "text": "Các cụm nhỏ đặt gần thiết bị; kiềm và axit loãng vẫn được trữ tập trung. Tuần hoàn mẻ nhỏ vừa đủ điền đầy mạch, giảm nước và nhiệt."
+        },
+        {
+          "title": "Tách sống – chín",
+          "text": "Nên tách CIP cho thiết bị xử lý sản phẩm chưa qua nhiệt khỏi thiết bị sau xử lý nhiệt, để dung dịch dùng chung không mang vi khuẩn, bào tử sang phía đã xử lý."
+        }
+      ],
+      "example": "Một trạm dùng chung cho bồn sữa nguyên liệu và bồn sau thanh trùng: dung dịch thu hồi có thể mang bào tử từ phía sống sang phía chín. Tách trạm, hoặc bù bằng nhiệt độ, thời gian và làm mới dung dịch.",
+      "takeaway": "Nếu buộc dùng chung một trạm, phải có biện pháp quản lý nhiễm chéo: nhiệt độ, thời gian, nồng độ, tần suất, tỷ lệ làm mới dung dịch.",
+      "source": "§7.4–7.5, tr. 27–29",
+      "narration": "Bạn có dùng chung một chiếc thớt cho thịt sống và thức ăn chín không? Chắc chắn là không. Với CIP, nguyên tắc tương tự. Nếu một trạm dùng chung cho bồn sữa nguyên liệu và bồn sau thanh trùng, dung dịch thu hồi có thể mang vi khuẩn và bào tử từ phía sống sang phía chín. Tài liệu khuyên nên tách riêng. Nếu buộc phải dùng chung, cần biện pháp bù. Tăng nhiệt độ. Kéo dài thời gian. Tăng nồng độ. Hoặc làm mới dung dịch thường xuyên hơn. Một điểm nữa là khoảng cách. Trạm càng xa thiết bị, càng mất nhiệt, mất áp và càng khó tách các dung dịch. Ở nhà máy lớn, nhiều cụm vệ tinh đặt gần thiết bị có thể hiệu quả hơn một trạm trung tâm.",
+      "visual": "",
+      "trainer": "Hỏi học viên: mạch nào ở cơ sở đang dùng chung dung dịch giữa phía trước và sau xử lý nhiệt? Biện pháp kiểm soát là gì?"
+    },
+    {
+      "id": 17,
+      "module": 5,
+      "title": "Bồn CIP: định cỡ và thiết kế",
+      "lead": "Bắt đầu bằng bảng tổng hợp đối tượng: thể tích giữ lại, lưu lượng yêu cầu, thời gian tráng.",
+      "cards": [
+        {
+          "title": "Thể tích mạch",
+          "text": "Hệ hở như bồn: diện tích trong × màng nước 2 mm (2 L/m², tối thiểu 1,5 L/m²) cộng ống cấp và hồi. Hệ kín: thể tích ống công nghệ cộng ống cấp và hồi."
+        },
+        {
+          "title": "Dự phòng",
+          "text": "Bồn hóa chất định cỡ theo thể tích mạch lớn nhất, hoặc tổng các mạch chạy đồng thời, cộng dự phòng khoảng 10–20%. Bồn nước tráng thường cộng 10%."
+        },
+        {
+          "title": "Chi tiết bồn",
+          "text": "Đáy dốc để lắng cặn, cửa xả cặn riêng; đầu vào hồi tiếp tuyến chống tạo bọt; có thiết bị phun để tự làm sạch; thông hơi ra ngoài nhà; nắp có khóa an toàn."
+        }
+      ],
+      "example": "Tính nhanh: bồn có 60 m² bề mặt trong cần khoảng 120 lít dung dịch để tạo màng nước 2 mm, cộng thêm thể tích ống cấp và ống hồi.",
+      "takeaway": "Không tăng đường kính ống “để dành cho tương lai”: vận tốc giảm sẽ gây lắng cặn và khó làm sạch chính hệ CIP.",
+      "source": "§7.6–7.7.1, tr. 29–32; Bảng 5, tr. 30",
+      "narration": "Bồn CIP cần lớn bao nhiêu? Câu trả lời bắt đầu từ danh sách thiết bị cần làm sạch. Với đường ống, ta cần đủ dung dịch để điền đầy ống. Với bồn, ta không điền đầy. Ta chỉ cần một màng nước mỏng khoảng hai mi li mét phủ lên toàn bộ bề mặt trong. Ví dụ, bồn có sáu mươi mét vuông bề mặt cần khoảng một trăm hai mươi lít, cộng thêm thể tích ống cấp và ống hồi. Sau đó cộng dự phòng từ mười đến hai mươi phần trăm. Về thiết kế, bồn nên có đáy dốc để cặn lắng xuống và một cửa xả cặn riêng. Một cảnh báo quan trọng. Đừng chọn ống to hơn để dành cho tương lai. Ống to làm vận tốc giảm, và chính hệ CIP sẽ bị đóng cặn. Hãy bấm vào từng bộ phận trên màn hình để khám phá.",
+      "visual": "station",
+      "trainer": "Yêu cầu học viên liên hệ với một trạm CIP, mạch hoặc đối tượng thực tế. Phân biệt nguyên tắc trong tài liệu với thông số đã được thẩm định và phê duyệt tại cơ sở."
+    },
+    {
+      "id": 18,
+      "module": 5,
+      "title": "Bơm và gia nhiệt",
+      "lead": "Bơm cấp tạo lưu lượng; bơm hồi giữ cho đối tượng không đọng dung dịch.",
+      "cards": [
+        {
+          "title": "Bơm cấp",
+          "text": "Thường là bơm ly tâm có biến tần để đặt lưu lượng riêng cho từng đối tượng. Tham khảo: lưu lượng lớn nhất + 10%; áp suất 2,5–8 bar theo tính toán tổn thất."
+        },
+        {
+          "title": "Bơm hồi",
+          "text": "Dùng cho hệ hở; đặt gần đối tượng, điều khiển từ trạm. Phải xử lý được khí; khuyến nghị tự mồi. Tham khảo: lưu lượng bơm cấp lớn nhất + 30%."
+        },
+        {
+          "title": "Gia nhiệt",
+          "text": "Bộ trao đổi nhiệt tấm nên là loại tấm hàn vì an toàn với kiềm nóng. Phun hơi trực tiếp làm loãng dung dịch và có thể đưa sắt vào hệ thống."
+        }
+      ],
+      "example": "Dấu hiệu dễ thấy: sau CIP, đáy bồn còn một vũng dung dịch và một vành bẩn ngang mực nước. Bơm hồi không hút kịp, nên phần đáy chỉ được “ngâm” chứ không được rửa.",
+      "takeaway": "Chạy bơm cấp theo xung để chờ bơm hồi không phải cách làm được khuyến nghị: kéo dài thời gian và giảm tác động cơ học.",
+      "source": "§7.7.2–7.7.3, tr. 34–38",
+      "narration": "Sau khi CIP xong, bạn mở bồn và thấy một vành bẩn ở gần đáy. Chuyện gì đã xảy ra? Rất có thể bơm hồi không hút kịp. Dung dịch đọng thành vũng, và phần đáy bồn chỉ được ngâm chứ không được rửa. Vì vậy bơm hồi phải mạnh hơn bơm cấp. Tài liệu gợi ý lớn hơn khoảng ba mươi phần trăm. Nó còn phải hút được cả không khí lẫn trong dung dịch. Bơm cấp thì thường là bơm ly tâm có biến tần, để mỗi thiết bị nhận đúng lưu lượng của mình. Về gia nhiệt, có một lưu ý an toàn. Bộ trao đổi nhiệt dạng tấm nên là loại tấm hàn, vì gioăng có thể bật ra khi gặp kiềm nóng. Còn phun hơi trực tiếp thì làm loãng dung dịch, nên hợp hơn với hệ không thu hồi.",
+      "visual": "",
+      "trainer": "Thảo luận: có đối tượng nào ở cơ sở bị đọng dung dịch ở đáy trong khi CIP không? Bơm hồi có được kiểm tra khả năng hút khí không?"
+    },
+    {
+      "id": 19,
+      "module": 5,
+      "title": "Van và lọc thô",
+      "lead": "Chọn van theo mức an toàn cần có tại điểm đó; chọn lọc thô theo thứ cần bảo vệ.",
+      "cards": [
+        {
+          "title": "Một lớp kín là chưa đủ",
+          "text": "Van bướm và van một đế chỉ có một lớp kín, không bảo vệ khi rò. Không dùng đơn lẻ để tách mạch CIP khỏi đường sản phẩm."
+        },
+        {
+          "title": "Mixproof hoặc block & bleed",
+          "text": "Van hai đế mixproof có khoang rò. Với van khác, dùng cấu hình block & bleed. Chọn vật liệu gioăng tương thích với dung dịch làm sạch."
+        },
+        {
+          "title": "Lọc thô",
+          "text": "Bảo vệ bơm và đầu phun; lỗ lọc nhỏ hơn lỗ phun nhỏ nhất, thường là lọc thô 3 mm. Dễ tiếp cận; kiểm tra và làm sạch sau mỗi chu trình CIP."
+        }
+      ],
+      "example": "Trong lọc thô đường hồi có một mảnh gioăng. Đừng chỉ vứt đi: mảnh đó đến từ một van hoặc khớp nối đang hỏng đâu đó trong mạch — phần còn lại có thể đang nằm ở phía sản phẩm.",
+      "takeaway": "Tìm thấy vật lạ hoặc phoi kim loại trong lọc thô là tín hiệu phải truy nguồn gốc và khắc phục ngay.",
+      "source": "§7.7.4–7.7.5, tr. 39–41",
+      "narration": "Một van bướm giống như cánh cửa chỉ có một lớp khóa. Khi gioăng mòn, dung dịch rò sang phía bên kia mà không ai hay biết. Vì thế, ở nơi rò rỉ có thể gây nhiễm, cần hai lớp bảo vệ. Hoặc dùng van hai đế chống trộn lẫn, có khoang thoát rò ở giữa. Hoặc dùng hai van chặn với một cửa xả giữa chúng. Bây giờ nói về lọc thô. Nó bảo vệ bơm và đầu phun khỏi vật lạ. Nhưng nó còn là một người đưa tin. Giả sử bạn tìm thấy một mảnh gioăng trong lọc thô đường hồi. Đừng chỉ vứt đi. Mảnh đó đến từ một van hoặc khớp nối đang hỏng đâu đó trong mạch. Hãy truy tìm nguồn gốc ngay. Lọc thô cần được kiểm tra và làm sạch sau mỗi chu trình.",
+      "visual": "",
+      "trainer": "Hỏi học viên: lần gần nhất tìm thấy vật lạ trong lọc thô đường hồi là khi nào? Nguồn gốc đã được xác định chưa?"
+    },
+    {
+      "id": 20,
+      "module": 5,
+      "title": "Thiết bị đo: đo gì, ở đâu",
+      "lead": "Độ dẫn điện trực tuyến là phương pháp được lựa chọn để tự động hóa và giám sát nồng độ.",
+      "cards": [
+        {
+          "title": "Đường cấp",
+          "text": "Đo lưu lượng sau bơm; đo nhiệt độ khi gia nhiệt trên đường cấp. Áp suất là tùy chọn."
+        },
+        {
+          "title": "Đường hồi",
+          "text": "Phát hiện dòng chảy để xác nhận có dòng hồi; đo nhiệt độ khi dùng chất lỏng nóng; đo độ dẫn điện. Độ đục là tùy chọn."
+        },
+        {
+          "title": "Bồn và hiệu chuẩn",
+          "text": "Bồn cần phát hiện mức. Mọi cảm biến phải được kiểm soát và hiệu chuẩn theo lịch cố định."
+        }
+      ],
+      "example": "Cảm biến độ dẫn điện lệch dần sau nhiều tháng không hiệu chuẩn: màn hình vẫn báo đủ nồng độ, chuẩn độ tay cho kết quả thấp hơn rõ rệt. Mọi chu trình trong thời gian đó đều “đạt” trên giấy.",
+      "takeaway": "Cảm biến lắp trong ống làm thay đổi dòng chảy và có thể tạo vùng khó làm sạch; lắp theo nguyên tắc của Doc. 37.",
+      "source": "§7.7.6, tr. 41–43; Bảng 6, tr. 43",
+      "narration": "Bạn có tin đồng hồ tốc độ của một chiếc xe chưa bao giờ được kiểm định không? Cảm biến trong hệ CIP cũng vậy. Nồng độ hóa chất được suy ra từ độ dẫn điện. Nếu cảm biến lệch dần sau nhiều tháng không hiệu chuẩn, màn hình vẫn báo đủ nồng độ, trong khi thực tế đã thấp hơn. Mọi chu trình đều đạt trên giấy, nhưng không đạt trên bề mặt. Vì vậy, mọi cảm biến phải được hiệu chuẩn theo lịch cố định. Về vị trí đo, hãy nhớ quy tắc đơn giản. Đường cấp đo lưu lượng và nhiệt độ. Đường hồi phát hiện dòng chảy, đo nhiệt độ và độ dẫn điện. Bồn thì cần phát hiện mức. Và nhớ rằng cảm biến lắp trong ống cũng phải làm sạch được, không được tạo thêm góc chết.",
+      "visual": "",
+      "trainer": "Yêu cầu học viên liên hệ với một trạm CIP, mạch hoặc đối tượng thực tế. Phân biệt nguyên tắc trong tài liệu với thông số đã được thẩm định và phê duyệt tại cơ sở."
+    },
+    {
+      "id": 21,
+      "module": 6,
+      "title": "Pha dung dịch và tiện ích",
+      "lead": "Trạm phải sẵn sàng về thể tích, nhiệt độ và nồng độ trước khi dùng.",
+      "cards": [
+        {
+          "title": "Trình tự pha",
+          "text": "Ví dụ: điền nước, gia nhiệt, theo dõi nhiệt độ, định lượng hóa chất, theo dõi nồng độ, sẵn sàng. Có thể định lượng vào bồn, vào vòng tuần hoàn hoặc trên đường ống."
+        },
+        {
+          "title": "Nước",
+          "text": "Nước tráng cuối đạt chuẩn nước uống. Nước pha dung dịch nên mềm, lý tưởng 5–10 mg/L CaCO₃; không nên dùng nước khử khoáng vì có thể ăn mòn."
+        },
+        {
+          "title": "Hơi và khí nén",
+          "text": "Hơi phun trực tiếp phải là hơi sạch dùng cho thực phẩm. Khí nén dùng để thổi mạch cần đạt yêu cầu chất lượng theo ISO 8573."
+        }
+      ],
+      "example": "Nhà máy dùng nước cứng để pha kiềm: sau vài tháng bộ gia nhiệt phủ cặn trắng, thời gian gia nhiệt kéo dài và cảnh báo “quá lâu chưa đạt nhiệt độ” xuất hiện ngày càng nhiều.",
+      "takeaway": "Nên tắt chế độ chuẩn bị nếu trạm không dùng trong một thời gian, vì lý do an toàn và môi trường.",
+      "source": "§7.8.1, tr. 44–45; §7.9, tr. 48",
+      "narration": "Pha một bồn dung dịch cũng giống pha một ấm trà ngon. Nước trước. Đun nóng. Rồi mới cho trà. Trình tự thông thường là điền nước, gia nhiệt, định lượng hóa chất, rồi kiểm tra nồng độ. Khi đủ thể tích, đủ nhiệt độ và đủ nồng độ, trạm ở trạng thái sẵn sàng. Chất lượng nước ảnh hưởng nhiều hơn ta tưởng. Một nhà máy dùng nước cứng để pha kiềm. Sau vài tháng, bộ gia nhiệt phủ một lớp cặn trắng. Thời gian gia nhiệt kéo dài, cảnh báo xuất hiện ngày càng nhiều. Tài liệu khuyên dùng nước mềm để pha. Nhưng cũng không nên dùng nước khử khoáng, vì nó có thể ăn mòn. Còn nước tráng cuối thì luôn phải đạt chuẩn nước uống được.",
+      "visual": "",
+      "trainer": "Yêu cầu học viên liên hệ với một trạm CIP, mạch hoặc đối tượng thực tế. Phân biệt nguyên tắc trong tài liệu với thông số đã được thẩm định và phê duyệt tại cơ sở."
+    },
+    {
+      "id": 22,
+      "module": 6,
+      "title": "Thu hồi dung dịch và khi nào phải thải bỏ",
+      "lead": "Thu hồi đòi hỏi đánh giá rủi ro nhiễm chéo và tiêu chí thải bỏ định kỳ.",
+      "cards": [
+        {
+          "title": "Phát hiện ranh giới pha",
+          "text": "Hệ điều khiển cần biết khi nào dung dịch này thay dung dịch kia để hướng đúng về bồn thu hồi. Không nên thu hồi nước tráng đầu tiên."
+        },
+        {
+          "title": "Tham khảo cho axit",
+          "text": "Thải sau 50 chu trình, hoặc khi chất rắn lơ lửng đạt 1%."
+        },
+        {
+          "title": "Tham khảo cho kiềm",
+          "text": "Thải sau 30 chu trình; khi cacbonat đạt 4–5%; COD trên 3000 mg/L; độ đục quá cao; hoặc nhìn thấy bẩn."
+        }
+      ],
+      "example": "Bồn kiềm được dùng tới chu trình thứ 60 “vì độ dẫn điện vẫn đẹp”. Dung dịch đã sẫm như nước trà, kết quả kiểm tra bề mặt xấu dần mà chưa ai nối hai việc lại với nhau.",
+      "takeaway": "Thải bỏ bất cứ khi nào phát hiện nhiễm vi sinh. Tiêu chí của cơ sở phải dựa trên kinh nghiệm thực tế tại ứng dụng đó.",
+      "source": "§7.8.2, tr. 46–47",
+      "narration": "Dầu chiên dùng một lần thì lãng phí. Nhưng dùng mãi không thay thì hỏng cả món ăn. Dung dịch CIP thu hồi cũng vậy. Thu hồi giúp tiết kiệm hóa chất, nước và nhiệt. Nhưng nếu dùng quá lâu, hiệu quả làm sạch giảm. Chất bẩn có thể bám trở lại bề mặt sạch. Vi sinh có thể theo dung dịch đi tới thiết bị sản xuất. Vậy khi nào phải thải? Tài liệu đưa ra vài mốc tham khảo. Với kiềm, sau khoảng ba mươi chu trình, hoặc khi dung dịch quá đục. Với axit, sau khoảng năm mươi chu trình. Và bất cứ lúc nào phát hiện vi sinh. Cách thực tế nhất vẫn là nhìn. Dung dịch trông bẩn thì thải. Bây giờ, mời bạn xử lý một tình huống trên màn hình.",
+      "visual": "scenario",
+      "trainer": "Yêu cầu học viên so sánh tiêu chí thải bỏ hiện hành của cơ sở với các mốc tham khảo. Ai quyết định thải? Dựa trên dữ liệu nào?"
+    },
+    {
+      "id": 23,
+      "module": 6,
+      "title": "Trạm CIP cũng phải được làm sạch",
+      "lead": "Toàn bộ cụm CIP được coi là bề mặt tiếp xúc trực tiếp với thực phẩm.",
+      "cards": [
+        {
+          "title": "Nơi dễ nhiễm",
+          "text": "Bồn thu hồi dễ nhiễm vi sinh, nhất là vùng trên mực dung dịch và vòm bồn. Bọt tạo vành cặn tại mực dung dịch."
+        },
+        {
+          "title": "Tần suất",
+          "text": "Làm sạch bồn thu hồi mỗi lần thải dung dịch hoặc ít nhất ba tháng một lần. Bồn nước sạch: kiểm tra bằng mắt hằng tuần và theo dõi vi sinh."
+        },
+        {
+          "title": "Xả cặn",
+          "text": "Để lắng tối thiểu 24 giờ, báo trước cho trạm xử lý nước thải, rồi xả đáy tới khi bớt đục; thường 1–2% thể tích là đủ."
+        }
+      ],
+      "example": "Mở nắp bồn nước thu hồi sau nhiều tháng: một vành nhớt ngang mực nước và mùi lạ. Mỗi lượt tráng sơ bộ từ bồn này đang đưa vi sinh vào thiết bị trước khi rửa.",
+      "takeaway": "Tránh để người vào bồn làm sạch thủ công; lắp thiết bị phun và kết nối để bồn CIP tự được CIP.",
+      "source": "§7.8.3, tr. 47–48; §7.12, tr. 49–50; Phụ lục B, tr. 73–74",
+      "narration": "Bạn có rửa bát bằng một miếng giẻ bẩn không? Một trạm CIP bẩn cũng giống như miếng giẻ ấy. Nó mang chất bẩn tới mọi thiết bị mà nó phục vụ. Tài liệu coi toàn bộ trạm CIP là bề mặt tiếp xúc trực tiếp với thực phẩm. Điểm yếu nhất là bồn nước thu hồi. Hãy tưởng tượng mở nắp bồn sau nhiều tháng và thấy một vành nhớt ngang mực nước. Khuyến nghị là làm sạch bồn thu hồi mỗi lần thải dung dịch, hoặc ít nhất ba tháng một lần. Bồn nước sạch cần được nhìn kiểm tra hằng tuần. Một mẹo hay là dùng chính dung dịch kiềm để rửa bồn axit, và ngược lại. Cuối cùng, hãy xả cặn đáy định kỳ. Để lắng ít nhất hai mươi bốn giờ, báo trước cho trạm xử lý nước thải, rồi mới xả.",
+      "visual": "",
+      "trainer": "Hỏi học viên: lần cuối mở kiểm tra vòm bồn nước thu hồi là khi nào? Kết quả có được ghi lại không?"
+    },
+    {
+      "id": 24,
+      "module": 6,
+      "title": "Tự động hóa, failsafe và kiểm soát thay đổi",
+      "lead": "Mức tự động hóa cao cho kết quả CIP hiệu quả và lặp lại nhất.",
+      "cards": [
+        {
+          "title": "Không cho phép rút ngắn",
+          "text": "Chương trình được thiết kế để không cho chu trình bị gián đoạn hoặc rút ngắn. Thông số bắt buộc phải được khóa; giá trị người vận hành chỉnh được có giới hạn và được ghi lại."
+        },
+        {
+          "title": "Failsafe và cảnh báo",
+          "text": "Mất điện, mất khí nén hoặc dừng khẩn cấp: bơm dừng, van về vị trí an toàn, có cảnh báo. Bộ đếm dừng khi nhiệt độ hoặc nồng độ lệch khỏi khoảng yêu cầu."
+        },
+        {
+          "title": "Kiểm soát thay đổi",
+          "text": "Mọi thay đổi về hệ thống, sản phẩm hoặc thông số phải được ghi nhận và đánh giá đa bộ phận; nếu cần thì tái thẩm định."
+        }
+      ],
+      "example": "Ca đêm chậm kế hoạch, người vận hành muốn bỏ qua bước rửa axit. Hệ thống thiết kế đúng không trao quyền đó cho người vận hành, và mọi thay đổi thông số đều để lại dấu vết.",
+      "takeaway": "Giao diện vận hành cần ghi lại mọi thay đổi, cảnh báo và tạo báo cáo truy vết cho từng đối tượng được làm sạch.",
+      "source": "§7.13–7.15, tr. 50–52",
+      "narration": "Ca đêm đang chậm kế hoạch. Người vận hành nhìn đồng hồ và muốn bỏ qua bước rửa axit. Nếu hệ thống cho phép, sớm muộn điều đó sẽ xảy ra. Vì vậy tài liệu yêu cầu chương trình phải được thiết kế để không ai rút ngắn được chu trình. Các thông số bắt buộc phải được khóa. Giá trị mà người vận hành được chỉnh phải có giới hạn, và mọi thay đổi đều được ghi lại. Khi mất điện, mất khí nén, hoặc có người bấm dừng khẩn cấp, bơm phải dừng và van phải về vị trí an toàn. Khi nhiệt độ hay nồng độ tụt, đồng hồ phải dừng đếm. Cuối cùng là kiểm soát thay đổi. Một thay đổi nhỏ, như đổi loại hóa chất hay sửa một đoạn ống, cũng có thể làm kết quả thẩm định mất hiệu lực.",
+      "visual": "",
+      "trainer": "Thảo luận: ai có quyền thay đổi thông số CIP trên hệ điều khiển? Thay đổi gần nhất có được đánh giá rủi ro không?"
+    },
+    {
+      "id": 25,
+      "module": 7,
+      "title": "Tách biệt sản phẩm – CIP và nối xả",
+      "lead": "Dung dịch CIP phải được tách khỏi thực phẩm tại mọi thời điểm.",
+      "cards": [
+        {
+          "title": "Bốn giải pháp tách biệt",
+          "text": "Cút ống dùng chung cho sản phẩm hoặc CIP; bảng đổi dòng có cảm biến tiệm cận; cấu hình block & bleed; van mixproof."
+        },
+        {
+          "title": "Không nối cứng với cống",
+          "text": "Hệ thống CIP không được nối cố định với hệ thoát nước, để tránh hút ngược chất lỏng hoặc khí nhiễm bẩn từ cống."
+        },
+        {
+          "title": "Khoảng hở khí",
+          "text": "Khoảng hở giữa ống xả CIP và chi tiết thoát nước tối thiểu 1–2 lần đường kính ống xả. Chất lỏng xả không được bắn tóe; rãnh và ống thoát đủ lớn cho lưu lượng đỉnh."
+        }
+      ],
+      "example": "Ống xả CIP hàn thẳng vào ống cống cho gọn. Khi cống nghẹt, nước thải dâng ngược vào đường hồi mà không ai thấy. Khoảng hở khí bằng 1–2 lần đường kính ống xả ngăn được điều đó.",
+      "takeaway": "Nối xả của CIP là hạng mục thường bị xem nhẹ ở cả giai đoạn thiết kế và lắp đặt.",
+      "source": "§8.1.1, tr. 53–54; Hình 28–29",
+      "narration": "Vì sao vòi nước trong bếp không bao giờ nhúng xuống dưới mặt nước trong chậu? Để nước bẩn không bị hút ngược vào đường ống. Trạm CIP cần đúng nguyên tắc đó. Có nhà máy hàn thẳng ống xả vào ống cống cho gọn. Khi cống nghẹt, nước thải dâng ngược vào đường hồi mà không ai nhìn thấy. Tài liệu yêu cầu không nối cứng với cống. Phải có một khoảng hở khí bằng một đến hai lần đường kính ống xả. Khoảng hở ấy còn cho ta nhìn thấy chất lỏng đang xả ra. Nguyên tắc thứ hai là tách biệt. Sản phẩm và hóa chất không bao giờ được gặp nhau. Có bốn cách làm. Cút ống dùng chung. Bảng đổi dòng có cảm biến vị trí. Hai van chặn có xả giữa. Hoặc van hai đế chống trộn lẫn.",
+      "visual": "",
+      "trainer": "Yêu cầu học viên chụp ảnh hoặc mô tả một điểm xả của trạm CIP tại cơ sở và so với nguyên tắc khoảng hở khí."
+    },
+    {
+      "id": 26,
+      "module": 7,
+      "title": "Nước tráng, rửa song song, bồn và đường kính",
+      "lead": "Bốn quy tắc ngắn quyết định phần lớn kết quả trong mạch.",
+      "cards": [
+        {
+          "title": "Bảo vệ nước sạch",
+          "text": "Đầu cấp nước sạch phải luôn được tách khỏi dung dịch CIP. Van một đế không có block & bleed có thể làm hóa chất lẫn vào nước tráng."
+        },
+        {
+          "title": "Tránh rửa song song",
+          "text": "Chia dòng cho nhiều nhánh cùng lúc gây lưu lượng mất cân bằng. Nếu buộc chia dòng, cần van điều chỉnh và đo lưu lượng cho từng nhánh."
+        },
+        {
+          "title": "Bồn và ống",
+          "text": "Mỗi bồn là một đối tượng riêng; không rửa bồn nối tiếp nhau và không gộp rửa bồn với rửa đường ống. Giữ đường kính ống không đổi khi có thể."
+        }
+      ],
+      "example": "Một lượt CIP rửa đồng thời hai nhánh ống: nhánh ngắn, ít cút nhận gần hết lưu lượng; nhánh dài gần như chỉ được thấm ướt. Đồng hồ tổng lưu lượng vẫn báo đạt.",
+      "takeaway": "Vận tốc trung bình thấp nhất của mạch nằm ở đoạn có đường kính lớn nhất; hãy tính cho đoạn đó.",
+      "source": "§8.1.2–8.1.5, tr. 55; Hình 30",
+      "narration": "Nước luôn chọn đường dễ đi. Hãy nhớ câu này khi nhìn một mạch CIP có chia nhánh. Giả sử một lượt rửa đi qua hai nhánh song song. Nhánh ngắn, ít khúc cua, nhận gần hết lưu lượng. Nhánh dài gần như chỉ được thấm ướt. Trong khi đó, đồng hồ tổng vẫn báo đạt. Vì vậy tài liệu khuyên tránh rửa song song. Nếu buộc phải chia dòng, mỗi nhánh cần van điều chỉnh và đo lưu lượng riêng. Thêm ba quy tắc ngắn nữa. Nước sạch phải luôn được bảo vệ khỏi hóa chất chảy ngược. Mỗi bồn là một đối tượng riêng, không rửa nối tiếp bồn này sang bồn kia. Và giữ đường kính ống đồng đều, vì vận tốc thấp nhất luôn nằm ở đoạn ống to nhất.",
+      "visual": "",
+      "trainer": "Bài tập: tìm trên sơ đồ một điểm chia dòng. Lưu lượng từng nhánh có được đo không?"
+    },
+    {
+      "id": 27,
+      "module": 7,
+      "title": "Nhánh T, vật liệu và khả năng thoát",
+      "lead": "Nơi dung dịch không chảy qua hoặc không thoát hết là nơi vấn đề bắt đầu.",
+      "cards": [
+        {
+          "title": "Nhánh T",
+          "text": "Nên tránh. Nếu không tránh được: càng ngắn càng tốt, chiều dài nhánh nhỏ hơn đường kính của nó, lắp đúng hướng và phải chứng minh được khả năng làm sạch."
+        },
+        {
+          "title": "Vật liệu",
+          "text": "Thép không gỉ 316L hoặc tốt hơn được ưu tiên, nhất là trong môi trường axit. Mọi vật liệu đàn hồi phải được kiểm tra tương thích với hóa chất sử dụng."
+        },
+        {
+          "title": "Thoát hết",
+          "text": "Ưu tiên tự thoát hoặc thoát được. Đường ống dốc tối thiểu 3%, có cửa xả tại điểm thấp nhất và đủ giá đỡ để ống không võng."
+        }
+      ],
+      "example": "Một nhánh cảm biến dài 150 mm trên ống 50 mm (l/d = 3): dung dịch chỉ xoáy ở miệng nhánh. Kết quả kiểm tra ở đáy nhánh không đạt lặp lại cho tới khi nhánh được rút ngắn.",
+      "takeaway": "Thoát tốt giúp tránh pha loãng dung dịch, tồn dư hóa chất và vi sinh phát triển trong thời gian không sản xuất.",
+      "source": "§8.1.6–8.1.8, tr. 55–56; Hình 31",
+      "narration": "Hãy nghĩ tới một con hẻm cụt bên cạnh đường lớn. Xe quét đường chạy qua, nhưng không bao giờ rẽ vào hẻm. Nhánh chữ T trong đường ống chính là con hẻm đó. Ví dụ, một nhánh lắp cảm biến dài một trăm năm mươi mi li mét trên ống năm mươi mi li mét. Dung dịch chỉ xoáy ở miệng nhánh. Đáy nhánh không bao giờ sạch. Tài liệu khuyên tránh hẳn nhánh chữ T. Nếu không tránh được, chiều dài nhánh phải nhỏ hơn đường kính của nó, và phải chứng minh được là làm sạch được. Điều thứ hai là thoát nước. Đường ống cần dốc ít nhất ba phần trăm và có điểm xả ở chỗ thấp nhất. Nước đọng lại qua cuối tuần là môi trường lý tưởng cho vi sinh. Bạn hãy thử công cụ kiểm tra trên màn hình.",
+      "visual": "tee",
+      "trainer": "Cho học viên đo một nhánh cảm biến hoặc nhánh lấy mẫu thực tế và nhập vào công cụ kiểm tra."
+    },
+    {
+      "id": 28,
+      "module": 7,
+      "title": "Đường phân phối, đường hồi và chọn van",
+      "lead": "Trong mạch CIP, dung dịch và sản phẩm không thể trộn lẫn là yêu cầu của thiết kế.",
+      "cards": [
+        {
+          "title": "Phân phối",
+          "text": "Dùng cụm van tự động (block & bleed hoặc mixproof) hay bảng đổi dòng thủ công có cảm biến tiệm cận báo đúng vị trí trước khi bắt đầu."
+        },
+        {
+          "title": "Đường hồi",
+          "text": "Mạch có bồn hở thường cần bơm hồi, chọn theo tổn thất áp đã tính. Nếu dùng van mixproof có nâng đế, đường hồi cần đối áp 1–2 bar."
+        },
+        {
+          "title": "Nguyên tắc chọn van",
+          "text": "Ở mọi điểm tiếp giáp sản phẩm – dung dịch, ưu tiên block & bleed: luôn có một cửa mở để dẫn rò rỉ ra ngoài nếu gioăng không kín."
+        }
+      ],
+      "example": "Bồn A đang chứa sản phẩm, bồn B bên cạnh đang CIP, hai bồn chung một cụm van. Với block & bleed, nếu một gioăng rò thì kiềm chảy ra cửa xả — nơi nhìn thấy được — chứ không sang bồn A.",
+      "takeaway": "Phải tránh nhánh cụt trong hệ phân phối, cả phía áp lực lẫn phía hồi.",
+      "source": "§8.2, tr. 56–60; Hình 32–37",
+      "narration": "Bồn A đang chứa đầy sản phẩm. Bồn B ngay bên cạnh đang được rửa bằng kiềm nóng. Hai bồn dùng chung một cụm van. Điều gì bảo vệ sản phẩm trong bồn A? Câu trả lời là nguyên lý chặn kép có xả giữa. Giữa sản phẩm và hóa chất luôn có hai lớp chặn, và ở giữa là một cửa mở ra ngoài. Nếu một gioăng bị rò, kiềm sẽ chảy ra cửa xả, nơi người vận hành nhìn thấy, chứ không chảy sang bồn A. Van hai đế chống trộn lẫn tích hợp sẵn nguyên lý này. Với bảng đổi dòng thủ công, cảm biến vị trí xác nhận cút nối đã đúng chỗ trước khi cho phép chạy. Còn với bồn hở, đường hồi thường cần bơm hồi để đưa dung dịch quay về trạm.",
+      "visual": "",
+      "trainer": "Yêu cầu học viên liên hệ với một trạm CIP, mạch hoặc đối tượng thực tế. Phân biệt nguyên tắc trong tài liệu với thông số đã được thẩm định và phê duyệt tại cơ sở."
+    },
+    {
+      "id": 29,
+      "module": 8,
+      "title": "Thẩm định hệ thống CIP",
+      "lead": "Thẩm định trạm và mạch trước; thẩm định kết quả làm sạch trên đối tượng là bước tiếp theo.",
+      "cards": [
+        {
+          "title": "Hồ sơ tiên quyết",
+          "text": "Sơ đồ P&ID hoàn công; URS; mô tả điều khiển hoặc đặc tả chức năng; đánh giá rủi ro; đặc tả thiết kế và thiết bị."
+        },
+        {
+          "title": "DQ và IQ",
+          "text": "DQ: thiết kế đáp ứng URS, tiêu chí thiết kế vệ sinh và quy định. IQ: kiểm tra thực địa hệ thống đúng với P&ID, tìm nhánh cụt và điều kiện không vệ sinh."
+        },
+        {
+          "title": "FQ và PQ",
+          "text": "FQ (còn gọi OQ): thử trình tự, chạy bằng nước trước, rồi mới đưa kiềm và axit. PQ: kiểm tra và lập hồ sơ rằng URS được đáp ứng."
+        }
+      ],
+      "example": "Chạy thử lần đầu bằng nước: một khớp nối trên đường cấp phun thành tia. Nếu lần chạy đầu là kiềm nóng 80 °C, đó đã là một tai nạn lao động.",
+      "takeaway": "Các mạch có thiết kế, điều kiện vận hành và quy trình tương tự có thể được nhóm lại, kèm lý do bằng văn bản.",
+      "source": "§9–9.1, tr. 60–64; Hình 38–39",
+      "narration": "Thẩm định giống như kỳ sát hạch lái xe, nhưng dành cho hệ thống CIP. Nó có bốn chặng. Chặng một, đánh giá thiết kế. Bản vẽ có đáp ứng yêu cầu người dùng không? Chặng hai, đánh giá lắp đặt. Hệ thống ngoài hiện trường có đúng bản vẽ không? Có nhánh cụt nào không? Chặng ba, đánh giá chức năng. Từng bơm, từng van, từng trình tự có chạy đúng không? Ở chặng này có một quy tắc vàng. Lần chạy đầu tiên luôn dùng nước. Nếu một khớp nối bị hở, nó chỉ phun nước, không phun kiềm nóng tám mươi độ. Chặng bốn, đánh giá hiệu năng. Hệ thống có đáp ứng toàn bộ yêu cầu ban đầu không? Bây giờ, mời bạn sắp xếp các bước trên màn hình theo đúng thứ tự.",
+      "visual": "sequence",
+      "trainer": "Yêu cầu học viên liên hệ với một trạm CIP, mạch hoặc đối tượng thực tế. Phân biệt nguyên tắc trong tài liệu với thông số đã được thẩm định và phê duyệt tại cơ sở."
+    },
+    {
+      "id": 30,
+      "module": 8,
+      "title": "Thẩm định làm sạch trên đối tượng",
+      "lead": "Tiêu chí chấp nhận phải được thiết lập trước, gắn với yêu cầu sản phẩm và mục tiêu làm sạch.",
+      "cards": [
+        {
+          "title": "Trường hợp xấu nhất",
+          "text": "Luôn thẩm định ở tình huống xấu nhất: điểm khó làm sạch nhất và sản phẩm khó làm sạch nhất. Lập danh sách trước khi bắt đầu."
+        },
+        {
+          "title": "Ít nhất ba chu trình",
+          "text": "Cần ít nhất ba chu trình làm sạch thành công, đạt tiêu chí chấp nhận đã thống nhất."
+        },
+        {
+          "title": "Ba mức sạch",
+          "text": "Vật lý: không thấy bẩn hoặc màng. Hóa học: không còn tồn dư chất bẩn vi lượng và hóa chất. Vi sinh: đạt giới hạn đã định."
+        }
+      ],
+      "example": "Chọn “xấu nhất” cho dây chuyền sữa: sản phẩm nhiều đạm và béo nhất; lượt sản xuất dài nhất; điểm kiểm tra là gioăng van đáy bồn và phía sau cánh khuấy. Ba lượt đạt liên tiếp mới ký báo cáo.",
+      "takeaway": "Định nghĩa “sạch” phụ thuộc vào độ nhạy của phương pháp; phương pháp thử cũng phải được xác nhận giá trị sử dụng.",
+      "source": "§9.2, tr. 64–65",
+      "narration": "Một lần đạt chưa nói lên điều gì. Có thể hôm đó sản phẩm dễ rửa. Có thể lượt sản xuất ngắn. Vì vậy thẩm định làm sạch luôn chọn tình huống xấu nhất. Ví dụ, với một dây chuyền sữa. Chọn sản phẩm nhiều đạm và béo nhất. Chọn lượt sản xuất dài nhất. Và kiểm tra ở những điểm khó nhất, như gioăng van đáy bồn hay phía sau cánh khuấy. Phải có ít nhất ba chu trình đạt. Còn sạch nghĩa là gì? Có ba mức. Sạch vật lý là không nhìn thấy, không sờ thấy bẩn. Sạch hóa học là không còn tồn dư sản phẩm và hóa chất. Sạch vi sinh là đạt giới hạn đã đặt ra. Tiêu chí chấp nhận phải được viết ra trước khi bắt đầu, không phải sau khi có kết quả.",
+      "visual": "",
+      "trainer": "Hỏi học viên: sản phẩm nào và điểm nào là “xấu nhất” trên dây chuyền của họ? Căn cứ là gì?"
+    },
+    {
+      "id": 31,
+      "module": 8,
+      "title": "Giám sát, thẩm tra và tái thẩm định",
+      "lead": "Sau thẩm định, trạng thái đã thẩm định phải được duy trì bằng dữ liệu.",
+      "cards": [
+        {
+          "title": "Giám sát",
+          "text": "Đo các thông số đã chọn trong mỗi chu trình CIP, so với giới hạn xác lập khi thẩm định. Giám sát trực tuyến cho mức tin cậy cao nhất."
+        },
+        {
+          "title": "Thẩm tra",
+          "text": "Làm thêm ngoài giám sát: kiểm tra bằng mắt định kỳ và phép thử khách quan như vi sinh bề mặt, ATP, chất gây dị ứng; ít nhất mỗi năm một lần."
+        },
+        {
+          "title": "Tái thẩm định",
+          "text": "Khi có thay đổi đáng kể về điều kiện chế biến, quy trình, công thức, thiết bị hoặc hóa chất; quản lý qua chương trình kiểm soát thay đổi."
+        }
+      ],
+      "example": "Bồn kiềm để hở nắp nhiều tuần: chuẩn độ cho thấy một phần kiềm đã thành cacbonat, trong khi độ dẫn điện gần như không đổi. Chỉ biểu đồ xu hướng chuẩn độ mới cho thấy điều đó.",
+      "takeaway": "Độ dẫn điện không phát hiện được kiềm đã chuyển thành cacbonat; cần chuẩn độ song song hydroxit và cacbonat.",
+      "source": "§10.1–10.3, tr. 66–67",
+      "narration": "Thẩm định xong chưa phải là hết. Giống như sau khi có bằng lái, bạn vẫn phải nhìn đồng hồ mỗi ngày và kiểm định xe định kỳ. Nhìn đồng hồ mỗi ngày chính là giám sát. Trong từng chu trình, hệ thống đo nhiệt độ, lưu lượng và độ dẫn điện. Kiểm định định kỳ chính là thẩm tra. Ít nhất mỗi năm một lần, kiểm tra thêm bằng mắt, bằng mẫu quệt bề mặt hoặc phép thử nhanh. Có một cái bẫy cần nhớ. Dung dịch kiềm hấp thụ khí cacbonic trong không khí và biến dần thành cacbonat. Khả năng làm sạch giảm, nhưng độ dẫn điện không cho thấy điều đó. Chỉ chuẩn độ mới phát hiện được. Cuối cùng, khi có thay đổi lớn về sản phẩm, thiết bị hay hóa chất, phải thẩm định lại.",
+      "visual": "",
+      "trainer": "Thảo luận: kết quả chuẩn độ và giá trị độ dẫn điện tại cơ sở có được so sánh định kỳ không? Xu hướng có được xem xét không?"
+    },
+    {
+      "id": 32,
+      "module": 8,
+      "title": "Kiểm tra định kỳ: tĩnh và vận hành",
+      "lead": "Kiểm tra tĩnh làm sau khi làm sạch theo kế hoạch; kiểm tra vận hành làm định kỳ hoặc khi tình huống yêu cầu.",
+      "cards": [
+        {
+          "title": "Bồn và mạch",
+          "text": "Dung dịch: độ trong, nồng độ, bọt, dấu hiệu màng sinh học. Bên trong bồn: vòm, cánh khuấy, gioăng, đầu phun. Tìm vết hóa chất khô trên ống, van, bơm và sàn; tháo kiểm tra lọc thô."
+        },
+        {
+          "title": "Định lượng và kho hóa chất",
+          "text": "Lượng hóa chất sử dụng, tình trạng thiết bị định lượng; nhãn và bao bì; vòi tắm khẩn cấp và bồn rửa mắt hoạt động; khay chứa tràn."
+        },
+        {
+          "title": "Kiểm tra vận hành",
+          "text": "So trình tự thực tế với chương trình; thời gian, nhiệt độ, lưu lượng, độ dẫn điện; chuẩn độ và so với giá trị đo tự động; chức năng thiết bị phun, van thông hơi."
+        }
+      ],
+      "example": "Đi tuần 15 phút mỗi tháng: tìm vệt trắng khô quanh khớp nối và trên sàn (dấu kiềm rò), mở van đáy bồn xem cặn, tháo lọc thô, thử vòi tắm khẩn cấp.",
+      "takeaway": "Dựa trên kết quả phân tích, dung dịch được dùng tiếp, tái sinh hoặc thải bỏ.",
+      "source": "§10.4, tr. 67–69",
+      "narration": "Chúng ta kết thúc khóa học bằng một thói quen đơn giản. Mười lăm phút đi tuần mỗi tháng. Hãy tìm những vệt trắng khô quanh khớp nối và trên sàn. Đó là dấu vết kiềm đã rò rồi khô lại. Mở van đáy bồn để xem có cặn không. Nhìn vào bên trong bồn, kiểm tra vòm bồn, cánh khuấy và đầu phun. Tháo lọc thô ra xem. Thử vòi tắm khẩn cấp và bồn rửa mắt. Đó là kiểm tra tĩnh. Còn kiểm tra vận hành thì so sánh trình tự thực tế với chương trình, và so kết quả chuẩn độ với số đo của cảm biến. Hãy dùng phiếu trên màn hình làm điểm bắt đầu, rồi điều chỉnh theo quy trình của nhà máy. Cảm ơn bạn đã theo dõi. Chúc bạn hoàn thành tốt bài đánh giá cuối khóa.",
+      "visual": "checklist",
+      "trainer": "Yêu cầu học viên liên hệ với một trạm CIP, mạch hoặc đối tượng thực tế. Phân biệt nguyên tắc trong tài liệu với thông số đã được thẩm định và phê duyệt tại cơ sở."
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "module": 1,
+      "slide": 2,
+      "q": "Nội dung nào thuộc phạm vi chính của Doc. 50?",
+      "options": [
+        "Thiết kế, thẩm định và quản lý trạm CIP cùng các mạch CIP",
+        "Thiết kế kỹ thuật chi tiết cho tiệt trùng tại chỗ (SIP)",
+        "Quy trình làm sạch riêng cho thiết bị cô đặc và màng"
+      ],
+      "answer": 0,
+      "why": "§1, tr. 6–7: tài liệu hướng dẫn về hệ thống CIP; SIP, làm khô, thu hồi sản phẩm và quy trình cho thiết bị đặc thù không được mô tả."
+    },
+    {
+      "id": 2,
+      "module": 1,
+      "slide": 3,
+      "q": "“Tự thoát” (self-draining) khác “thoát được” (drainable) ở điểm nào?",
+      "options": [
+        "Tự thoát cần thổi khí nén",
+        "Tự thoát chỉ nhờ trọng lực; thoát được có thể cần biện pháp hỗ trợ",
+        "Hai thuật ngữ đồng nghĩa"
+      ],
+      "answer": 1,
+      "why": "§3, tr. 7: self-draining là loại chất lỏng chỉ nhờ trọng lực; drainable là nhờ một biện pháp hỗ trợ như thổi khí."
+    },
+    {
+      "id": 3,
+      "module": 1,
+      "slide": 4,
+      "q": "Mạch làm sạch (CIP loop) gồm những gì?",
+      "options": [
+        "Chỉ các bồn hóa chất của trạm",
+        "Chỉ đối tượng cần làm sạch",
+        "Đường cấp, đường phân phối, đối tượng và đường hồi"
+      ],
+      "answer": 2,
+      "why": "§7.2, tr. 21: mạch là toàn bộ lộ trình làm sạch một đối tượng, gồm đường phân phối, đường cấp, đối tượng và đường hồi."
+    },
+    {
+      "id": 4,
+      "module": 2,
+      "slide": 5,
+      "q": "Vận tốc trung bình nào thường được coi là ngưỡng tối thiểu khi CIP đường ống?",
+      "options": [
+        "0,5 m/s",
+        "1,5 m/s",
+        "4 m/s"
+      ],
+      "answer": 1,
+      "why": "§6.1, tr. 10: 1,5 m/s được coi là ngưỡng tối thiểu; chất bẩn khó có thể cần 2 m/s hoặc cao hơn."
+    },
+    {
+      "id": 5,
+      "module": 2,
+      "slide": 8,
+      "q": "Khi nào thời gian tuần hoàn của bước rửa được tính?",
+      "options": [
+        "Khi nhiệt độ, lưu lượng và nồng độ đều đạt điểm đặt",
+        "Ngay khi bơm cấp khởi động",
+        "Khi bồn hóa chất đạt nhiệt độ"
+      ],
+      "answer": 0,
+      "why": "§6.2, tr. 13: bộ đếm chỉ chạy khi mọi thông số nhiệt độ, lưu lượng, nồng độ ở điểm đặt."
+    },
+    {
+      "id": 6,
+      "module": 2,
+      "slide": 7,
+      "q": "Vì sao nhiệt độ nước tráng sơ bộ không nên quá cao?",
+      "options": [
+        "Vì làm hỏng cảm biến lưu lượng",
+        "Vì nước nóng luôn làm tăng độ dẫn điện",
+        "Vì có thể làm biến tính chất bẩn protein"
+      ],
+      "answer": 2,
+      "why": "§6.2, tr. 12: không quá cao để tránh biến tính protein, không quá thấp để làm chảy chất béo."
+    },
+    {
+      "id": 7,
+      "module": 3,
+      "slide": 10,
+      "q": "Cách pha loãng hóa chất đậm đặc nào đúng?",
+      "options": [
+        "Đổ nước vào hóa chất đậm đặc",
+        "Cho hóa chất đậm đặc vào nước",
+        "Trộn kiềm và axit đậm đặc để trung hòa trước"
+      ],
+      "answer": 1,
+      "why": "§6.3, tr. 16: cấm đổ nước vào hóa chất đậm đặc và cấm trộn hóa chất đậm đặc; chỉ cho hóa chất vào nước."
+    },
+    {
+      "id": 8,
+      "module": 3,
+      "slide": 11,
+      "q": "Vì sao chỉ lấy mẫu nước tráng là chưa đủ để kết luận bề mặt sạch?",
+      "options": [
+        "Vì nước tráng luôn có độ dẫn điện bằng không",
+        "Vì nước tráng không lấy mẫu được",
+        "Vì nó không cho thấy chất bẩn chưa được làm ướt hoặc bám quá chặt"
+      ],
+      "answer": 2,
+      "why": "§6.4, tr. 17: nước tráng không phát hiện chất bẩn không được dung dịch làm ướt hoặc bám chặt đến mức nước không cuốn đi."
+    },
+    {
+      "id": 9,
+      "module": 3,
+      "slide": 12,
+      "q": "Mục nào là một đầu vào của URS cho hệ thống CIP?",
+      "options": [
+        "Khả năng của hệ thống xử lý nước thải với tải lượng từ CIP",
+        "Màu sơn khung trạm",
+        "Tên thương mại của bơm"
+      ],
+      "answer": 0,
+      "why": "§7.1, tr. 19: URS gồm cả khả năng xử lý nước thải và tác động môi trường của nước xả CIP."
+    },
+    {
+      "id": 10,
+      "module": 4,
+      "slide": 13,
+      "q": "Mô hình CIP một lần qua (single pass) phù hợp nhất khi nào?",
+      "options": [
+        "Khi cần giảm thiểu rủi ro nhiễm chéo, ví dụ có chất gây dị ứng",
+        "Khi cần chi phí vận hành thấp nhất",
+        "Khi làm sạch rất thường xuyên với thể tích lớn"
+      ],
+      "answer": 0,
+      "why": "§7.3.1, tr. 23: dùng khi yêu cầu rủi ro nhiễm chéo tối thiểu; chi phí vận hành cao."
+    },
+    {
+      "id": 11,
+      "module": 4,
+      "slide": 14,
+      "q": "Điểm bất lợi của trạm thu hồi nhiều bồn là gì?",
+      "options": [
+        "Luôn tiêu thụ nhiều hóa chất hơn",
+        "Tăng rủi ro nhiễm chéo và cần giám sát tích tụ chất bẩn",
+        "Không dùng được trong ngành sữa"
+      ],
+      "answer": 1,
+      "why": "§7.3.4, tr. 26: giảm hóa chất và tải nước thải nhưng tăng rủi ro nhiễm chéo; cần theo dõi chặt."
+    },
+    {
+      "id": 12,
+      "module": 4,
+      "slide": 16,
+      "q": "Vì sao nên tách CIP của thiết bị xử lý sản phẩm sống khỏi thiết bị sau xử lý nhiệt?",
+      "options": [
+        "Để dùng ít bồn hơn",
+        "Vì hai phía luôn cần hóa chất khác nhau",
+        "Để dung dịch dùng chung không mang vi khuẩn, bào tử sang phía đã xử lý"
+      ],
+      "answer": 2,
+      "why": "§7.5, tr. 29: tránh nhiễm bề mặt phía đã chế biến bởi vi khuẩn và bào tử sống sót từ phía nguyên liệu."
+    },
+    {
+      "id": 13,
+      "module": 5,
+      "slide": 18,
+      "q": "Yêu cầu nào đúng với bơm hồi CIP?",
+      "options": [
+        "Lưu lượng nhỏ hơn bơm cấp để tiết kiệm điện",
+        "Xử lý được khí; tham khảo lưu lượng bơm cấp lớn nhất + 30%",
+        "Đặt càng xa đối tượng càng tốt"
+      ],
+      "answer": 1,
+      "why": "§7.7.2, tr. 35: bơm hồi phải xử lý được khí, khuyến nghị tự mồi, đặt gần đối tượng; lưu lượng bơm cấp + 30%."
+    },
+    {
+      "id": 14,
+      "module": 5,
+      "slide": 20,
+      "q": "Theo Bảng 6, thông số nào cần đo trên đường hồi khi dung dịch phát hiện được?",
+      "options": [
+        "Độ dẫn điện",
+        "Mức bồn",
+        "Tốc độ quay của bơm"
+      ],
+      "answer": 0,
+      "why": "§7.7.6 và Bảng 6, tr. 41–43: đường hồi cần phát hiện dòng chảy, đo nhiệt độ và độ dẫn điện."
+    },
+    {
+      "id": 15,
+      "module": 5,
+      "slide": 19,
+      "q": "Vì sao không dùng một van bướm đơn để tách mạch CIP khỏi đường sản phẩm?",
+      "options": [
+        "Vì van bướm không đóng được",
+        "Vì van bướm chỉ dùng cho khí nén",
+        "Vì một lớp kín không bảo vệ khi rò rỉ"
+      ],
+      "answer": 2,
+      "why": "§7.7.4, tr. 39: van một lớp kín không có bảo vệ rò; cần mixproof hoặc cấu hình block & bleed."
+    },
+    {
+      "id": 16,
+      "module": 6,
+      "slide": 22,
+      "q": "Tiêu chí tham khảo nào dùng để thải bỏ dung dịch kiềm thu hồi?",
+      "options": [
+        "Sau 30 chu trình hoặc khi cacbonat đạt 4–5%",
+        "Chỉ khi bồn cạn",
+        "Sau mỗi 500 chu trình"
+      ],
+      "answer": 0,
+      "why": "§7.8.2, tr. 47: kiềm – 30 chu trình, cacbonat 4–5%, COD > 3000 mg/L, độ đục cao hoặc nhìn thấy bẩn."
+    },
+    {
+      "id": 17,
+      "module": 6,
+      "slide": 24,
+      "q": "Khi nhiệt độ lệch khỏi khoảng yêu cầu trong bước rửa, bộ đếm thời gian nên làm gì?",
+      "options": [
+        "Tiếp tục đếm để kịp lịch sản xuất",
+        "Dừng, và có thể tự chạy lại khi điều kiện trở về khoảng chấp nhận",
+        "Tự chuyển sang bước tráng cuối"
+      ],
+      "answer": 1,
+      "why": "§7.14, tr. 52: bộ đếm dừng khi nhiệt độ hoặc nồng độ lệch; không cho phép chu trình bị rút ngắn."
+    },
+    {
+      "id": 18,
+      "module": 6,
+      "slide": 23,
+      "q": "Bồn thu hồi của trạm CIP nên được làm sạch khi nào?",
+      "options": [
+        "Chỉ khi có khiếu nại khách hàng",
+        "Mỗi năm một lần là đủ",
+        "Mỗi lần thải dung dịch hoặc ít nhất ba tháng một lần"
+      ],
+      "answer": 2,
+      "why": "§7.8.3, tr. 47: làm sạch mỗi lần thải dung dịch hoặc ít nhất ba tháng một lần."
+    },
+    {
+      "id": 19,
+      "module": 7,
+      "slide": 25,
+      "q": "Ống xả của CIP nên nối với hệ thoát nước như thế nào?",
+      "options": [
+        "Hàn cứng vào ống cống để tránh bắn tóe",
+        "Qua khoảng hở khí tối thiểu 1–2 lần đường kính ống xả",
+        "Nối qua một van bướm thường đóng"
+      ],
+      "answer": 1,
+      "why": "§8.1.1, tr. 53: không nối cố định với cống; khoảng hở khí tối thiểu 1–2 lần đường kính ống xả."
+    },
+    {
+      "id": 20,
+      "module": 7,
+      "slide": 27,
+      "q": "Nếu không tránh được nhánh T, yêu cầu nào đúng?",
+      "options": [
+        "Chiều dài nhánh nhỏ hơn đường kính của nó và chứng minh được khả năng làm sạch",
+        "Nhánh càng dài càng dễ làm sạch",
+        "Chỉ cần tăng nồng độ hóa chất"
+      ],
+      "answer": 0,
+      "why": "§8.1.7, tr. 56: nhánh càng ngắn càng tốt, chiều dài nhỏ hơn đường kính, và phải chứng minh khả năng làm sạch."
+    },
+    {
+      "id": 21,
+      "module": 7,
+      "slide": 26,
+      "q": "Vì sao nên tránh rửa song song nhiều nhánh?",
+      "options": [
+        "Vì luôn tốn nhiều hóa chất hơn",
+        "Vì cảm biến nhiệt độ không hoạt động",
+        "Vì trở lực khác nhau làm lưu lượng mất cân bằng, điều kiện CIP không kiểm soát"
+      ],
+      "answer": 2,
+      "why": "§8.1.3, tr. 55: chia dòng gây tổn thất áp khác nhau và lưu lượng mất cân bằng; nếu buộc chia cần van điều chỉnh và đo lưu lượng."
+    },
+    {
+      "id": 22,
+      "module": 8,
+      "slide": 29,
+      "q": "Khi bắt đầu FQ cho một hệ thống mới, nên chạy thử bằng gì trước?",
+      "options": [
+        "Kiềm nóng ở nồng độ làm việc",
+        "Nước, để phát hiện rò rỉ an toàn",
+        "Axit ở nhiệt độ môi trường"
+      ],
+      "answer": 1,
+      "why": "§9.1.3, tr. 63: khởi động hệ thống mới bằng nước trước; khi đã an toàn mới đưa kiềm và axit."
+    },
+    {
+      "id": 23,
+      "module": 8,
+      "slide": 30,
+      "q": "Thẩm định làm sạch đối tượng cần tối thiểu bao nhiêu chu trình thành công?",
+      "options": [
+        "Một",
+        "Hai",
+        "Ba"
+      ],
+      "answer": 2,
+      "why": "§9.2, tr. 64: ít nhất ba chu trình làm sạch thành công đạt tiêu chí chấp nhận, ở tình huống xấu nhất."
+    },
+    {
+      "id": 24,
+      "module": 8,
+      "slide": 31,
+      "q": "Vì sao cần chuẩn độ dung dịch kiềm ngoài việc đo độ dẫn điện?",
+      "options": [
+        "Vì độ dẫn điện không phát hiện kiềm đã chuyển thành cacbonat",
+        "Vì cảm biến độ dẫn điện không dùng được trên đường hồi",
+        "Vì chuẩn độ nhanh hơn đo trực tuyến"
+      ],
+      "answer": 0,
+      "why": "§10.2.2, tr. 67: sự chuyển hóa thành cacbonat làm giảm độ kiềm nhưng không phát hiện được bằng độ dẫn điện."
+    }
+  ]
+}</script>
+<script>
+'use strict';
+const C=JSON.parse(document.getElementById('course-data').textContent),KEY=C.id, $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fold=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[đĐ]/g,'d').toLowerCase();
+function fresh(){return {seen:[],completed:[],practice:{},lastSlide:1,attempts:[],exam:null,checklist:[],scenario:[],created:new Date().toISOString()}}
+let db={active:'',profiles:{},theme:'light'},storageOK=true;try{const d=JSON.parse(localStorage.getItem(KEY)||'null');if(d&&d.profiles&&typeof d.profiles==='object')db=d;}catch(e){storageOK=false}
+let guest={info:{id:'',name:'',dept:''},state:fresh()},mode='learner',route={type:'home'},sequence=['PQ','URS','Giám sát & thẩm tra','IQ','Thẩm định làm sạch đối tượng','DQ','FQ (OQ)'],seqResult='',trainerPractice={},scenarioStep=0,scenarioWrong='',pending=null,navDir='';
+const profile=()=>db.profiles[db.active]||guest, state=()=>profile().state;
+function validateState(){const s=state();for(const k of ['seen','completed','attempts','checklist','scenario'])if(!Array.isArray(s[k]))s[k]=[];if(!s.practice||typeof s.practice!=='object')s.practice={};if(!C.slides.some(x=>x.id===s.lastSlide))s.lastSlide=1;s.seen=s.seen.filter(n=>C.slides.some(x=>x.id===n));s.completed=s.completed.filter(n=>C.modules.some(x=>x.id===n));if(s.exam&&(!Array.isArray(s.exam.ids)||s.exam.ids.some(id=>!C.questions.some(q=>q.id===id))||!s.exam.answers))s.exam=null;}
+if(!db.active||!db.profiles[db.active]){db.profiles['person:OPEN']=db.profiles['person:OPEN']||{info:{id:'open',name:'',dept:''},state:fresh()};db.active='person:OPEN'}
+validateState();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db));storageOK=true;}catch(e){storageOK=false}storageStatus()}
+function storageStatus(){const a=$('#storage-alert');a.hidden=storageOK;a.textContent='Trình duyệt không lưu được dữ liệu. Giữ trang mở và xuất kết quả trước khi đóng; thử mở bằng trình duyệt cho phép lưu trữ.'}
+function notify(t){$('#toast').textContent=t;$('#toast').hidden=false;clearTimeout(notify.timer);notify.timer=setTimeout(()=>$('#toast').hidden=true,5000)}
+function go(type,id){speech.stop();navDir=type==='slide'&&route.type==='slide'&&id<route.id?'enter-prev':'enter-next';route={type,id};if(type==='slide'&&mode==='learner'){const s=state();s.lastSlide=id;if(!s.seen.includes(id)){s.seen.push(id)}if(db.active)save();}render();$('#sidebar').classList.remove('open');$('#menu').setAttribute('aria-expanded','false');window.scrollTo({top:0,behavior:'instant'});$('#main').focus({preventScroll:true});}
+function source(s){return `<p class="source">Nguồn: EHEDG Doc. 50 (07/2019), ${esc(s.source)}.</p>`}
+function moduleSlides(m){return C.slides.filter(s=>s.module===m)}
+function practiceQuestions(m){return C.questions.filter(q=>q.module===m).slice(0,2)}
+function countPractice(m){const p=mode==='trainer'?trainerPractice:state().practice;return practiceQuestions(m).filter(q=>p[q.id]===q.answer).length}
+function canComplete(m){return moduleSlides(m).every(s=>state().seen.includes(s.id))&&countPractice(m)===practiceQuestions(m).length}
+function ready(){return C.modules.every(m=>state().completed.includes(m.id))}
+const needed=()=>Math.ceil(C.modules.length*C.examPerModule*C.passPercent/100);
+function nav(){const st=state(),m=route.type==='slide'?C.slides.find(s=>s.id===route.id)?.module:route.type==='practice'?route.id:0;$('#sidebar').innerHTML=`<div class="brand"><span class="brand-icon">↻</span><div>CIP ACADEMY<small>HYGIENIC DESIGN</small></div></div><div><div class="sidebar-label">HỆ THỐNG CIP NHÀ MÁY THỰC PHẨM</div><button class="sidebar-button ${route.type==='home'?'active':''}" data-go="home">⌂ &nbsp; Tổng quan khóa học</button></div><nav aria-label="Các bài học"><div class="sidebar-label">LỘ TRÌNH HỌC</div>${C.modules.map(x=>`<button class="sidebar-button ${m===x.id?'active':''} ${st.completed.includes(x.id)?'done':''}" data-m="${x.id}" data-slide="${moduleSlides(x.id)[0].id}"><span class="num">${st.completed.includes(x.id)?'✓':String(x.id).padStart(2,'0')}</span>${esc(x.title)}</button>`).join('')}</nav><div><button class="sidebar-button ${route.type==='exam'?'active':''}" data-go="exam">◎ &nbsp; Đánh giá cuối khóa</button><button class="sidebar-button ${route.type==='results'?'active':''}" data-go="results">▤ &nbsp; Kết quả & xác nhận</button><button class="sidebar-button ${route.type==='resources'?'active':''}" data-go="resources">↗ &nbsp; Tài liệu & công cụ</button></div><div class="side-footer"><strong>${esc(profile().info.name||'Học tự do · không cần đăng nhập')}</strong><div class="progress"><i style="width:${st.completed.length/C.modules.length*100}%"></i></div><span>${st.completed.length}/${C.modules.length} bài hoàn thành · ${st.seen.length}/${C.slides.length} màn hình đã xem</span><p style="margin:14px 0 0;font-size:10px">Biên soạn từ EHEDG Doc. 50, 2019<br>Đào tạo nội bộ · Phiên bản ${C.version}</p><p class="copyright">© 2026 Đặng Thanh Bình</p></div>`}
+function home(){const s=state();return `<section class="hero"><div><div class="eyebrow">EHEDG DOC. 50 / HỌC ĐỂ ÁP DỤNG</div><h1>Làm sạch tại chỗ.<br>Đúng từ<br>thiết kế.</h1><p>Hiểu đường đi của dung dịch. Nhận diện nhánh chết và điểm rò. Thiết kế, vận hành và thẩm định hệ thống CIP nhà máy thực phẩm.</p><div class="row"><button class="primary" data-start>▶ ${db.active&&s.seen.length?'Tiếp tục trình chiếu':'Bắt đầu tự trình chiếu'}</button><button class="ghost" data-manual>Tự xem thủ công</button><button class="ghost" data-go="resources">Tài liệu & phạm vi</button></div><p class="small" style="margin-top:14px">Tự đọc tiếng Việt · 1,2× mặc định · tự chuyển màn hình<br>Cần Internet. Lời thuyết minh được gửi tới Google Translate TTS.</p><div class="stats"><div><b>08</b><span>Bài học ngắn</span></div><div><b>32</b><span>Màn hình nội dung</span></div><div><b>16</b><span>Câu đánh giá</span></div></div></div><div class="hero-diagram">${heroSVG()}</div></section><div class="section-head"><div><div class="eyebrow" style="margin-bottom:9px">LỘ TRÌNH CỦA BẠN</div><h2>Từ nguyên lý đến thẩm định</h2><p>${C.audience} · Dự kiến ${C.duration}</p></div><span class="pill">${s.completed.length}/8 hoàn thành</span></div><div class="modules">${C.modules.map(m=>`<button class="module-card" data-m="${m.id}" data-slide="${moduleSlides(m.id)[0].id}"><span class="badge">${s.completed.includes(m.id)?'✓':String(m.id).padStart(2,'0')}</span><div><h3>${esc(m.title)}</h3><p>${esc(m.description)}</p><div class="meta"><span>${m.duration} · 4 màn hình</span><span>${s.completed.includes(m.id)?'Đã hoàn thành':moduleSlides(m.id).some(x=>s.seen.includes(x.id))?'Đang học':'Bắt đầu →'}</span></div></div></button>`).join('')}</div><div class="notice"><b>Cách hoàn thành:</b> xem đủ 4 màn hình mỗi bài và trả lời đúng 2 câu luyện tập. Sau 8 bài, làm bài đánh giá 16 câu; cần ít nhất ${needed()}/16 câu đúng (ngưỡng ${C.passPercent}%).</div><section class="author"><span class="avatar" aria-hidden="true">ĐB</span><div><small>Biên soạn & thiết kế khóa học</small><b>Đặng Thanh Bình</b><a href="mailto:dangthanhbinh53@gmail.com">dangthanhbinh53@gmail.com</a><p>© 2026 Đặng Thanh Bình. Bản quyền thuộc về tác giả đối với phần biên soạn tiếng Việt, ví dụ minh họa, thiết kế và phần mềm khóa học. Nội dung gốc EHEDG Doc. 50 © EHEDG.</p></div></section><p class="small">Nội dung diễn giải từ bản tháng 7/2019 do người dùng cung cấp. Không phải bản dịch chính thức, chương trình chứng nhận EHEDG hoặc đặc tả thiết kế cho một nhà máy cụ thể.</p>`}
+function heroSVG(){return `<svg viewBox="0 0 400 360" role="img" aria-label="Minh họa mạch CIP: trạm, đường cấp, đối tượng và đường hồi"><defs><linearGradient id="hg" x1="0" x2="1"><stop stop-color="#e5c985"/><stop offset="1" stop-color="#91ccb0"/></linearGradient></defs><g fill="none" stroke="#a5cbb5" opacity=".22"><circle cx="200" cy="180" r="150"/><circle cx="200" cy="180" r="115"/><circle cx="200" cy="180" r="78"/></g><path d="M315 122V78H76V122" fill="none" stroke="#afccb9" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/><path d="m69 108 7 12 7-12" fill="none" stroke="#afccb9" stroke-width="2"/><rect x="40" y="122" width="72" height="120" rx="12" fill="#ffffff12" stroke="#ddc487" stroke-width="2"/><path d="M40 168h72" stroke="#ddc487" opacity=".7"/><path d="M52 190h48M52 206h48M52 222h48" stroke="#ddc487" opacity=".35"/><path d="M112 214H262" stroke="url(#hg)" stroke-width="3"/><circle cx="170" cy="214" r="15" fill="#123e32" stroke="#e5c985" stroke-width="2"/><path d="m164 206 13 8-13 8z" fill="#e5c985"/><path d="m250 206 12 8-12 8" stroke="#afddb9" stroke-width="2" fill="none"/><rect x="265" y="122" width="100" height="120" rx="16" fill="#c0d8ba"/><path d="m296 184 13 13 25-29" stroke="#174d37" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><g fill="#d6e8da" font-family="Segoe UI,Arial" font-size="11" text-anchor="middle"><text x="76" y="266">TRẠM CIP</text><text x="188" y="250">ĐƯỜNG CẤP</text><text x="315" y="266">ĐỐI TƯỢNG</text><text x="196" y="68">ĐƯỜNG HỒI</text></g><text x="200" y="318" text-anchor="middle" fill="#d8c18c" font-family="Segoe UI,Arial" font-size="11" letter-spacing="3">CLEANABLE BY DESIGN</text></svg>`}
+function slideView(id){const s=C.slides.find(x=>x.id===id);if(!s)return home();const m=C.modules[s.module-1],siblings=moduleSlides(s.module),idx=siblings.findIndex(x=>x.id===id);return `<div class="row between no-print" style="margin-bottom:18px"><span class="pill">Bài ${s.module} / 8 · ${esc(m.title)}</span><button data-present>${document.body.classList.contains('present')?'Thoát trình chiếu':'⛶ Trình chiếu'}</button></div><article class="lesson"><header class="lesson-head" data-n="${String(id).padStart(2,'0')}"><div class="eyebrow">${String(id).padStart(2,'0')} / ${C.slides.length} &nbsp; · &nbsp; ${idx+1} / 4 TRONG BÀI</div><h2>${esc(s.title)}</h2><p class="lead">${esc(s.lead)}</p></header><div class="grid">${s.cards.map((c,i)=>`<section class="card"><span class="index">0${i+1}</span><h3>${esc(c.title)}</h3><p>${esc(c.text)}</p></section>`).join('')}</div>${s.example?`<aside class="example"><small>Ví dụ từ hiện trường <i>· tình huống minh họa</i></small>${esc(s.example)}</aside>`:''}${visual(s.visual)}<div class="takeaway"><small>ĐIỀU CẦN NHỚ</small>${esc(s.takeaway)}</div>${source(s)}${mode==='trainer'?`<aside class="trainer-note"><small>GỢI Ý CHO GIẢNG VIÊN · Không ghi nhận tiến độ ở chế độ này</small>${esc(s.trainer)}<p style="margin:10px 0 0"><b>Mục tiêu bài:</b> ${esc(m.objective)}</p></aside>`:''}<details><summary>Lời thuyết minh & bản đọc</summary><p>${esc(s.narration)}</p></details><footer class="lesson-nav"><button data-slide="${id-1}" ${id===1?'disabled':''}>← Trước</button><div class="dots" aria-label="Các màn hình trong bài">${siblings.map(x=>`<button class="${x.id===id?'active':state().seen.includes(x.id)?'seen':''}" data-slide="${x.id}" aria-label="Màn hình ${x.id}: ${esc(x.title)}" title="${esc(x.title)}"></button>`).join('')}</div><small>${mode==='learner'?'Đã ghi nhận xem màn hình':'Chế độ giảng viên'}</small>${idx===3?`<button class="primary" data-practice="${s.module}">Luyện tập bài ${s.module} →</button>`:`<button class="primary" data-slide="${id+1}">Tiếp theo →</button>`}</footer></article>${audioBar()}`}
+function audioBar(){return `<div class="audio no-print"><div class="tts-track"><i id="tts-progress"></i></div><button data-tts-prev aria-label="Màn hình trước" ${route.id===1?'disabled':''}>←</button><button data-pause class="primary">${speech.active?(speech.paused?'▶ Tiếp tục':'Ⅱ Tạm dừng'):'▶ Phát'}</button><button data-tts-next aria-label="Màn hình tiếp" ${route.id===C.slides.length?'disabled':''}>→</button><button data-speak>Đọc lại</button><button data-stop>Dừng</button><button data-mute aria-pressed="${speech.muted}">${speech.muted?'Bật tiếng':'Tắt tiếng'}</button><label>Tốc độ <select id="rate">${[0.9,1,1.2,1.4].map(r=>`<option value="${r}" ${speech.rate===r?'selected':''}>${String(r).replace('.',',')}×</option>`).join('')}</select></label><label><input id="auto-read" type="checkbox" ${speech.auto?'checked':''}>Tự chuyển</label><label><input id="pause-practice" type="checkbox" ${speech.stopAtPractice?'checked':''}>Dừng ở luyện tập</label><span id="audio-status" class="audio-status" role="status">${esc(speech.message)}</span><small class="tts-disclosure">Google Translate TTS · Cần Internet. Lời thuyết minh được gửi tới Google; không gửi thông tin học viên.</small></div>`}
+const stationInfo=[['Bồn','Đáy dốc để lắng cặn và cửa xả cặn riêng; đầu vào hồi tiếp tuyến hoặc cút 45° hướng vào thành để chống tạo bọt; đầu nối hóa chất đậm đặc ở đỉnh, nhô vào ít nhất 5 mm; có thiết bị phun, nắp có khóa an toàn (§7.7.1, tr. 31–32).'],['Bơm','Bơm cấp: ly tâm có biến tần, tham khảo lưu lượng lớn nhất + 10%, áp suất 2,5–8 bar. Bơm hồi: xử lý được khí, khuyến nghị tự mồi, tham khảo lưu lượng bơm cấp + 30% (§7.7.2, tr. 34–35).'],['Gia nhiệt','Gia nhiệt trên đường cấp bảo đảm nhiệt độ đo ở đường hồi đạt điểm đặt. Trao đổi nhiệt tấm nên là loại tấm hàn; bộ gia nhiệt trong bồn dễ đóng cặn; phun hơi trực tiếp làm loãng dung dịch (§7.7.3, tr. 36–38).'],['Van','Mixproof hoặc block & bleed ở nơi rò rỉ có thể gây nhiễm. Van bướm, van một đế chỉ có một lớp kín. Chọn gioăng tương thích hóa chất; đủ điểm lấy mẫu ở vị trí phù hợp (§7.7.4, tr. 39–40).'],['Đo & lọc thô','Đường cấp: lưu lượng, nhiệt độ. Đường hồi: phát hiện dòng, nhiệt độ, độ dẫn điện. Hiệu chuẩn theo lịch. Lọc thô thường 3 mm, kiểm tra và làm sạch sau mỗi chu trình (§7.7.5–7.7.6, tr. 41–43).']];
+const fmt=(n,d=2)=>n.toLocaleString('vi-VN',{maximumFractionDigits:d});
+function velocityResult(q,d){const area=Math.PI*(d/1000)**2/4,v=Math.round(q/3600/area*100)/100,need=x=>fmt(x*area*3600,1);const note=v<1.5?'Dưới ngưỡng tối thiểu 1,5 m/s.':v<2?'Đạt ngưỡng tối thiểu 1,5 m/s. Chất bẩn khó có thể cần 2 m/s trở lên.':v<=4?'Từ 2 m/s trở lên.':'Trên 4 m/s: tăng thêm vận tốc chỉ cải thiện rất ít.';return `<div class="metric">${fmt(v)} <small>m/s</small></div><p>${note}<br>Cần <b>${need(1.5)} m³/h</b> cho 1,5 m/s · <b>${need(2)} m³/h</b> cho 2 m/s.${d>150?'<br>Ống trên 150 mm nằm ngoài phạm vi Doc. 50.':''}</p>`}
+function teeResult(l,d,s){const tee=l<d,slope=s>=3;return `<div class="metric">${tee&&slope?'✓':'!'} <small>l/d = ${fmt(l/d)}</small></div><p>${tee?'Nhánh ngắn hơn đường kính của nó.':'Nhánh không ngắn hơn đường kính: rút ngắn hoặc đổi cấu hình van.'}<br>${slope?'Độ dốc đạt mức tối thiểu 3%.':'Độ dốc dưới 3%: xem lại khả năng thoát.'}<br><small>Đạt hai điều kiện này chưa chứng minh nhánh làm sạch được; vẫn phải chứng minh khả năng làm sạch.</small></p>`}
+function icon(i){const drawings=['<path d="M14 14v26l16 12 16-12V14"/><ellipse cx="30" cy="14" rx="16" ry="6"/><path d="M14 28h32"/>','<circle cx="27" cy="33" r="17"/><circle cx="27" cy="33" r="4"/><path d="M27 16h25v9H42"/>','<path d="M10 10h40v8H10v8h40v8H10v8h40v8H10"/>','<path d="M8 22v22l22-11zM52 22v22L30 33z"/><path d="M30 33V13M21 13h18"/>','<path d="M6 46h48M30 46V27"/><circle cx="30" cy="17" r="10"/><path d="M30 17l5-5"/>'];return `<svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">${drawings[i]}</svg>`}
+function visual(kind){if(!kind||kind==='hero')return '';let b='';
+if(kind==='cipflow')b=`<div class="flow"><div class="node">Trạm CIP<small>Pha & giữ dung dịch</small></div><span class="arrow">→</span><div class="node">Đường cấp<small>Bơm · lưu lượng · nhiệt độ</small></div><span class="arrow">→</span><div class="node">Đối tượng<small>Qua đường phân phối</small></div><span class="arrow">→</span><div class="node">Đường hồi<small>Dòng · nhiệt độ · độ dẫn điện</small></div></div><p class="small" style="margin:12px 0 0">Đường hồi quay về trạm để thu hồi hoặc xả. Sơ đồ biên soạn từ §7.2 và Hình 6–7; không thay cho P&ID của cơ sở.</p>`;
+if(kind==='steps')b=`<div class="flow">${[['Tráng sơ bộ','Loại bẩn rời'],['Rửa 1','Kiềm hoặc axit'],['Tráng','Nước uống được'],['Rửa 2','Axit hoặc kiềm'],['Tráng','Nước uống được'],['Khử trùng','Hóa chất / nhiệt'],['Tráng cuối','Nước uống được']].map((x,i)=>`${i?'<span class="arrow">→</span>':''}<div class="node">${x[0]}<small>${x[1]}</small></div>`).join('')}</div><p class="small" style="margin:12px 0 0">Ví dụ chương trình 7 bước theo Bảng 3. Thu hồi sản phẩm trước CIP là điều kiện tiên quyết. Số bước thực tế do đánh giá rủi ro và thẩm định của cơ sở quyết định.</p>`;
+if(kind==='concepts')b=`<div class="table-wrap"><table><caption style="text-align:left;margin-bottom:10px">Tóm tắt Bảng 4 · EHEDG Doc. 50 (2019), tr. 27</caption><thead><tr><th>Mô hình</th><th>Ứng dụng điển hình</th><th>Ưu điểm</th><th>Nhược điểm</th></tr></thead><tbody><tr><td>Một lần qua<br><small>không thu hồi</small></td><td>Chiết rót nguyên liệu lỏng giá trị cao; làm sạch không thường xuyên</td><td>Ít rủi ro nhiễm chéo; vốn thấp</td><td>Chi phí vận hành cao</td></tr><tr><td>Dùng một lần<br><small>không thu hồi</small></td><td>Tải bẩn nặng: UHT, cô đặc, thanh trùng, màng</td><td>Ít rủi ro nhiễm chéo; vốn thấp</td><td>Chi phí vận hành cao</td></tr><tr><td>Thu hồi<br><small>toàn phần / một phần</small></td><td>Sữa, đồ uống; làm sạch thường xuyên</td><td>Chi phí vận hành tương đối thấp hơn</td><td>Vốn cao; có thể nhiễm chéo</td></tr></tbody></table></div><p class="small" style="margin:10px 0 0">Bảng định hướng. Lựa chọn cuối cùng dựa trên tổng chi phí sở hữu và đánh giá rủi ro của cơ sở.</p>`;
+if(kind==='station')b=`<div class="eyebrow">KHÁM PHÁ TRẠM CIP · CHỌN TỪNG BỘ PHẬN</div><p class="small">Các điểm thiết kế chính của từng nhóm thiết bị trong trạm.</p><div class="ahu">${stationInfo.map((x,i)=>`<button data-ahu="${i}" class="${i===0?'active':''}">${icon(i)}${x[0]}</button>`).join('')}</div><div class="explanation" id="ahu-info" role="status">${stationInfo[0][1]}</div>`;
+if(kind==='timer')b=`<div class="eyebrow">THỬ BẬT TỪNG ĐIỀU KIỆN</div><p class="small">Mô hình minh họa nguyên tắc ở §6.2. Điểm đặt thực tế do thẩm định của cơ sở xác lập.</p><label class="check-row"><input type="checkbox" id="t-temp"><span>Nhiệt độ đường hồi đạt điểm đặt</span></label><label class="check-row"><input type="checkbox" id="t-conc"><span>Độ dẫn điện (nồng độ) đường hồi đạt điểm đặt</span></label><label class="check-row"><input type="checkbox" id="t-flow"><span>Lưu lượng đường cấp đạt điểm đặt</span></label><div id="timer-feedback" class="explanation" role="status">⏸ Bộ đếm dừng. Chưa điều kiện nào đạt.</div>`;
+if(kind==='velocity')b=`<div class="eyebrow">TÍNH THỬ · KHÔNG PHẢI CÔNG CỤ THIẾT KẾ</div><div class="calc"><div class="fields"><label>Lưu lượng Q (m³/h)<input id="vel-q" type="number" min="0" max="100000" step="any" value="11"></label><label>Đường kính trong d (mm)<input id="vel-d" type="number" min="5" max="300" step="any" value="50"></label><small>v = 4·Q / (3600·π·d²), d tính bằng mét (Hình 1, tr. 9).</small></div><div class="calc-result" id="vel-result" role="status">${velocityResult(11,50)}</div></div>`;
+if(kind==='tee')b=`<div class="eyebrow">KIỂM TRA NHANH · NHÁNH T VÀ ĐỘ DỐC</div><div class="calc"><div class="fields"><label>Chiều dài nhánh l (mm)<input id="tee-l" type="number" min="0" max="2000" step="any" value="40"></label><label>Đường kính nhánh d (mm)<input id="tee-d" type="number" min="5" max="300" step="any" value="50"></label><label>Độ dốc đường ống (%)<input id="tee-slope" type="number" min="0" max="100" step="any" value="3"></label></div><div class="calc-result" id="tee-result" role="status">${teeResult(40,50,3)}</div></div>`;
+if(kind==='sequence')b=`<div class="eyebrow">BÀI TẬP SẮP XẾP</div><p>Đưa các bước về trình tự: từ yêu cầu người dùng đến duy trì trạng thái đã thẩm định. Dùng ↑ ↓.</p><ol class="sequence">${sequence.map((x,i)=>`<li><b>${i+1}</b><span>${x}</span><button data-seq="${i}" data-delta="-1" ${i===0?'disabled':''} aria-label="Đưa ${x} lên">↑</button><button data-seq="${i}" data-delta="1" ${i===sequence.length-1?'disabled':''} aria-label="Đưa ${x} xuống">↓</button></li>`).join('')}</ol><button data-seq-check>Kiểm tra thứ tự</button><div id="seq-result" role="status">${seqResult?`<p class="feedback">${seqResult}</p>`:''}</div>`;
+if(kind==='scenario')b=scenarioView();
+if(kind==='checklist')b=checklistView();
+return `<section class="visual">${b}</section>`}
+const checks=['Dung dịch trong bồn: độ trong, nồng độ, bọt; không có dấu hiệu khuẩn lạc bề mặt hoặc màng sinh học.','Bên trong bồn: vòm, cánh khuấy, thành không có bọt, cặn, bẩn; gioăng, cảm biến nguyên vẹn; đầu phun không tắc.','Không có vết hóa chất khô trên ống, khớp nối, van, bơm và sàn; đã tháo và kiểm tra lọc thô.','Định lượng: lượng hóa chất sử dụng đúng loại đã chỉ định; thiết bị và đường định lượng nguyên vẹn.','Kho hóa chất: nhãn và bao bì nguyên vẹn; vòi tắm khẩn cấp và bồn rửa mắt hoạt động; có khay chứa tràn.','Vận hành: trình tự, thời gian, nhiệt độ, lưu lượng, độ dẫn điện khớp chương trình; kết quả chuẩn độ khớp giá trị đo tự động.'];
+function checklistView(){return `<div class="eyebrow">CHECKLIST THỰC HÀNH</div>${checks.map((x,i)=>`<label class="check-row"><input type="checkbox" data-check="${i}" ${state().checklist.includes(i)?'checked':''}><span>${esc(x)}</span></label>`).join('')}<div class="row" style="margin-top:17px"><button data-print-check>In phiếu mang về</button><small>Phiếu học tập · Điều chỉnh theo SOP trước khi áp dụng.</small></div>`}
+function scenarioView(){if(scenarioStep>=2)return `<h3>Đã đi hết tình huống</h3><p class="feedback">Bạn đã chọn đánh giá dung dịch bằng dữ liệu ngoài độ dẫn điện, rồi làm sạch bồn và tìm nguyên nhân tích tụ. Quyết định thải bỏ và đưa bồn trở lại sử dụng thuộc thẩm quyền và tiêu chí của cơ sở.</p><button data-scenario-reset>Làm lại tình huống</button>`;
+const steps=[{q:'Bồn kiềm thu hồi: độ dẫn điện vẫn ở điểm đặt, nhưng dung dịch sẫm màu, đục và kết quả kiểm tra bề mặt xấu dần. Bạn làm gì trước?',opts:['Tiếp tục dùng vì độ dẫn điện đạt.','Báo QA/kỹ thuật; chuẩn độ hydroxit và cacbonat, xem độ đục/COD và so với tiêu chí thải bỏ của cơ sở.','Định lượng thêm hóa chất đậm đặc để tăng độ dẫn điện.'],a:1,why:'Chất bẩn và muối hòa tan cũng đóng góp vào độ dẫn điện; cacbonat không phát hiện được bằng độ dẫn điện.'},{q:'Dung dịch đã được thải bỏ theo quyết định của cơ sở. Điều gì cần làm tiếp?',opts:['Pha ngay mẻ mới vào bồn để kịp lịch.','Chỉ tăng điểm đặt nồng độ cho mẻ sau.','Làm sạch bồn thu hồi, xem xét tráng sơ bộ và nguồn tải bẩn, ghi nhận trước khi pha mẻ mới.'],a:2,why:'Bồn thu hồi nên được làm sạch mỗi lần thải dung dịch; tích tụ thường do tải bẩn hoặc tráng sơ bộ không đủ.'}];const x=steps[scenarioStep];return `<div class="eyebrow">QUYẾT ĐỊNH ${scenarioStep+1} / 2 · TÌNH HUỐNG GIẢ ĐỊNH</div><h3>${x.q}</h3>${x.opts.map((o,i)=>`<button class="choice" data-scenario="${i}" data-answer="${x.a}">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}${scenarioWrong?`<div class="feedback bad" role="status">${scenarioWrong}</div>`:''}<small>Chọn để xem hệ quả. Có thể thử lại; không tính vào điểm thi cuối khóa.</small>`}
+function practiceView(m){const module=C.modules[m-1],qs=practiceQuestions(m),s=state();return `<div class="eyebrow">LUYỆN TẬP / BÀI ${m}</div><h2>${esc(module.title)}</h2><p class="lead">Trả lời để nhận giải thích ngay. Có thể chọn lại sau khi ôn; kết quả này không phải điểm thi cuối khóa.</p>${qs.map(q=>{const v=(mode==='trainer'?trainerPractice:s.practice)[q.id],answered=Number.isInteger(v);return `<fieldset class="question-card"><legend>${esc(q.q)}</legend>${q.options.map((o,j)=>`<button class="choice ${v===j?(j===q.answer?'correct':'wrong'):''}" data-practice-q="${q.id}" data-option="${j}" aria-pressed="${v===j}">${String.fromCharCode(65+j)}. ${esc(o)}</button>`).join('')}${answered?`<div class="feedback ${v===q.answer?'':'bad'}" role="status"><b>${v===q.answer?'Chính xác.':'Cần ôn lại.'}</b> ${esc(q.why)} <button data-slide="${q.slide}">Ôn màn hình ${q.slide}</button></div>`:''}</fieldset>`}).join('')}<div class="panel"><h3>${s.completed.includes(m)?'✓ Bài học đã hoàn thành':'Hoàn thành bài học'}</h3><p>Đã xem ${moduleSlides(m).filter(x=>s.seen.includes(x.id)).length}/4 màn hình · Luyện tập đúng ${countPractice(m)}/${qs.length} câu.</p>${mode==='trainer'?'<p class="notice">Chế độ giảng viên không cấp trạng thái hoàn thành. Chuyển về Học viên để ghi nhận việc học.</p>':`<button class="primary" data-complete="${m}" ${!canComplete(m)?'disabled':''}>${m<8?'Hoàn thành & sang bài tiếp →':'Hoàn thành & đến đánh giá →'}</button>`}<button data-slide="${moduleSlides(m)[0].id}">Xem lại bài</button></div>`}
+function shuffled(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function startExam(){if(!db.active){askProfile(()=>startExam());return}if(!ready()||mode!=='learner'){notify('Hoàn thành 8 bài ở chế độ Học viên trước khi thi.');return}const s=state();if(s.exam&&!confirm('Bỏ lượt thi đang dở và tạo lượt mới?'))return;const ids=C.modules.flatMap(m=>shuffled(C.questions.filter(q=>q.module===m.id)).slice(0,C.examPerModule).map(q=>q.id));s.exam={ids:shuffled(ids),answers:{},started:new Date().toISOString()};save();go('exam')}
+function examView(){const s=state(),exam=s.exam;if(!exam)return `<div class="eyebrow">ĐÁNH GIÁ CUỐI KHÓA</div><h2>Kiểm tra điều bạn đã hiểu.</h2><p class="lead">16 câu, chọn 2 câu từ mỗi bài trong ngân hàng 24 câu. Điểm và giải thích chỉ xuất hiện sau khi nộp.</p><div class="panel"><div class="grid"><div><h3>Đủ 8 bài</h3><p>Hiện tại: ${s.completed.length}/8 bài hoàn thành.</p></div><div><h3>Ngưỡng ${C.passPercent}%</h3><p>Cần đúng ít nhất ${needed()}/16 câu (${(needed()/16*100).toLocaleString('vi-VN')}%).</p></div><div><h3>Lưu từng lần làm</h3><p>Có thể thi lại. Các lượt đã nộp được giữ trong hồ sơ trên máy.</p></div></div><button class="primary" data-exam-start ${!ready()||mode!=='learner'?'disabled':''}>Bắt đầu đánh giá →</button>${!ready()?'<p class="small" style="margin:12px 0 0">Mở từng bài, xem đủ nội dung và hoàn thành luyện tập để mở bài thi.</p>':''}${mode==='trainer'?'<p class="notice">Chuyển sang Học viên để làm bài đánh giá.</p>':''}</div><button data-go="results">Xem lịch sử kết quả</button>`;
+return `<div class="eyebrow">LƯỢT THI ĐANG THỰC HIỆN</div><h2>Đánh giá cuối khóa</h2><p class="muted">Có thể đổi lựa chọn trước khi nộp. Trả lời đủ 16 câu để chấm điểm.</p><div class="exam-progress row between"><strong id="exam-count">Đã trả lời ${Object.keys(exam.answers).length}/${exam.ids.length}</strong><button class="primary" data-submit-exam>Nộp bài</button></div>${exam.ids.map((id,i)=>{const q=C.questions.find(x=>x.id===id);return `<fieldset class="question-card" id="exam-q-${q.id}"><legend><small>CÂU ${i+1} / ${exam.ids.length} · BÀI ${q.module}</small><br>${esc(q.q)}</legend><div role="radiogroup" aria-label="Đáp án câu ${i+1}">${q.options.map((o,j)=>`<label class="choice ${exam.answers[id]===j?'selected':''}"><input type="radio" name="exam-${id}" data-exam-q="${id}" value="${j}" ${exam.answers[id]===j?'checked':''} style="width:auto;margin:0 10px 0 0">${String.fromCharCode(65+j)}. ${esc(o)}</label>`).join('')}</div></fieldset>`}).join('')}<div class="row"><button class="primary" data-submit-exam>Nộp bài & xem kết quả</button><button data-abandon-exam>Hủy lượt đang làm</button></div>`}
+function submitExam(){const s=state(),e=s.exam;if(!e||mode!=='learner')return;if(!ready()){notify('Cần hoàn thành đủ các bài.');return}const missing=e.ids.find(id=>!Number.isInteger(e.answers[id]));if(missing){notify('Hãy trả lời đủ tất cả câu hỏi trước khi nộp.');$('#exam-q-'+missing).scrollIntoView({block:'center'});return}const score=e.ids.filter(id=>e.answers[id]===C.questions.find(q=>q.id===id).answer).length;const a={...e,score,total:e.ids.length,percent:score/e.ids.length*100,pass:score/e.ids.length*100>=C.passPercent,submitted:new Date().toISOString(),id:'CIP50-'+Date.now().toString(36).toUpperCase(),learner:{...profile().info},completed:[...s.completed],version:C.version};s.attempts.push(a);s.exam=null;save();go('results');}
+function resultView(){const s=state(),attempt=s.attempts.at(-1);if(!attempt)return `<div class="eyebrow">HỒ SƠ HỌC TẬP</div><h2>Kết quả của bạn</h2><div class="panel"><p>Chưa có lượt đánh giá đã nộp. Bạn đã hoàn thành ${s.completed.length}/8 bài.</p><button class="primary" data-go="exam">Đến đánh giá</button> <button data-export>Xuất tiến độ hiện tại</button></div>`;return `<div class="no-print"><div class="eyebrow">KẾT QUẢ / LƯỢT GẦN NHẤT</div><h2>${attempt.pass?'Bạn đã đạt bài đánh giá.':'Hãy ôn lại rồi thử tiếp.'}</h2><div class="panel"><div class="row between"><div><div class="metric">${attempt.score}<small> / ${attempt.total} câu</small></div><p>${attempt.percent.toLocaleString('vi-VN')}% · ${attempt.pass?'Đạt':'Chưa đạt'} · Ngưỡng ${C.passPercent}%</p></div><div><button class="primary" data-exam-start>Thi lại</button> <button data-export>Xuất JSON</button> <button data-csv>Xuất CSV</button></div></div><div class="table-wrap"><table><thead><tr><th>Nhóm kiến thức</th><th>Kết quả</th><th>Ôn tập</th></tr></thead><tbody>${C.modules.map(m=>{const ids=attempt.ids.filter(id=>C.questions.find(q=>q.id===id)?.module===m.id);const correct=ids.filter(id=>attempt.answers[id]===C.questions.find(q=>q.id===id).answer).length;return `<tr><td>${m.id}. ${esc(m.title)}</td><td>${correct}/${ids.length}</td><td><button data-slide="${moduleSlides(m.id)[0].id}">Ôn bài</button></td></tr>`}).join('')}</tbody></table></div></div></div>${attempt.pass?certificate(attempt):''}<div class="no-print"><h3 style="margin-top:30px">Xem lại đáp án & giải thích</h3>${attempt.ids.map((id,i)=>{const q=C.questions.find(x=>x.id===id),a=attempt.answers[id];return `<details><summary>${i+1}. ${a===q.answer?'✓':'○'} ${esc(q.q)}</summary><p>Bạn chọn: ${esc(q.options[a])}<br><b>Đáp án: ${esc(q.options[q.answer])}</b></p><p>${esc(q.why)}</p><button data-slide="${q.slide}" style="margin-bottom:15px">Ôn màn hình ${q.slide}</button></details>`}).join('')}<div class="panel"><h3>Lịch sử ${s.attempts.length} lượt thi</h3>${[...s.attempts].reverse().map(a=>`<div class="history-item"><b>${a.score}/${a.total} · ${a.pass?'Đạt':'Chưa đạt'}</b> <small>${new Date(a.submitted).toLocaleString('vi-VN')}</small><br><small>${esc(a.id)}</small></div>`).join('')}</div></div>`}
+function certificate(a){return `<section id="cert-area"><div class="row no-print" style="margin-top:25px"><button class="primary" data-print-cert>In / lưu PDF xác nhận</button><small>Chọn “Lưu dưới dạng PDF” trong hộp thoại in của trình duyệt.</small><label>Họ tên in trên xác nhận (tùy chọn)<input id="cert-name" maxlength="80" autocomplete="name" value="${esc(a.learner.name)}" placeholder="Có thể để trống"></label></div><div class="certificate"><div class="eyebrow">CIP ACADEMY · ĐÀO TẠO NỘI BỘ</div><h2>XÁC NHẬN HOÀN THÀNH KHÓA HỌC</h2><div class="cert-line"></div><p class="learner-name">${esc(a.learner.name)||'……………………………………'}</p><p>Đã hoàn thành 8 bài học và bài đánh giá</p><h3>${esc(C.title)}</h3><p>Điểm: <b>${a.score}/${a.total} · ${a.percent.toLocaleString('vi-VN')}%</b></p><p>Ngày hoàn thành: ${new Date(a.submitted).toLocaleDateString('vi-VN')}</p><div class="cert-line"></div><small>Nội dung biên soạn từ EHEDG Doc. 50, tháng 7/2019 · Khóa ${esc(C.id)} · v${esc(a.version)}</small><small>Mã bản ghi cục bộ: ${esc(a.id)}</small><small>Biên soạn khóa học: Đặng Thanh Bình · dangthanhbinh53@gmail.com</small><small style="margin-top:15px">Đây là xác nhận học tập nội bộ do ứng dụng tạo từ dữ liệu trên máy.<br>Không phải chứng nhận của EHEDG; chưa xác minh danh tính hoặc năng lực thực hành.</small></div></section>`}
+function resources(){return `<div class="eyebrow">TRA CỨU & MANG VỀ CÔNG VIỆC</div><h2>Tài liệu, công cụ & phạm vi</h2><p class="lead">Các bài học dẫn về trang và mục của tài liệu gốc để QA, kỹ thuật và giảng viên kiểm tra lại.</p><div class="panel"><h3>Nguồn chính</h3><p><b>EHEDG Doc. 50 — Hygienic Design Requirements for CIP Installations.</b><br>July 2019 · 94 trang · © EHEDG.</p><p>Biên soạn tiếng Việt từ PDF do người dùng cung cấp. Bản tiếng Anh là bản chính thức. App không bao gồm toàn bộ PDF và không xác nhận các tiêu chuẩn, quy định viện dẫn trong bản 2019 là phiên bản hiện hành.</p><p class="notice">Khi dùng để thiết kế, mua sắm hoặc xây SOP: đối chiếu bản tài liệu gốc, tiêu chuẩn áp dụng, yêu cầu địa phương, khuyến nghị của nhà cung cấp thiết bị/hóa chất, đánh giá rủi ro và thông số đã được cơ sở thẩm định.</p><ol class="source-index">${C.modules.map(m=>`<li><b>${esc(m.title)}</b><br><small>${moduleSlides(m.id).map(s=>`${s.id}: ${esc(s.source)}`).join(' · ')}</small></li>`).join('')}</ol></div><div class="panel"><h3>Bảng thuật ngữ ngắn</h3><div class="table-wrap"><table><tbody>${[['CIP','Làm sạch tại chỗ: tuần hoàn/cho chảy dung dịch và nước tráng qua bề mặt mà không tháo rời'],['Mạch CIP','Mọi đoạn ống và thiết bị được làm sạch trong một chu trình CIP'],['Đối tượng làm sạch','Thiết bị hoặc cụm công nghệ được nối với hệ thống CIP'],['Single pass / Single use / Re-use','Một lần qua rồi xả / pha mới và xả sau mỗi bước / thu hồi về bồn để dùng lại'],['Self-draining / Drainable','Tự thoát chỉ nhờ trọng lực / thoát được nhờ biện pháp hỗ trợ'],['Block & bleed','Hai lớp chặn với một cửa mở ở giữa để dẫn rò rỉ ra ngoài'],['Mixproof','Van hai đế có khoang rò, tích hợp nguyên lý block & bleed'],['TCO','Tổng chi phí sở hữu: vốn đầu tư và chi phí vận hành'],['COD','Nhu cầu ôxy hóa học; chỉ báo tải hữu cơ trong dung dịch/nước thải'],['URS','Yêu cầu của người sử dụng'],['DQ / IQ / FQ (OQ) / PQ','Đánh giá thiết kế / lắp đặt / chức năng (vận hành) / hiệu năng'],['P&ID','Sơ đồ đường ống và thiết bị đo']].map(x=>`<tr><th>${x[0]}</th><td>${x[1]}</td></tr>`).join('')}</tbody></table></div></div><div class="panel"><h3>Phiếu áp dụng tại cơ sở</h3><p>Chọn một trạm CIP hoặc mạch thực tế. Ghi mô hình CIP, dung dịch, thông số đã thẩm định và người chịu trách nhiệm. Phiếu cần được cơ sở duyệt trước khi đưa vào SOP.</p>${checklistView()}</div><section class="author"><span class="avatar" aria-hidden="true">ĐB</span><div><small>Biên soạn & thiết kế khóa học</small><b>Đặng Thanh Bình</b><a href="mailto:dangthanhbinh53@gmail.com">dangthanhbinh53@gmail.com</a><p>© 2026 Đặng Thanh Bình. Bản quyền thuộc về tác giả đối với phần biên soạn tiếng Việt, ví dụ minh họa, thiết kế và phần mềm khóa học. Nội dung gốc EHEDG Doc. 50 © EHEDG.</p></div></section><div class="panel"><h3>Dữ liệu & cách sử dụng</h3><p>App chạy trong một file HTML, không gửi điểm hoặc thông tin học viên tới máy chủ. Không cần nhập thông tin cá nhân. Tiến độ lưu trong trình duyệt hiện tại; xóa dữ liệu trình duyệt hoặc chuyển máy có thể mất tiến độ.</p><p>Chức năng đọc dùng Google Translate TTS giống app mẫu: tiếng Việt, chia đoạn ngắn, thử tw-ob rồi gtx khi có lỗi. Cần Internet; lời thuyết minh được gửi tới Google, không gửi hồ sơ học viên. Dịch vụ có thể chặn hoặc giới hạn yêu cầu; khi không phát được, app dừng và cho phép đọc lại hoặc xem thủ công.</p><div class="row"><button data-export>Xuất hồ sơ JSON</button><button data-csv>Xuất lịch sử CSV</button><button data-profile>Đổi học viên</button><button data-reset>Xóa tiến độ học</button></div><p class="small" style="margin-top:15px">File xuất chứa thông tin học viên. JSON là bản lưu để kiểm tra/tổng hợp; bản này chưa có chức năng nhập phục hồi. CSV gồm các lượt thi đã nộp.</p></div><div id="print-checklist" hidden>${printChecklist()}</div>`}
+function printChecklist(){return `<h2>Phiếu áp dụng · Kiểm tra định kỳ hệ thống CIP</h2><p>Khóa học từ EHEDG Doc.50 (2019) · Phiếu học tập, chưa phải SOP.</p><p>Người học: ................................................ Bộ phận: ................................</p><p>Trạm CIP / mạch / đối tượng: ..................................................................</p><p>Mô hình CIP & dung dịch sử dụng: ................................................................</p><p>Thông số / tiêu chí đã thẩm định: ................................................................</p><ul>${checks.map(x=>`<li>□ ${x}</li>`).join('')}</ul><p>Phát hiện / hành động / người phụ trách: ....................................................</p><p>...................................................................................................................</p><p>Người xem xét: ..................................... Ngày: ..........................................</p><p><small>Tham chiếu: §10.4, tr.67–69; §7.8.2–7.8.3, tr.46–48. Điều chỉnh theo thiết kế, rủi ro và SOP của cơ sở.</small></p>`}
+function fitDeck(){const el=document.querySelector('.lesson');if(!el)return;el.style.setProperty('--deck-zoom','1');if(!document.body.classList.contains('present'))return;const avail=innerHeight-28;let z=1;for(let i=0;i<10;i++){const height=el.getBoundingClientRect().height;if(!height)break;const next=Math.min(1.7,Math.max(.5,z*Math.pow(avail/height,.6)));if(Math.abs(next-z)<.003)break;z=next;el.style.setProperty('--deck-zoom',String(z))}}
+let chromeTimer=null;
+function peekChrome(ms=2600,which='both'){const b=document.body;if(which!=='bottom')b.classList.add('show-top');if(which!=='top')b.classList.add('show-bottom');clearTimeout(chromeTimer);chromeTimer=setTimeout(()=>b.classList.remove('show-top','show-bottom'),ms)}
+function enterPresent(){document.body.classList.add('present');peekChrome(3500);notify('Đưa chuột tới mép trên hoặc mép dưới để hiện thanh điều khiển. Esc để thoát.')}
+document.addEventListener('mousemove',e=>{if(!document.body.classList.contains('present'))return;if(e.clientY<70)peekChrome(2600,'top');else if(e.clientY>innerHeight-110)peekChrome(2600,'bottom')});
+document.addEventListener('touchstart',()=>{if(document.body.classList.contains('present'))peekChrome(4000)},{passive:true});
+document.addEventListener('animationend',e=>{if(e.target.classList&&e.target.classList.contains('lesson'))fitDeck()});
+window.addEventListener('resize',()=>requestAnimationFrame(fitDeck));
+document.addEventListener('toggle',()=>requestAnimationFrame(fitDeck),true);
+function render(){nav();const mainEl=$('#main'),curSlide=route.type==='slide'?C.slides.find(s=>s.id===route.id):null;mainEl.dataset.anim=navDir;navDir='';mainEl.dataset.m=curSlide?curSlide.module:route.type==='practice'?route.id:'';$('#course-progress i').style.width=(curSlide?curSlide.id/C.slides.length*100:route.type==='practice'?moduleSlides(route.id).at(-1).id/C.slides.length*100:['exam','results'].includes(route.type)?100:0)+'%';mainEl.innerHTML=route.type==='slide'?slideView(route.id):route.type==='practice'?practiceView(route.id):route.type==='exam'?examView():route.type==='results'?resultView():route.type==='resources'?resources():home();$('#profile').textContent=db.active?profile().info.id:'Học viên';$('#present').textContent=document.body.classList.contains('present')?'Thoát trình chiếu':'Trình chiếu';$('#role').value=mode;storageStatus();speech.sync();requestAnimationFrame(fitDeck)}
+function askProfile(cb){speech.stop();pending=cb||null;const i=profile().info;$('#emp-id').value=i.id;$('#emp-name').value=i.name;$('#emp-dept').value=i.dept;$('#profile-error').textContent='';$('#profile-dialog').showModal()}
+function exportData(){if(!db.active){notify('Chọn học viên trước khi xuất hồ sơ.');return}download('CIP50-'+safeName(profile().info.id)+'.json',JSON.stringify({course:{id:C.id,version:C.version,source:C.source},exported:new Date().toISOString(),profile:profile()},null,2),'application/json')}
+function safeName(s){return String(s).replace(/[^\p{L}\p{N}_-]/gu,'_').slice(0,40)||'learner'}
+function download(name,data,type){const url=URL.createObjectURL(new Blob([data],{type:type+';charset=utf-8'})),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000)}
+function csv(){if(!db.active)return notify('Chọn học viên trước khi xuất.');const quote=v=>'"'+String(v??'').replace(/^[=+@-]/,"'$&").replace(/"/g,'""')+'"';const rows=[['Mã nhân viên','Họ tên','Bộ phận','Khóa','Phiên bản','Ngày nộp','Đúng','Tổng','Phần trăm','Kết quả','Mã bản ghi'],...state().attempts.map(a=>[a.learner.id,a.learner.name,a.learner.dept,C.id,a.version,a.submitted,a.score,a.total,a.percent,a.pass?'Đạt':'Chưa đạt',a.id])];download('CIP50-'+safeName(profile().info.id)+'.csv','\ufeff'+rows.map(r=>r.map(quote).join(',')).join('\r\n'),'text/csv')}
+function present(){if(document.body.classList.contains('present')){speech.stop();document.body.classList.remove('present');render();if(document.fullscreenElement)document.exitFullscreen?.();return}if(route.type!=='slide')go('slide',state().lastSlide);enterPresent();speech.auto=true;render();document.documentElement.requestFullscreen?.().catch(()=>notify('Có thể dùng F11 để mở toàn màn hình.'));speech.start()}
+function printMode(kind){speech.stop();if(kind==='cert'){if(route.type!=='results'||!state().attempts.at(-1)?.pass)return;document.body.classList.add('print-cert')}else{let el=$('#print-checklist');if(!el){el=document.createElement('section');el.id='print-checklist';el.hidden=true;el.innerHTML=printChecklist();$('#main').appendChild(el)}document.body.classList.add('print-check')}window.print();setTimeout(()=>document.body.classList.remove('print-cert','print-check'),500)}
+window.addEventListener('afterprint',()=>document.body.classList.remove('print-cert','print-check'));
+// Same Google Translate TTS endpoint and client fallback as the supplied HACCP app.
+// Only course narration is sent; learner records never enter a request URL.
+const speech={audio:new Audio(),available:true,auto:true,stopAtPractice:false,muted:false,token:0,active:false,paused:false,rate:1.2,parts:[],index:0,pending:null,timer:null,advanceTimer:null,message:'Sẵn sàng · Google TTS · cần Internet',loadTimeout:25000,
+ status(t){this.message=t;this.sync();if(/chặn|Không phát được/.test(t)&&document.body.classList.contains('present'))peekChrome(8000)},
+ sync(){const el=$('#audio-status');if(el)el.textContent=this.message;const p=$('[data-pause]');if(p)p.textContent=this.active?(this.paused?'▶ Tiếp tục':'Ⅱ Tạm dừng'):'▶ Phát';const mute=$('[data-mute]');if(mute){mute.textContent=this.muted?'Bật tiếng':'Tắt tiếng';mute.setAttribute('aria-pressed',String(this.muted))}const line=$('#tts-progress');if(line)line.style.width=(this.parts.length?this.index/this.parts.length*100:0)+'%';},
+ url(text,client='tw-ob'){return 'https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&total=1&idx=0&client='+client+'&q='+encodeURIComponent(text)+'&textlen='+text.length},
+ normalize(t){return t.replace(/\bCIP\b/g,'xi ai pi').replace(/\bSIP\b/g,'ét ai pi').replace(/\bUHT\b/g,'iu hát ti').replace(/\bATP\b/g,'ây ti pi').replace(/\bDQ\b/g,'đi kiu').replace(/\bFQ\b/g,'ép kiu').replace(/\bURS\b/g,'iu a ét').replace(/\bIQ\b/g,'ai kiu').replace(/\bOQ\b/g,'âu kiu').replace(/\bPQ\b/g,'pi kiu').replace(/\bSOP\b/g,'ét âu pi').replace(/\bQA\b/g,'kiu ây').replace(/\bHACCP\b/g,'hát xắp').replace(/axit/gi,'a xít').replace(/cacbonic/gi,'các bô níc').replace(/cacbonat/gi,'các bô nát').replace(/\bclo\b/gi,'cờ lo').replace(/\bEHEDG\b/g,'i hát i đi gi').replace(/\s+/g,' ').trim()},
+ split(t){const sentences=this.normalize(t).match(/[^.!?]+[.!?]?/g)||[];const out=[];for(const sentence of sentences){let line='';for(const word of sentence.trim().split(/\s+/)){if((line+' '+word).trim().length>170){if(line)out.push(line);line='';}if(word.length>170){for(let i=0;i<word.length;i+=170)out.push(word.slice(i,i+170));}else line=(line+' '+word).trim();}if(line)out.push(line);}return out},
+ settle(ok){clearTimeout(this.timer);this.timer=null;const resolve=this.pending;this.pending=null;this.audio.onended=null;this.audio.onerror=null;this.audio.onplaying=null;this.audio.onwaiting=null;this.audio.onstalled=null;if(resolve)resolve(ok)},
+ stop(){this.token++;clearTimeout(this.advanceTimer);this.advanceTimer=null;this.active=false;this.paused=false;this.audio.pause();this.settle(false);this.audio.removeAttribute('src');this.audio.load();this.status('Đã dừng đọc.')},
+ speak(text,token){return new Promise(resolve=>{this.pending=resolve;let attemptId=0;const attempt=client=>{const attemptToken=++attemptId;if(token!==this.token){this.settle(false);return}const valid=()=>token===this.token&&attemptToken===attemptId&&!!this.pending;const a=this.audio;const fail=err=>{if(!valid())return;clearTimeout(this.timer);if(err?.name==='NotAllowedError'){this.settle(false);this.status('Trình duyệt chặn âm thanh. Bấm Phát hoặc Đọc lại để tiếp tục.');return}if(client==='tw-ob')attempt('gtx');else{this.settle(false);this.status('Không phát được Google TTS. Kiểm tra Internet rồi bấm Đọc lại; vẫn có thể xem thủ công.')}};this.armTimeout=()=>{clearTimeout(this.timer);if(valid()&&!this.paused)this.timer=setTimeout(()=>fail(),this.loadTimeout)};a.pause();a.onended=()=>{if(valid())this.settle(true)};a.onerror=fail;a.onplaying=()=>{if(valid()){clearTimeout(this.timer);this.timer=null}};a.onwaiting=this.armTimeout;a.onstalled=this.armTimeout;a.src=this.url(text,client);a.playbackRate=this.rate;a.preservesPitch=true;a.muted=this.muted;this.armTimeout();if(!this.paused){try{a.play().catch(fail)}catch(err){fail(err)}}};attempt('tw-ob')})},
+ async start(){this.stop();if(route.type!=='slide')return;const slide=C.slides.find(s=>s.id===route.id);const token=this.token;this.parts=this.split(slide.narration);this.index=0;this.active=true;this.status('Đang tải giọng Google · màn hình '+slide.id);for(this.index=0;this.index<this.parts.length;this.index++){if(token!==this.token)return;while(this.paused){await new Promise(r=>setTimeout(r,80));if(token!==this.token)return}this.status('Google TTS · màn hình '+slide.id+' · đoạn '+(this.index+1)+'/'+this.parts.length);const ok=await this.speak(this.parts[this.index],token);if(token!==this.token)return;if(!ok){this.active=false;this.paused=false;this.audio.pause();this.sync();return}}if(token!==this.token)return;this.status('Đã đọc xong màn hình '+slide.id);if(!this.auto){this.active=false;this.sync();return}this.status('Đã đọc xong · sắp chuyển màn hình');const advance=()=>{if(token!==this.token||!this.auto){this.active=false;this.sync();return}if(this.paused){this.advanceTimer=setTimeout(advance,100);return}this.active=false;const last=moduleSlides(slide.module).at(-1).id;if(this.stopAtPractice&&slide.id===last){go('practice',slide.module);notify('Đã dừng để luyện tập bài '+slide.module+'.');return}if(slide.id===C.slides.at(-1).id){this.status('Đã trình chiếu hết 32 màn hình. Hoàn thành luyện tập các bài để mở đánh giá.');notify('Đã đọc hết khóa học. Việc xem tự động không thay thế luyện tập và bài thi.');return}go('slide',slide.id+1);this.start()};this.advanceTimer=setTimeout(advance,900)},
+ pause(){if(!this.active){this.start();return}if(this.paused){this.paused=false;this.status('Đang tiếp tục đọc');if(this.pending){this.armTimeout?.();this.audio.play().catch(e=>{if(e.name==='NotAllowedError'){this.stop();this.status('Âm thanh bị chặn. Bấm Đọc lại.')}})}}else{this.paused=true;clearTimeout(this.timer);this.audio.pause();this.status('Đã tạm dừng')}this.sync()},
+ setRate(v){this.rate=Number(v);this.audio.playbackRate=this.rate},
+ mute(){this.muted=!this.muted;this.audio.muted=this.muted;this.sync()}
+};
+function beginAutomatic(){const run=()=>{go('slide',state().lastSlide);enterPresent();speech.auto=true;render();document.documentElement.requestFullscreen?.().catch(()=>{});speech.start()};if(!db.active)askProfile(run);else run()}
+function moveSlide(n){const resume=speech.active&&!speech.paused&&document.body.classList.contains('present');go('slide',Math.max(1,Math.min(C.slides.length,n)));if(resume)speech.start()}
+
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.disabled)return;const d=b.dataset;
+if(d.go){go(d.go);return}if(d.slide){moveSlide(+d.slide);return}if(d.practice){go('practice',+d.practice);return}
+if('start'in d){beginAutomatic();return}if('manual'in d){const run=()=>{document.body.classList.remove('present');go('slide',state().lastSlide)};if(!db.active)askProfile(run);else run();return}if('ttsPrev'in d){moveSlide(route.id-1);return}if('ttsNext'in d){moveSlide(route.id+1);return}if('mute'in d){speech.mute();return}
+if('profile'in d){askProfile();return}if('present'in d){present();return}
+if('ahu'in d){$$('[data-ahu]').forEach(x=>x.classList.toggle('active',x===b));$('#ahu-info').textContent=stationInfo[+d.ahu][1];return}
+if('seq'in d){const i=+d.seq,j=i+(+d.delta);[sequence[i],sequence[j]]=[sequence[j],sequence[i]];seqResult='';render();$(`[data-seq="${j}"][data-delta="${d.delta}"]`)?.focus();return}
+if('seqCheck'in d){const correct=['URS','DQ','IQ','FQ (OQ)','PQ','Thẩm định làm sạch đối tượng','Giám sát & thẩm tra'];seqResult=sequence.every((x,i)=>x===correct[i])?'Chính xác. Yêu cầu → đánh giá thiết kế, lắp đặt, chức năng, hiệu năng → thẩm định làm sạch trên đối tượng → giám sát và thẩm tra.':'Chưa đúng. Bắt đầu bằng URS, rồi DQ, IQ, FQ, PQ cho hệ thống CIP. Thẩm định làm sạch đối tượng đi sau; giám sát và thẩm tra duy trì trạng thái đã thẩm định.';$('#seq-result').innerHTML=`<p class="feedback">${seqResult}</p>`;return}
+if('scenario'in d){if(+d.scenario===+d.answer){scenarioStep++;scenarioWrong='';notify(scenarioStep===1?'Đúng hướng: đánh giá dung dịch bằng dữ liệu, không chỉ bằng độ dẫn điện.':'Đã hoàn thành tình huống.')}else scenarioWrong=scenarioStep===0?'Chưa phù hợp. Độ dẫn điện đạt không loại trừ dung dịch đã bão hòa chất bẩn hoặc kiềm đã chuyển thành cacbonat. Hãy thử cách đánh giá bằng chuẩn độ và tiêu chí thải bỏ.':'Mẻ mới pha vào bồn bẩn sẽ nhanh chóng nhiễm bẩn trở lại. Cần làm sạch bồn và xem xét nguyên nhân tích tụ trước.';render();return}
+if('scenarioReset'in d){scenarioStep=0;scenarioWrong='';render();return}
+if('practiceQ'in d){if(mode==='trainer')trainerPractice[+d.practiceQ]=+d.option;else{state().practice[+d.practiceQ]=+d.option;if(db.active)save();}const y=scrollY;render();window.scrollTo(0,y);return}
+if('complete'in d){const m=+d.complete;if(mode!=='learner'||!canComplete(m))return;if(!db.active){askProfile(()=>{notify('Đã chọn hồ sơ. Hãy kiểm tra tiến độ và luyện tập của hồ sơ này.');go('practice',m)});return}if(!state().completed.includes(m))state().completed.push(m);save();notify('Đã hoàn thành bài '+m+'.');if(m<8)go('slide',moduleSlides(m+1)[0].id);else go('exam');return}
+if('examStart'in d){startExam();return}if('submitExam'in d){submitExam();return}if('abandonExam'in d){if(confirm('Hủy các câu trả lời của lượt chưa nộp? Lịch sử lượt đã nộp được giữ.')){state().exam=null;save();render()}return}
+if('export'in d){exportData();return}if('csv'in d){csv();return}if('printCert'in d){printMode('cert');return}if('printCheck'in d){printMode('check');return}
+if('reset'in d){if(db.active&&confirm('Xóa toàn bộ tiến độ và lịch sử thi trên trình duyệt này? Hãy xuất kết quả trước nếu cần giữ.')){profile().state=fresh();save();go('home')}return}
+if('speak'in d){speech.start();return}if('pause'in d){speech.pause();return}if('stop'in d){speech.stop();return}
+});
+document.addEventListener('change',e=>{const d=e.target.dataset;if(d.examQ){const id=+d.examQ;state().exam.answers[id]=+e.target.value;save();const root=e.target.closest('fieldset');root.querySelectorAll('.choice').forEach(x=>x.classList.toggle('selected',x.querySelector('input').checked));$('#exam-count').textContent=`Đã trả lời ${Object.keys(state().exam.answers).length}/${state().exam.ids.length}`;}if('check'in d){const i=+d.check;state().checklist=state().checklist.filter(x=>x!==i);if(e.target.checked)state().checklist.push(i);if(db.active)save()}if(['t-temp','t-flow','t-conc'].includes(e.target.id)){const names={'t-temp':'nhiệt độ','t-conc':'nồng độ','t-flow':'lưu lượng'},missing=Object.keys(names).filter(k=>!$('#'+k).checked).map(k=>names[k]);$('#timer-feedback').textContent=missing.length?'⏸ Bộ đếm dừng. Chưa đạt: '+missing.join(', ')+'.':'▶ Bộ đếm chạy. Cả ba thông số ở điểm đặt; nếu một thông số lệch, bộ đếm phải dừng.'}if(e.target.id==='auto-read')speech.auto=e.target.checked;if(e.target.id==='rate')speech.setRate(e.target.value);if(e.target.id==='pause-practice')speech.stopAtPractice=e.target.checked;});
+document.addEventListener('input',e=>{if(['vel-q','vel-d'].includes(e.target.id)){const q=$('#vel-q'),d=$('#vel-d');if(!q.value||!d.value||!q.validity.valid||!d.validity.valid){$('#vel-result').textContent='Nhập lưu lượng ≥ 0 và đường kính trong từ 5 đến 300 mm.';return}$('#vel-result').innerHTML=velocityResult(+q.value,+d.value)}
+if(['tee-l','tee-d','tee-slope'].includes(e.target.id)){const l=$('#tee-l'),d=$('#tee-d'),s=$('#tee-slope');if(!l.value||!d.value||!s.value||![l,d,s].every(x=>x.validity.valid)){$('#tee-result').textContent='Nhập chiều dài ≥ 0, đường kính từ 5 đến 300 mm và độ dốc từ 0–100%.';return}$('#tee-result').innerHTML=teeResult(+l.value,+d.value,+s.value)}});
+$('#profile-form').addEventListener('submit',e=>{e.preventDefault();const info={id:$('#emp-id').value.trim(),name:$('#emp-name').value.trim(),dept:$('#emp-dept').value.trim()};if(Object.values(info).some(x=>!x)){ $('#profile-error').textContent='Vui lòng nhập đủ thông tin.';return}const key='person:'+info.id.toLocaleUpperCase('vi-VN');const existing=db.profiles[key];if(existing&&(existing.info.name!==info.name||existing.info.dept!==info.dept)&&!confirm('Mã này đã có hồ sơ '+existing.info.name+'. Cập nhật tên/bộ phận? Lượt thi cũ giữ nguyên thông tin lúc nộp.'))return;if(!existing)db.profiles[key]={info,state:fresh()};else existing.info=info;db.active=key;validateState();save();$('#profile-dialog').close();scenarioStep=0;scenarioWrong='';const cb=pending;pending=null;if(cb)cb();else go('home')});
+$('#profile-cancel').onclick=()=>{$('#profile-dialog').close();pending=null};$('#profile-dialog').addEventListener('cancel',()=>pending=null);
+$('#profile').onclick=()=>askProfile();$('#present').onclick=present;$('#menu').onclick=()=>{const open=$('#sidebar').classList.toggle('open');$('#menu').setAttribute('aria-expanded',String(open))};
+$('#theme').onclick=()=>{document.body.classList.toggle('dark');db.theme=document.body.classList.contains('dark')?'dark':'light';save()};
+$('#role').onchange=e=>{speech.stop();mode=e.target.value;if(mode==='trainer'&&route.type==='exam'&&state().exam)go('home');else render();notify(mode==='trainer'?'Chế độ giảng viên: hiện gợi ý, không ghi nhận xem bài.':'Chế độ học viên.');};
+$('#search').addEventListener('input',e=>{const q=fold(e.target.value.trim()),r=$('#search-results');r.hidden=!q;if(!q)return;const found=C.slides.filter(s=>fold([s.title,s.lead,...s.cards.map(c=>c.title+' '+c.text),s.example||''].join(' ')).includes(q));r.innerHTML=found.length?found.map(s=>`<button data-slide="${s.id}"><small>Bài ${s.module} · Màn hình ${s.id}</small><br>${esc(s.title)}</button>`).join(''):'<p class="small">Không tìm thấy. Thử “vận tốc”, “thu hồi”, “IQ”…</p>'});
+$('#search-results').addEventListener('click',()=>{$('#search-results').hidden=true;$('#search').value=''});document.addEventListener('click',e=>{if(!e.target.closest('.searchwrap'))$('#search-results').hidden=true});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){speech.stop();if(document.body.classList.contains('present')){document.body.classList.remove('present');render()}$('#sidebar').classList.remove('open');$('#search-results').hidden=true;}if($('#profile-dialog').open||/INPUT|TEXTAREA|SELECT|BUTTON/.test(e.target.tagName)||route.type!=='slide')return;if(e.key==='ArrowRight'){e.preventDefault();moveSlide(route.id+1)}if(e.key==='ArrowLeft'){e.preventDefault();moveSlide(route.id-1)}if(e.code==='Space'&&document.body.classList.contains('present')){e.preventDefault();speech.pause()}});
+window.addEventListener('beforeunload',()=>speech.stop());if(db.theme==='dark')document.body.classList.add('dark');document.addEventListener('input',e=>{if(e.target.id!=='cert-name')return;const a=state().attempts.at(-1);if(!a)return;const v=e.target.value.trim();a.learner.name=v;profile().info.name=v;save();const el=$('.certificate .learner-name');if(el)el.textContent=v||'……………………………………'});render();
+</script></body></html>
